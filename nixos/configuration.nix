@@ -9,6 +9,7 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ./packages.nix
+      <home-manager/nixos>
     ];
 
   # Bootloader.
@@ -51,6 +52,30 @@
     variant = "mac";
   };
 
+# Nvidia config
+	hardware.graphics = {
+		enable = true;
+	};
+
+	services.xserver.videoDrivers = ["nvidia"];
+
+	hardware.nvidia = {
+		modesetting.enable = true;
+		powerManagement.enable = false;
+		powerManagement.finegrained = false;
+		open = true;
+		nvidiaSettings = true;
+		package = config.boot.kernelPackages.nvidiaPackages.stable;
+	};
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.users.michael = {
+    isNormalUser = true;
+    description = "Michael";
+    extraGroups = [ "networkmanager" "wheel" ];
+  };
+
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -73,32 +98,17 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-  # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.michael = {
-    isNormalUser = true;
-    description = "Michael";
-    extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [
-    #  thunderbird
-    ];
-  };
 
   # Enable automatic login for the user.
-  services.xserver.displayManager.autoLogin.enable = true;
-  services.xserver.displayManager.autoLogin.user = "michael";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "michael";
 
   # Workaround for GNOME autologin: https://github.com/NixOS/nixpkgs/issues/103746#issuecomment-945091229
   systemd.services."getty@tty1".enable = false;
   systemd.services."autovt@tty1".enable = false;
 
   #nix.nixPath = [ "nixos-config=/home/michael/NixOS/nix-os-config/nixos/configuration.nix" ];
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

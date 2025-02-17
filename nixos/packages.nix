@@ -7,10 +7,22 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-   environment.systemPackages = [
-    pkgs.git
-    pkgs._1password-gui
-    pkgs._1password-cli
-    pkgs.vscode
+   environment.systemPackages = with pkgs;[
+    git
+    _1password-gui
+    _1password-cli
+    vscode
+    vim
+    kitty
+
+    waybar
   ];
+
+  # Hyprland 
+
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+
+  };
 }
