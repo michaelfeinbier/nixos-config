@@ -5,16 +5,27 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./packages.nix
-      <home-manager/nixos>
-    ];
+  imports = [ # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./packages.nix
+    <home-manager/nixos>
+    ./home.nix
+  ];
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+
+    grub = {
+      enable = false;
+      device = "nodev";
+      useOSProber = true;
+    };
+  };
 
   networking.hostName = "saturn"; # Define your hostname.
 
@@ -52,21 +63,26 @@
     variant = "mac";
   };
 
-# Nvidia config
-	hardware.graphics = {
-		enable = true;
-	};
+  # Nvidia config
+  hardware.graphics = { enable = true; };
 
-	services.xserver.videoDrivers = ["nvidia"];
+  services.xserver.videoDrivers = [ "nvidia" ];
 
-	hardware.nvidia = {
-		modesetting.enable = true;
-		powerManagement.enable = false;
-		powerManagement.finegrained = false;
-		open = true;
-		nvidiaSettings = true;
-		package = config.boot.kernelPackages.nvidiaPackages.stable;
-	};
+  hardware.nvidia = {
+    modesetting.enable = true;
+    powerManagement.enable = false;
+    powerManagement.finegrained = false;
+    open = true;
+    nvidiaSettings = true;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
+  };
+
+  programs.hyprland = {
+    # Install the packages from nixpkgs
+    enable = true;
+    # Whether to enable XWayland
+    xwayland.enable = true;
+  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.michael = {
@@ -74,7 +90,6 @@
     description = "Michael";
     extraGroups = [ "networkmanager" "wheel" ];
   };
-
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -98,7 +113,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "michael";
@@ -109,6 +123,11 @@
 
   #nix.nixPath = [ "nixos-config=/home/michael/NixOS/nix-os-config/nixos/configuration.nix" ];
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings = {
+    substituters = [ "https://hyprland.cachix.org" ];
+    trusted-public-keys =
+      [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
