@@ -22,5 +22,7 @@
     kitty
     waybar
     rofi
+    swaynotificationcenter
+    nerdfonts
   ];
 }

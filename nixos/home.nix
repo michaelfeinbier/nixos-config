@@ -71,6 +71,8 @@
       #   org.gradle.daemon.idletimeout=3600000
       # '';
       ".config/hypr/hyprland.conf".source = dotfiles/hyprland.conf;
+      ".config/hypr/animations.conf".source = dotfiles/animations.conf;
+      ".config/hypr/nvidia.conf".source = dotfiles/nvidia.conf;
     };
 
     # Home Manager can also manage your environment variables through
