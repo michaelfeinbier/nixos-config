@@ -1,14 +1,6 @@
-{ config, pkgs, home-manager, ... }:
+{ config, pkgs,  ... }:
 
 {
-  home-manager.useGlobalPkgs = true;
-  home-manager.useUserPackages = true;
-  home-manager.backupFileExtension = "bckp";
-  home-manager.users.michael = { pkgs, ... }: {
-
-    imports = [
-      #configs/hyprland.nix
-    ]; 
 
     home.username = "michael";
     home.homeDirectory = "/home/michael";
@@ -20,18 +12,18 @@
     };
 
     # Gnome config
-    dconf = {
-      enable = true;
-      settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-      settings."org/gnome/shell" = {
-        disable-user-extensions = false;
-        enabled-extensions = with pkgs.gnomeExtensions; [
-          blur-my-shell.extensionUuid
-          system-monitor.extensionUuid
-          dash-to-dock.extensionUuid
-        ];
-      };
-    };
+    # dconf = {
+    #   enable = true;
+    #   settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+    #   settings."org/gnome/shell" = {
+    #     disable-user-extensions = false;
+    #     enabled-extensions = with pkgs.gnomeExtensions; [
+    #       blur-my-shell.extensionUuid
+    #       system-monitor.extensionUuid
+    #       dash-to-dock.extensionUuid
+    #     ];
+    #   };
+    # };
 
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
@@ -97,5 +89,4 @@
 
 
     home.stateVersion = "24.11";
-  };
 }
