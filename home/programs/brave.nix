@@ -1,3 +1,5 @@
+{ pkgs,  ... }:
+{
 programs.chromium = {
     enable = true;
     package = pkgs.brave;
@@ -9,4 +11,5 @@ programs.chromium = {
       # copied this somewhere - not sure if it's necessary
       #"--disable-features=WebRtcAllowInputVolumeAdjustment"
     ];
-  }
+  };
+}
