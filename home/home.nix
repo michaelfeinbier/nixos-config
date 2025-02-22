@@ -2,6 +2,10 @@
 
 {
 
+  imports = [
+    ./programs/brave.nix
+  ];
+
     home.username = "michael";
     home.homeDirectory = "/home/michael";
 
@@ -28,6 +32,8 @@
     # Let Home Manager install and manage itself.
     programs.home-manager.enable = true;
 
+
+    fonts.fontconfig.enable = true;
     # The home.packages option allows you to install Nix packages into your
     # environment.
     home.packages = [
@@ -39,7 +45,7 @@
       # # overrides. You can do that directly here, just don't forget the
       # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
       # # fonts?
-      # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
+      (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono", "FiraCode", "JetBrainsMono", "CaskaydiaCove" ]; })
 
       # # You can also create simple shell scripts directly inside your
       # # configuration. For example, this adds a command 'my-hello' to your
@@ -62,9 +68,9 @@
       #   org.gradle.console=verbose
       #   org.gradle.daemon.idletimeout=3600000
       # '';
-      ".config/hypr/hyprland.conf".source = dotfiles/hyprland.conf;
-      ".config/hypr/animations.conf".source = dotfiles/animations.conf;
-      ".config/hypr/nvidia.conf".source = dotfiles/nvidia.conf;
+      ".config/hypr/hyprland.conf".source = ../dotfiles/hyprland.conf;
+      ".config/hypr/animations.conf".source = ../dotfiles/animations.conf;
+      ".config/hypr/nvidia.conf".source = ../dotfiles/nvidia.conf;
     };
 
     # Home Manager can also manage your environment variables through

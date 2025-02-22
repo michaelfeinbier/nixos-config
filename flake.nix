@@ -15,7 +15,7 @@
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
       modules = [
-        ./nixos/configuration.nix
+        ./configuration.nix
         #./hardware-configuration.nix
         home-manager.nixosModules.home-manager
         {
@@ -23,7 +23,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "bckp";
 
-          home-manager.users.michael = import ./nixos/home.nix;
+          home-manager.users.michael = import ./home/home.nix;
         }
       ];
     };

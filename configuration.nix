@@ -6,7 +6,7 @@
 
 {
   imports = [ # Include the results of the hardware scan.
-    ./hardware-configuration.nix
+    ./hosts/saturn/default.nix
     ./packages.nix
   ];
 
@@ -25,7 +25,6 @@
     };
   };
 
-  networking.hostName = "saturn"; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;

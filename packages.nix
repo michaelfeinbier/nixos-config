@@ -19,6 +19,7 @@
     nixfmt-rfc-style
 
     # Gnome extension
+    nautilus
     #gnomeExtensions.blur-my-shell
     #gnomeExtensions.dash-to-dock
 
