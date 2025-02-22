@@ -3,10 +3,10 @@
     enable = true;
     settings = {
 
-  mainBar = {
-    layer = "top";
-    position = "top";
-  };
+      mainBar = {
+        layer = "top";
+        position = "top";
+      };
     };
-  }
+  };
 }
