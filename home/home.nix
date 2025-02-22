@@ -4,6 +4,7 @@
 
   imports = [
     ./programs/brave.nix
+    ./configs/waybar.nix
   ];
 
     home.username = "michael";
