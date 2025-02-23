@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, services, ... }:
 
 {
 
   imports = [
     ./programs/brave.nix
     ./configs/waybar.nix
+    ./configs/pywal.nix
   ];
 
   home.username = "michael";
@@ -14,6 +15,24 @@
     enable = true;
     userEmail = "michael@feinbier.net";
     userName = "Michael Feinbier";
+  };
+
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "off";
+      splash = false;
+
+      preload = [
+        ".config/wallpapers/path-to-heaven.jpg"
+
+      ];
+
+      wallpaper = [
+        ",.config/wallpapers/path-to-heaven.jpg"
+
+      ];
+    };
   };
 
   # Gnome config
@@ -78,6 +97,8 @@
     ".config/hypr/hyprland.conf".source = ../dotfiles/hyprland.conf;
     ".config/hypr/animations.conf".source = ../dotfiles/animations.conf;
     ".config/hypr/nvidia.conf".source = ../dotfiles/nvidia.conf;
+
+    ".config/wallpapers" = { source = ./wallpaper; recursive = true; };
   };
 
   # Home Manager can also manage your environment variables through
