@@ -29,39 +29,35 @@
 
 * {
     font-family: FantasqueSansMono Nerd Font;
-    font-size: 19px;
+    font-size: 1rem;
     min-height: 0;
 }
 
 window#waybar {
-    background: transparent;
+    /* background: transparent; */
+    background: shade(@base, 1);
+    border: .1rem solid alpha(@crust, .3);
+    border-radius: 1rem;
+    margin: 1rem;
 }
 
 #workspaces {
     border-radius: 1rem;
     background-color: @surface0;
-    margin-top: 1rem;
-    margin: 7px 3px 0px 7px;
+    /* margin-top: 1rem; */
+    /* margin: 7px 3px 0px 7px; */
 }
 
 #workspaces button {
     color: @pink;
-    border-radius: 1rem;
-    padding-left: 6px;
-    margin: 5px 0;
-    box-shadow: inset 0 -3px transparent;
-    transition: all 0.5s cubic-bezier(.55, -0.68, .48, 1.68);
-    background-color: transparent;
 }
 
 #workspaces button.active {
     color: @flamingo;
-    border-radius: 1rem;
 }
 
 #workspaces button:hover {
     color: @rosewater;
-    border-radius: 1rem;
 }
 
 #tray,
@@ -69,6 +65,7 @@ window#waybar {
 #backlight,
 #clock,
 #battery,
+#cpu,
 #pulseaudio,
 #custom-lock,
 #custom-power {

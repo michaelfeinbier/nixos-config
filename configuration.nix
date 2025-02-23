@@ -26,6 +26,9 @@
     };
   };
 
+  stylix.image = ./home/wallpaper/path-to-heaven.jpg;
+  # Bugfix stylix?
+
   # Enable networking
   networking.networkmanager.enable = true;
 

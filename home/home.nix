@@ -10,7 +10,7 @@
   imports = [
     ./programs/brave.nix
     ./configs/waybar.nix
-    ./configs/pywal.nix
+    ./configs/stylix.nix
   ];
 
   home.username = "michael";
@@ -53,32 +53,6 @@
   #     ];
   #   };
   # };
-
-  # GTK Theming
-  gtk = {
-    enable = true;
-    theme = {
-      name = "WhiteSur-dark";
-      package = pkgs.whitesur-gtk-theme;
-    };
-    iconTheme = {
-      name = "WhiteSur";
-      package = pkgs.whitesur-icon-theme;
-    };
-    #font = "Cantarell 11";
-
-    gtk3.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-
-    gtk4.extraConfig = {
-      Settings = ''
-        gtk-application-prefer-dark-theme=1
-      '';
-    };
-  };
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;

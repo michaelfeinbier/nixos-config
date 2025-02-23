@@ -2,7 +2,8 @@
   programs.waybar = {
     enable = true;
 
-    style = ./waybar.css;
+    # We test styling via stylix
+    # style = ./waybar.css;
 
     settings = {
       mainBar = {
