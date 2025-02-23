@@ -1,4 +1,9 @@
-{ config, pkgs, services, ... }:
+{
+  config,
+  pkgs,
+  services,
+  ...
+}:
 
 {
 
@@ -49,6 +54,32 @@
   #   };
   # };
 
+  # GTK Theming
+  gtk = {
+    enable = true;
+    theme =  {
+      name = "WhiteSur-dark";
+      package = pkgs.whitesur-gtk-theme;
+    }
+    iconTheme = {
+      name = "WhiteSur"
+      package = pkgs.whitesur-icon-theme;
+    }
+    #font = "Cantarell 11";
+
+gtk3.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+
+    gtk4.extraConfig = {
+      Settings = ''
+        gtk-application-prefer-dark-theme=1
+      '';
+    };
+  };
+
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
 
@@ -98,7 +129,10 @@
     ".config/hypr/animations.conf".source = ../dotfiles/animations.conf;
     ".config/hypr/nvidia.conf".source = ../dotfiles/nvidia.conf;
 
-    ".config/wallpapers" = { source = ./wallpaper; recursive = true; };
+    ".config/wallpapers" = {
+      source = ./wallpaper;
+      recursive = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through
