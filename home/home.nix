@@ -57,17 +57,17 @@
   # GTK Theming
   gtk = {
     enable = true;
-    theme =  {
+    theme = {
       name = "WhiteSur-dark";
       package = pkgs.whitesur-gtk-theme;
-    }
+    };
     iconTheme = {
-      name = "WhiteSur"
+      name = "WhiteSur";
       package = pkgs.whitesur-icon-theme;
-    }
+    };
     #font = "Cantarell 11";
 
-gtk3.extraConfig = {
+    gtk3.extraConfig = {
       Settings = ''
         gtk-application-prefer-dark-theme=1
       '';
