@@ -68,7 +68,7 @@
         nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs hostname;
-            userconfig = users.${username};
+            userConfig = users.${username};
             nixosModules = "${self}/modules/nixos";
           };
           modules = [
