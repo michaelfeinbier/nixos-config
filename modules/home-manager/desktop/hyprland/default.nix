@@ -27,7 +27,21 @@
   };
 
   # Set the default wallpaper
-  services.hyprpaper.settings = {
-    wallpaper = pkgs.hyprpaper.wallpapers.hyprland;
+  services.hyprpaper = {
+    enable = true;
+    settings = {
+      ipc = "off";
+      splash = false;
+
+      preload = [
+        ".config/wallpapers/path-to-heaven.jpg"
+
+      ];
+
+      wallpaper = [
+        ",.config/wallpapers/path-to-heaven.jpg"
+
+      ];
+    };
   };
 }

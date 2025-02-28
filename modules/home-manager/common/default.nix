@@ -20,6 +20,8 @@
       if pkgs.stdenv.isDarwin then "/Users/${userConfig.name}" else "/home/${userConfig.name}";
   };
 
+  programs.home-manager.enable = true;
+
   home.packages = with pkgs; [
     git
     vim
