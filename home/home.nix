@@ -9,6 +9,7 @@
 
   imports = [
     ./programs/brave.nix
+    ./programs/vscode.nix
     ./configs/waybar.nix
     ./configs/stylix.nix
   ];

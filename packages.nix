@@ -19,7 +19,6 @@
     git
     _1password-gui
     _1password-cli
-    vscode
     vim
     nixfmt-rfc-style
 

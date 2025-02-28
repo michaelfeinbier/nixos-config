@@ -2,12 +2,9 @@
 
 {
   stylix = {
-    enable = false;
-    #image = ../wallpaper/path-to-heaven.jpg;
-    image = pkgs.fetchurl {
-    url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
-    sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
-  };
+    enable = true;
+    autoEnable = false;
+    image = ../wallpaper/path-to-heaven.jpg;
     polarity = "dark";
 
     # Configuration for apps
@@ -19,7 +16,9 @@
       swaync.enable = true;
       waybar.enable = true;
       rofi.enable = true;
-      vscode.enable = true;
+      
+      # neeeee
+      #vscode.enable = true;
     };
   };
 
