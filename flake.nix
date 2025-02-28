@@ -41,7 +41,7 @@
       nix-homebrew,
       darwin,
       ...
-    } @ inputs:
+    }@inputs:
     let
       inherit (self) outputs;
 
@@ -51,19 +51,31 @@
       # Eval the treefmt modules from ./treefmt.nix
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
 
-      # Generate dynamic NixOS Config
-      mkNixosConfiguration = hostname: username:
+      # Generate dynamic NixOS & Home-manager Config
+      mkNixosConfiguration =
+        hostname: username:
         nixpkgs.lib.nixosSystem {
-          specialArgs = { 
-            inherit inputs outputs hostname; 
+          specialArgs = {
+            inherit inputs outputs hostname;
             userconfig = users.${username};
             nixosModules = "${self}/modules/nixos";
+            homeModules = "${self}/modules/home-manager";
           };
-          modules = [./hosts/${hostname}]
+          modules = [
+            ./hosts/${hostname}
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bckp";
+            }
+            ./home/${username}/${hostname}
+          ];
         };
-      
+
       # Generate dynamic Mac OS darwin configs
-      mkDarwinConfiguration = hostname: username: 
+      mkDarwinConfiguration =
+        hostname: username:
         darwin.lib.darwinSystem {
           system = "aarch64-darwin";
           specialArgs = {
@@ -77,6 +89,20 @@
           ];
         };
 
+      mkHomeConfiguration =
+        system: username: hostname:
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = import nixpkgs { inherit system; };
+          extraSpecialArgs = {
+            inherit inputs outputs;
+            userConfig = users.${username};
+            homeModules = "${self}/modules/home-manager";
+          };
+          modules = [
+            ./home/${username}/${hostname}
+            #catppuccin.homeManagerModules.catppuccin
+          ];
+        };
 
     in
     {
@@ -90,31 +116,11 @@
       darwinConfigurations = {
         # Billie Mac
         "michael-JN4T2CYH6X" = mkDarwinConfiguration "michael-JN4T2CYH6X" "michael";
-      }
+      };
 
       nixosConfigurations = {
         # Saturn
         saturn = mkNixosConfiguration "saturn" "michael";
       };
-      # nixosConfigurations.saturn = nixpkgs.lib.nixosSystem {
-      #   system = "x86_64-linux";
-      #   specialArgs = { inherit inputs; };
-      #   modules = [
-      #     ./configuration.nix
-      #     #./hardware-configuration.nix
-
-      #     inputs.stylix.nixosModules.stylix
-
-      #     home-manager.nixosModules.home-manager
-      #     {
-      #       home-manager.useGlobalPkgs = true;
-      #       home-manager.useUserPackages = true;
-      #       home-manager.backupFileExtension = "bckp";
-
-      #       home-manager.users.michael = import ./home/home.nix;
-      #     }
-      #   ];
-
-      # };
     };
 }

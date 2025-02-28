@@ -17,8 +17,6 @@
 
   environment.systemPackages = with pkgs; [
     git
-    _1password-gui
-    _1password-cli
     vim
     nixfmt-rfc-style
 

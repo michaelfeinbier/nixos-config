@@ -1,4 +1,4 @@
-{pkgs, ... }:
+{ pkgs, ... }:
 
 {
   stylix = {
@@ -16,7 +16,7 @@
       swaync.enable = true;
       waybar.enable = true;
       rofi.enable = true;
-      
+
       # neeeee
       #vscode.enable = true;
     };
