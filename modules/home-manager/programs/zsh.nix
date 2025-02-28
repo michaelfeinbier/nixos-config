@@ -6,10 +6,10 @@
     shellAliases = {
 
       # rebuild home-manager
-      rhm = "home-manager switch --flake /home/michael/nix-os-config";
+      rhm = "home-manager switch --flake /home/michael/nix-os-config#michael@saturn";
 
       # rebuild system
-      rs = "sudo nixos-rebuild switch --flake /home/michael/nix-os-config#michael@saturn";
+      rs = "sudo nixos-rebuild switch --flake /home/michael/nix-os-config#saturn";
     };  
   };
 }
