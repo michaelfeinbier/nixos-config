@@ -4,6 +4,7 @@
   lib,
   hostname,
   inputs,
+  nixosModules,
   ...
 }:
 

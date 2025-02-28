@@ -2,8 +2,7 @@
 {
   # From https://github.com/AlexNabokikh/nix-config/blob/master/modules/nixos/desktop/hyprland/default.nix
 
-  # GLOBAL CONFIGURATION 
-
+  # GLOBAL CONFIGURATION
 
   # Call dbus-update-activation-environment on login
   services.xserver.updateDbusEnvironment = true;

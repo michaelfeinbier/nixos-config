@@ -51,6 +51,17 @@
       # Eval the treefmt modules from ./treefmt.nix
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
 
+      # Define user configurations
+      users = {
+        michael = {
+          #avatar = ./files/avatar/face;
+          email = "michael@feinbier.net";
+          fullName = "Michael Feinbier";
+          #gitKey = "C5810093";
+          name = "michael";
+        };
+      };
+
       # Generate dynamic NixOS & Home-manager Config
       mkNixosConfiguration =
         hostname: username:
@@ -59,17 +70,9 @@
             inherit inputs outputs hostname;
             userconfig = users.${username};
             nixosModules = "${self}/modules/nixos";
-            homeModules = "${self}/modules/home-manager";
           };
           modules = [
             ./hosts/${hostname}
-            home-manager.nixosModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.backupFileExtension = "bckp";
-            }
-            ./home/${username}/${hostname}
           ];
         };
 
@@ -106,6 +109,7 @@
 
     in
     {
+
       # for `nix fmt`
       formatter = eachSystem (pkgs: treefmtEval.${pkgs.system}.config.build.wrapper);
       # for `nix flake check`
@@ -121,6 +125,10 @@
       nixosConfigurations = {
         # Saturn
         saturn = mkNixosConfiguration "saturn" "michael";
+      };
+
+      homeConfigurations = {
+        "michael@saturn" = mkHomeConfiguration "x86_64-linux" "michael" "saturn";
       };
     };
 }

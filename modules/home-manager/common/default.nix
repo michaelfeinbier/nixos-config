@@ -1,4 +1,9 @@
-{ userConfig, pkgs, homeModules, ... }:
+{
+  userConfig,
+  pkgs,
+  homeModules,
+  ...
+}:
 {
   # Default programms and settings
   imports = [
