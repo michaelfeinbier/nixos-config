@@ -18,8 +18,10 @@
     "hypr/hyprland.conf" = {
       source = ./hyprland.conf;
     };
+  };
 
-    
-
+  # Set the default wallpaper
+  services.hyprpaper.settings = {
+    wallpaper = pkgs.hyprpaper.wallpapers.hyprland;
   };
 }

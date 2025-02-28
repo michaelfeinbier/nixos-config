@@ -20,6 +20,8 @@
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
+    # Whether to enable XWayland
+    xwayland.enable = true;
   };
 
   # Enable security services
