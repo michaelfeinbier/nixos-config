@@ -2,33 +2,82 @@
   description = "Michael's NixOS configuration";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    # Nixpkgs
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+
     hyprswitch.url = "github:h3rmt/hyprswitch/release";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
+
+    # Stylix global theming
     stylix.url = "github:danth/stylix/release-24.11";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-24.11";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # NixOS profiles to optimize settings for different hardware
+    hardware.url = "github:nixos/nixos-hardware";
+
+    # Nix Darwin (for MacOS machines)
+    darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Homebrew
+    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
   };
 
   outputs =
-    inputs@{
+    {
       self,
       nixpkgs,
       home-manager,
       systems,
       treefmt-nix,
+      nix-homebrew,
+      darwin,
       ...
-    }:
+    } @ inputs:
     let
+      inherit (self) outputs;
+
       # Small tool to iterate over each systems
       eachSystem = f: nixpkgs.lib.genAttrs (import systems) (system: f nixpkgs.legacyPackages.${system});
 
       # Eval the treefmt modules from ./treefmt.nix
       treefmtEval = eachSystem (pkgs: treefmt-nix.lib.evalModule pkgs ./treefmt.nix);
+
+      # Generate dynamic NixOS Config
+      mkNixosConfiguration = hostname: username:
+        nixpkgs.lib.nixosSystem {
+          specialArgs = { 
+            inherit inputs outputs hostname; 
+            userconfig = users.${username};
+            nixosModules = "${self}/modules/nixos";
+          };
+          modules = [./hosts/${hostname}]
+        };
+      
+      # Generate dynamic Mac OS darwin configs
+      mkDarwinConfiguration = hostname: username: 
+        darwin.lib.darwinSystem {
+          system = "aarch64-darwin";
+          specialArgs = {
+            inherit inputs outputs hostname;
+            userConfig = users.${username};
+          };
+          modules = [
+            ./hosts/${hostname}
+            home-manager.darwinModules.home-manager
+            nix-homebrew.darwinModules.nix-homebrew
+          ];
+        };
+
+
     in
     {
       # for `nix fmt`
@@ -38,25 +87,34 @@
         formatting = treefmtEval.${pkgs.system}.config.build.check self;
       });
 
-      nixosConfigurations.saturn = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          #./hardware-configuration.nix
+      darwinConfigurations = {
+        # Billie Mac
+        "michael-JN4T2CYH6X" = mkDarwinConfiguration "michael-JN4T2CYH6X" "michael";
+      }
 
-          inputs.stylix.nixosModules.stylix
-
-          home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.backupFileExtension = "bckp";
-
-            home-manager.users.michael = import ./home/home.nix;
-          }
-        ];
-
+      nixosConfigurations = {
+        # Saturn
+        saturn = mkNixosConfiguration "saturn" "michael";
       };
+      # nixosConfigurations.saturn = nixpkgs.lib.nixosSystem {
+      #   system = "x86_64-linux";
+      #   specialArgs = { inherit inputs; };
+      #   modules = [
+      #     ./configuration.nix
+      #     #./hardware-configuration.nix
+
+      #     inputs.stylix.nixosModules.stylix
+
+      #     home-manager.nixosModules.home-manager
+      #     {
+      #       home-manager.useGlobalPkgs = true;
+      #       home-manager.useUserPackages = true;
+      #       home-manager.backupFileExtension = "bckp";
+
+      #       home-manager.users.michael = import ./home/home.nix;
+      #     }
+      #   ];
+
+      # };
     };
 }
