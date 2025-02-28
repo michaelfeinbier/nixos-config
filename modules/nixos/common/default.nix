@@ -104,7 +104,7 @@
     roboto
   ];
 
-   # Enable automatic login for the user.
+  # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
-  services.displayManager.autoLogin.user = "michael";
+  services.displayManager.autoLogin.user = "${userConfig.name}";
 }

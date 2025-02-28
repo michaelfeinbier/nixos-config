@@ -1,4 +1,10 @@
-{lib, self, inputs, ...}: {
+{
+  lib,
+  self,
+  inputs,
+  ...
+}:
+{
 
   options.wallpaper = lib.mkOption {
     default = "${inputs.self}/files/wallpaper/path-to-heaven.jpg";

@@ -40,6 +40,7 @@
       treefmt-nix,
       nix-homebrew,
       darwin,
+      stylix,
       ...
     }@inputs:
     let
@@ -102,6 +103,8 @@
             homeModules = "${self}/modules/home-manager";
           };
           modules = [
+            stylix.homeManagerModules.stylix
+            
             ./home/${username}/${hostname}
             #catppuccin.homeManagerModules.catppuccin
           ];

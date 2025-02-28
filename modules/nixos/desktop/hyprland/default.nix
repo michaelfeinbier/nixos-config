@@ -21,6 +21,10 @@
     enable = true;
     # Whether to enable XWayland
     xwayland.enable = true;
+
+    # Maybe this only works when imported as flake
+    # package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   # Enable security services
@@ -52,7 +56,7 @@
     kitty
     waybar
     rofi
-    swaynotificationcenter
+    # swaynotificationcenter via package now
     inputs.hyprswitch.packages.x86_64-linux.default
     hyprpaper
     hyprsunset
