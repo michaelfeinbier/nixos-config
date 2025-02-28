@@ -1,8 +1,10 @@
-{ userConfig, pkgs, ... }:
+{ userConfig, pkgs, homeModules, ... }:
 {
   # Default programms and settings
   imports = [
-    ../programs/git.nix
+    "${homeModules}/programs/git.nix"
+    "${homeModules}/programs/brave.nix"
+    "${homeModules}/programs/vscode.nix"
   ];
 
   nixpkgs.config.allowUnfree = true;
