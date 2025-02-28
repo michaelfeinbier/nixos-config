@@ -17,6 +17,7 @@
 
     ./hardware-configuration.nix
     "${nixosModules}/common"
+    "${nixosModules}/desktop/hyprland"
   ];
 
   # Nvidia config
