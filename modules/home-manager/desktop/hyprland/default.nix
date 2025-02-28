@@ -34,13 +34,12 @@
       splash = false;
 
       preload = [
-        ".config/wallpapers/path-to-heaven.jpg"
+        config.wallpaper
 
       ];
 
       wallpaper = [
-        ",.config/wallpapers/path-to-heaven.jpg"
-
+        ",${config.wallpaper}"
       ];
     };
   };

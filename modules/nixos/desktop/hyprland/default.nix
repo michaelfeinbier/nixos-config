@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   # From https://github.com/AlexNabokikh/nix-config/blob/master/modules/nixos/desktop/hyprland/default.nix
 

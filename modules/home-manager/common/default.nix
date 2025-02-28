@@ -2,6 +2,8 @@
   userConfig,
   pkgs,
   homeModules,
+  lib,
+  self,
   ...
 }:
 {
@@ -10,6 +12,9 @@
     "${homeModules}/programs/git.nix"
     "${homeModules}/programs/brave.nix"
     "${homeModules}/programs/vscode.nix"
+    "${homeModules}/programs/zsh.nix"
+    "${homeModules}/misc/wallpaper.nix"
+
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -25,6 +30,8 @@
   home.packages = with pkgs; [
     git
     vim
+    dua
+    htop
     nixfmt-rfc-style
     _1password-gui
     _1password-cli
