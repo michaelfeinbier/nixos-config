@@ -75,10 +75,10 @@
 
   # X11 settings - use it for now, check later if wayland is better
   services.xserver = {
-   enable = true;
-   excludePackages = with pkgs; [ xterm ];
-   displayManager.gdm.enable = true;
-   displayManager.gdm.wayland = true;
+    enable = true;
+    excludePackages = with pkgs; [ xterm ];
+    displayManager.gdm.enable = true;
+    displayManager.gdm.wayland = true;
   };
 
   # Enable sound with pipewire.

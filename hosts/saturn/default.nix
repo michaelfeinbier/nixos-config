@@ -18,6 +18,7 @@
     ./hardware-configuration.nix
     "${nixosModules}/common"
     "${nixosModules}/desktop/hyprland"
+    "${nixosModules}/programs/steam.nix"
   ];
 
   # Nvidia config

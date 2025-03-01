@@ -1,4 +1,4 @@
-{ homeModules, ... }:
+{ homeModules, pkgs, ... }:
 {
   imports = [
     "${homeModules}/common"
@@ -9,6 +9,14 @@
 
   # Enable home-manager
   programs.home-manager.enable = true;
+
+  # Some proton hacks
+  home.packages = with pkgs; [
+    protonup
+  ];
+  home.sessionVariables = {
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
+  };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

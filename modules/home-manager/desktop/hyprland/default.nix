@@ -95,6 +95,7 @@
       "waybar & swaync & hyprpaper & hyprsunset"
       "hyprswitch init --show-title &"
       "1password --silent"
+      "nwg-dock-hyprland -d"
     ];
 
     bind =
@@ -116,8 +117,8 @@
             ws = i + 1;
           in
           [
-            "$mainMod, {toString i}, workspace, ${toString ws}"
-            "$mainMod SHIFT, ${toString i}, movetoworkspace, ${toString ws}"
+            "$mainMod, ${toString ws}, workspace, ${toString ws}"
+            "$mainMod SHIFT, ${toString ws}, movetoworkspace, ${toString ws}"
           ]
         ) 9
       ));
@@ -141,7 +142,7 @@
 
     input = {
       kb_layout = "us,de";
-      kb_options = grp:win_space_toggle;
+      kb_options = "grp:win_space_toggle";
       follow_mouse = true;
 
       natural_scroll = true;
@@ -157,15 +158,15 @@
       };
 
       shadow = {
-        enabled = true;
-        range =4;
+        enabled = false;
+        range = 4;
         render_power = 3;
         color = "rgba(1a1a1aee)";
       };
     };
 
     animations = {
-      enabled = false;
+      enabled = true;
     };
 
     xwayland = {
@@ -174,6 +175,7 @@
 
     cursor = {
       no_warps = true;
+      no_hardware_cursors = true;
     };
 
     misc = {
@@ -185,11 +187,22 @@
 
     dwindle = {
       preserve_split = true;
-      pseudotile = true; 
+      pseudotile = true;
     };
 
     master = {
       new_status = "master";
     };
+
+    windowrulev2 = [
+      # Steam on WS3
+      "workspace 3, class:steam"
+
+      # Ignore maximize
+      "suppressevent maximize, class:.*"
+
+      #x11 bugfix
+      "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+    ];
   };
 }

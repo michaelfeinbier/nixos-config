@@ -12,5 +12,9 @@
       # rebuild system
       rs = "sudo nixos-rebuild switch --flake /home/michael/nix-os-config#saturn";
     };
+
+    initExtra = ''
+      fastfetch
+    '';
   };
 }

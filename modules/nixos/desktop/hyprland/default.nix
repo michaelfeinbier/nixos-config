@@ -70,5 +70,6 @@
     inputs.hyprswitch.packages.x86_64-linux.default
     hyprpaper
     hyprsunset
+    nwg-dock-hyprland
   ];
 }

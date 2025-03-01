@@ -15,6 +15,7 @@
     "${homeModules}/programs/zsh.nix"
     "${homeModules}/programs/alacritty.nix"
     "${homeModules}/programs/fastfetch.nix"
+    "${homeModules}/programs/starship.nix"
     "${homeModules}/misc/wallpaper.nix"
 
   ];
