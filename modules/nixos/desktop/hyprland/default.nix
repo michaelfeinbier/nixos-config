@@ -22,10 +22,19 @@
     # Whether to enable XWayland
     xwayland.enable = true;
 
+    withUWSM = true;
+
     # Maybe this only works when imported as flake
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage =
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+  };
+
+  programs.uwsm = {
+    enable = true;
+    waylandCompositors.hyprland = {
+      prettyName = "Hyprland";
+    };
   };
 
   # Enable security services
@@ -56,7 +65,7 @@
 
     kitty
     waybar
-    rofi
+    rofi-wayland
     # swaynotificationcenter via package now
     inputs.hyprswitch.packages.x86_64-linux.default
     hyprpaper

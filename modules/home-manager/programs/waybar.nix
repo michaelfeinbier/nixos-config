@@ -17,7 +17,6 @@
         margin-right = 4;
 
         modules-left = [
-          "hyprland/workspaces"
           "cpu"
           "temperature"
           "memory"
@@ -25,6 +24,7 @@
         ];
 
         modules-center = [
+          "hyprland/workspaces"
           #"clock"
           #"custom/notification"
         ];
@@ -214,6 +214,7 @@
         padding: 0px;
         margin-top: 1px;
         margin-bottom: 1px;
+        color: @text;
       }
 
       window#waybar {
@@ -238,7 +239,7 @@
       .modules-right,
       .modules-center,
       .modules-left {
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: alpha(@base, 0.6);
         border: 0px solid #b4befe;
         border-radius: 8px;
       }
@@ -281,7 +282,7 @@
       #pulseaudio,
       #temperature,
       #workspaces {
-        color: #dfdfdf;
+        color: @text;
         padding: 0px 10px;
         border-radius: 8px;
       }

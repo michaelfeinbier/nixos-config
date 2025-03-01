@@ -63,7 +63,7 @@
     enable = true;
     settings = {
       ipc = "off";
-      splash = true;
+      splash = false;
 
       preload = [
         config.wallpaper
@@ -86,7 +86,7 @@
     "$reverse" = "grave";
     "$key" = "Tab";
 
-    "$terminal" = "kitty";
+    "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
     "$menu " = "rofi -show drun -show-icons";
 
@@ -116,8 +116,8 @@
             ws = i + 1;
           in
           [
-            "$mod, code:1${toString i}, workspace, ${toString ws}"
-            "$mod SHIFT, code:1${toString i}, movetoworkspace, ${toString ws}"
+            "$mainMod, {toString i}, workspace, ${toString ws}"
+            "$mainMod SHIFT, ${toString i}, movetoworkspace, ${toString ws}"
           ]
         ) 9
       ));
@@ -139,12 +139,57 @@
       "WLR_DRM_NO_ATOMIC,1"
     ];
 
+    input = {
+      kb_layout = "us,de";
+      kb_options = grp:win_space_toggle;
+      follow_mouse = true;
+
+      natural_scroll = true;
+    };
+
+    # Optics: Window decorations, animations, etc.
+    decoration = {
+      rounding = 8;
+      blur = {
+        enabled = false;
+        size = 3;
+        passes = 1;
+      };
+
+      shadow = {
+        enabled = true;
+        range =4;
+        render_power = 3;
+        color = "rgba(1a1a1aee)";
+      };
+    };
+
+    animations = {
+      enabled = false;
+    };
+
     xwayland = {
       force_zero_scaling = true;
     };
 
     cursor = {
       no_warps = true;
+    };
+
+    misc = {
+      force_default_wallpaper = 0;
+      disable_hyprland_logo = true;
+      disable_splash_rendering = true;
+      vrr = 2;
+    };
+
+    dwindle = {
+      preserve_split = true;
+      pseudotile = true; 
+    };
+
+    master = {
+      new_status = "master";
     };
   };
 }
