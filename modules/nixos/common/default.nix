@@ -113,6 +113,7 @@
     nerd-fonts.jetbrains-mono
     nerd-fonts.fira-mono
     roboto
+    dejavu_fonts
   ];
 
   # Enable automatic login for the user.

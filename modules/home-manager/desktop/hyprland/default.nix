@@ -31,37 +31,23 @@
   catppuccin.flavor = "mocha";
   # for now global enable, maybe finetune later
   catppuccin.enable = true;
+  catppuccin.gtk.enable = true;
 
   # Consistent cursor theme across all applications.
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = pkgs.yaru-theme;
-    name = "Yaru";
+    package = pkgs.bibata-cursors;
+    name = "Bibata-Modern-Ice";
     size = 24;
   };
-
-  # Source hyprland config from the home-manager store
-  # NOT DOING THIS ... see below
-  # xdg.configFile = {
-  #   "hypr/hyprland.conf" = {
-  #     source = ./hyprland.conf;
-  #   };
-  # };
 
   # Install swaync via home-manager module
   services.swaync = {
     enable = true;
   };
 
-  # Source swaync config from the home-manager store
-  #$xdg.configFile = {
-  # "swaync/style.css" = {
-  #   source = ./style.css;
-  # };
-  #};
-
-  # Set the default wallpaper
+  # Set the wallpaper
   services.hyprpaper = {
     enable = true;
     settings = {
@@ -98,7 +84,6 @@
       "waybar & swaync & hyprpaper & hyprsunset"
       "hyprswitch init --show-title &"
       "1password --silent"
-      "nwg-dock-hyprland -d"
     ];
 
     bind =
@@ -111,7 +96,7 @@
         "$mainMod, Q, exec, $terminal"
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
-        "$mainMod, R, exec, $menu"
+        "$mainMod, SPACE, exec, $menu"
       ]
       ++ (builtins.concatLists (
         builtins.genList (
@@ -139,6 +124,7 @@
     env = [
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
+      "GTK_THEME,Adwaita-dark"
 
       # nvidia specific
       "LIBVA_DRIVER_NAME,nvidia"
@@ -149,7 +135,7 @@
 
     input = {
       kb_layout = "us,de";
-      kb_options = "grp:win_space_toggle";
+      #kb_options = "grp:win_space_toggle";
       follow_mouse = true;
 
       natural_scroll = true;
@@ -238,5 +224,41 @@
       #x11 bugfix
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
     ];
+  };
+
+  # Other dconf settings
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      "color-scheme" = "prefer-dark";
+      gtk-theme = "Adwaita-dark";
+      icon-theme = "Tela-dark";
+      cursor-theme = "Bibata-Modern-Ice";
+      #font-name = "Cantarell 11";
+    };
+
+    "org/gnome/nautilus/preferences" = {
+      "default-folder-viewer" = "list-view";
+      "migrated-gtk-settings" = true;
+      "search-filter-time-type" = "last_modified";
+      "search-view" = "list-view";
+    };
+
+    "org/gtk/gtk4/settings/file-chooser" = {
+      "show-hidden" = true;
+    };
+
+    "org/gtk/settings/file-chooser" = {
+      "date-format" = "regular";
+      "location-mode" = "path-bar";
+      "show-hidden" = true;
+      "show-size-column" = true;
+      "show-type-column" = true;
+      "sort-column" = "name";
+      "sort-directories-first" = false;
+      "sort-order" = "ascending";
+      "type-format" = "category";
+      "view-type" = "list";
+    };
+
   };
 }

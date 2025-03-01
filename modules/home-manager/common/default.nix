@@ -16,6 +16,7 @@
     "${homeModules}/programs/alacritty.nix"
     "${homeModules}/programs/fastfetch.nix"
     "${homeModules}/programs/starship.nix"
+    "${homeModules}/programs/mangohud.nix"
     "${homeModules}/misc/wallpaper.nix"
 
   ];
@@ -38,6 +39,10 @@
     nixfmt-rfc-style
     _1password-gui
     _1password-cli
+    pavucontrol
+    tela-icon-theme
+    gnome-tweaks
+    bibata-cursors
   ];
 
 }
