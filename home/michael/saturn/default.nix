@@ -13,6 +13,7 @@
   # Some proton hacks
   home.packages = with pkgs; [
     protonup
+    mangohud
   ];
   home.sessionVariables = {
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";

@@ -18,11 +18,14 @@
   wayland.windowManager.hyprland = {
     enable = true;
     # set the flake package
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    #portalPackage =
+    #  inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
     #package = null;
     #portalPackage = null;
+
+    # Disable this here to avoid conflict with NIX wayland
+    systemd.enable = false;
   };
 
   catppuccin.flavor = "mocha";
@@ -80,7 +83,7 @@
   wayland.windowManager.hyprland.settings = {
 
     # General settings
-    monitor = ",preferred,auto,2";
+    monitor = ",3840x2160@144,auto,2";
     "$mainMod" = "SUPER";
     "$mod" = "alt";
     "$reverse" = "grave";
@@ -122,6 +125,10 @@
           ]
         ) 9
       ));
+
+    general = {
+      allow_tearing = true;
+    };
 
     bindm = [
       # Move windows
@@ -182,7 +189,7 @@
       force_default_wallpaper = 0;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
-      vrr = 2;
+      #vrr = 2;
     };
 
     dwindle = {

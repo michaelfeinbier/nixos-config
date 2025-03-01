@@ -5,7 +5,7 @@
   # GLOBAL CONFIGURATION
 
   # Call dbus-update-activation-environment on login
-  services.xserver.updateDbusEnvironment = true;
+  #services.xserver.updateDbusEnvironment = true;
 
   # # Enables support for Bluetooth
   # hardware.bluetooth = {

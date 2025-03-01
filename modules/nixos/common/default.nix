@@ -74,15 +74,15 @@
   services.printing.enable = true;
 
   # X11 settings - use it for now, check later if wayland is better
-  services.xserver = {
-    enable = true;
-    excludePackages = with pkgs; [ xterm ];
-    displayManager.gdm.enable = true;
-    displayManager.gdm.wayland = true;
-  };
+  # services.xserver = {
+  #   enable = true;
+  #   excludePackages = with pkgs; [ xterm ];
+  #   displayManager.gdm.enable = true;
+  #   displayManager.gdm.wayland = true;
+  # };
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -118,4 +118,5 @@
   # Enable automatic login for the user.
   services.displayManager.autoLogin.enable = true;
   services.displayManager.autoLogin.user = "${userConfig.name}";
+  services.getty.autologinUser = "${userConfig.name}";
 }
