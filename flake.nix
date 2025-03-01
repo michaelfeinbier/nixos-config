@@ -10,9 +10,6 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
-
-    # Stylix global theming
-    stylix.url = "github:danth/stylix/release-24.11";
     # Global catppuccin theme
     catppuccin.url = "github:catppuccin/nix";
 
@@ -43,7 +40,6 @@
       treefmt-nix,
       nix-homebrew,
       darwin,
-      stylix,
       catppuccin,
       ...
     }@inputs:
@@ -78,6 +74,14 @@
           };
           modules = [
             ./hosts/${hostname}
+            home-manager.nixosModules.home-manager
+            {
+              home-manager.useGlobalPkgs = true;
+              home-manager.useUserPackages = true;
+
+              #home-manager.users.${username} = import ./home/${username}/${hostname};
+            }
+            #/home/${username}/${hostname}
           ];
         };
 
@@ -107,7 +111,6 @@
             homeModules = "${self}/modules/home-manager";
           };
           modules = [
-            stylix.homeManagerModules.stylix
 
             ./home/${username}/${hostname}
             catppuccin.homeManagerModules.catppuccin

@@ -25,18 +25,19 @@
         ];
 
         modules-center = [
-          "clock"
-          "custom/notification"
+          #"clock"
+          #"custom/notification"
         ];
 
         modules-right = [
-          "custom/recorder"
           "hyprland/language"
           "tray"
           #"bluetooth"
           "pulseaudio"
           "pulseaudio#microphone"
           #"battery"
+          "clock"
+          "custom/notification"
         ];
 
         backlight = {
@@ -200,16 +201,6 @@
           on-click = "swaync-client -t -sw";
           on-click-right = "swaync-client -d -sw";
           escape = true;
-        };
-
-        "custom/recorder" = {
-          format = "";
-          tooltip = false;
-          return-type = "json";
-          exec = "echo '{\"class\": \"recording\"}'";
-          exec-if = "pgrep wf-recorder";
-          interval = 1;
-          on-click = "screen-recorder";
         };
       };
     };
