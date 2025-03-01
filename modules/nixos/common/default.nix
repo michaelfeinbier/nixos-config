@@ -67,8 +67,18 @@
     shell = pkgs.zsh;
   };
 
+  # Input settings
+  services.libinput.enable = true;
+
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  # X11 settings - use it for now, check later if wayland is better
+  services.xserver = {
+    enable = true;
+    excludePackages = with pkgs; [ xterm ];
+    displayManager.gdm.enable = true;
+  };
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;

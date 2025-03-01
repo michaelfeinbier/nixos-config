@@ -2,7 +2,7 @@
 
 {
   stylix = {
-    enable = true;
+    enable = false;
     autoEnable = false;
     image = config.wallpaper;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";

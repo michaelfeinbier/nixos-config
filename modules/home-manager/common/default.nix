@@ -13,6 +13,7 @@
     "${homeModules}/programs/brave.nix"
     "${homeModules}/programs/vscode.nix"
     "${homeModules}/programs/zsh.nix"
+    "${homeModules}/programs/warp-terminal.nix"
     "${homeModules}/programs/fastfetch.nix"
     "${homeModules}/misc/wallpaper.nix"
 

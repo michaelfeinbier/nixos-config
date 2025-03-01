@@ -4,6 +4,7 @@
   config,
   lib,
   inputs,
+  catppuccin,
   ...
 }:
 {
@@ -12,14 +13,19 @@
     "${homeModules}/services/stylix.nix"
   ];
 
-  # wayland.windowManager.hyprland = {
-  #   enable = true;
-  #   # set the flake package
-  #   #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-  #   #portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  #   package = null;
-  #   portalPackage = null;
-  # };
+  wayland.windowManager.hyprland = {
+    enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    #package = null;
+    #portalPackage = null;
+  };
+
+  catppuccin.flavor = "mocha";
+  # for now global enable, maybe finetune later
+  catppuccin.enable = true;
 
   # Consistent cursor theme across all applications.
   # home.pointerCursor = {
@@ -44,10 +50,10 @@
 
   # Source swaync config from the home-manager store
   #$xdg.configFile = {
-    # "swaync/style.css" = {
-    #   source = ./style.css;
-    # };
- #};
+  # "swaync/style.css" = {
+  #   source = ./style.css;
+  # };
+  #};
 
   # Set the default wallpaper
   services.hyprpaper = {

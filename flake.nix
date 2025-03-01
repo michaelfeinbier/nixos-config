@@ -7,11 +7,14 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     hyprswitch.url = "github:h3rmt/hyprswitch/release";
+    hyprland.url = "github:hyprwm/Hyprland";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
     # Stylix global theming
     stylix.url = "github:danth/stylix/release-24.11";
+    # Global catppuccin theme
+    catppuccin.url = "github:catppuccin/nix";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -41,6 +44,7 @@
       nix-homebrew,
       darwin,
       stylix,
+      catppuccin,
       ...
     }@inputs:
     let
@@ -104,9 +108,9 @@
           };
           modules = [
             stylix.homeManagerModules.stylix
-            
+
             ./home/${username}/${hostname}
-            #catppuccin.homeManagerModules.catppuccin
+            catppuccin.homeManagerModules.catppuccin
           ];
         };
 
