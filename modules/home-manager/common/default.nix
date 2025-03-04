@@ -18,6 +18,7 @@
     "${homeModules}/programs/starship.nix"
     "${homeModules}/programs/mangohud.nix"
     "${homeModules}/misc/wallpaper.nix"
+    "${homeModules}/misc/gtk.nix"
 
   ];
 
@@ -41,8 +42,10 @@
     _1password-cli
     pavucontrol
     tela-icon-theme
-    gnome-tweaks
     bibata-cursors
+    cliphist
+    webcord-vencord
+    nwg-look
   ];
 
 }

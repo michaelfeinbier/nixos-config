@@ -21,8 +21,8 @@
     #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     #portalPackage =
     #  inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    #package = null;
-    #portalPackage = null;
+    package = null;
+    portalPackage = null;
 
     # Disable this here to avoid conflict with NIX wayland
     systemd.enable = false;
@@ -31,16 +31,6 @@
   catppuccin.flavor = "mocha";
   # for now global enable, maybe finetune later
   catppuccin.enable = true;
-  catppuccin.gtk.enable = true;
-
-  # Consistent cursor theme across all applications.
-  home.pointerCursor = {
-    gtk.enable = true;
-    x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Modern-Ice";
-    size = 24;
-  };
 
   # Install swaync via home-manager module
   services.swaync = {
@@ -124,7 +114,7 @@
     env = [
       "XCURSOR_SIZE,24"
       "HYPRCURSOR_SIZE,24"
-      "GTK_THEME,Adwaita-dark"
+      "GTK_THEME,juno"
 
       # nvidia specific
       "LIBVA_DRIVER_NAME,nvidia"
@@ -202,7 +192,7 @@
       force_default_wallpaper = 0;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
-      #vrr = 2;
+      vrr = 2;
     };
 
     dwindle = {
@@ -226,39 +216,4 @@
     ];
   };
 
-  # Other dconf settings
-  dconf.settings = {
-    "org/gnome/desktop/interface" = {
-      "color-scheme" = "prefer-dark";
-      gtk-theme = "Adwaita-dark";
-      icon-theme = "Tela-dark";
-      cursor-theme = "Bibata-Modern-Ice";
-      #font-name = "Cantarell 11";
-    };
-
-    "org/gnome/nautilus/preferences" = {
-      "default-folder-viewer" = "list-view";
-      "migrated-gtk-settings" = true;
-      "search-filter-time-type" = "last_modified";
-      "search-view" = "list-view";
-    };
-
-    "org/gtk/gtk4/settings/file-chooser" = {
-      "show-hidden" = true;
-    };
-
-    "org/gtk/settings/file-chooser" = {
-      "date-format" = "regular";
-      "location-mode" = "path-bar";
-      "show-hidden" = true;
-      "show-size-column" = true;
-      "show-type-column" = true;
-      "sort-column" = "name";
-      "sort-directories-first" = false;
-      "sort-order" = "ascending";
-      "type-format" = "category";
-      "view-type" = "list";
-    };
-
-  };
 }
