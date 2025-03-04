@@ -16,8 +16,18 @@
       "nix-command"
       "flakes"
     ];
-    substituters = [ "https://hyprland.cachix.org" ];
-    trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
+    substituters = [ 
+      "https://hyprland.cachix.org"
+      "https://cache.soopy.moe"
+      "https://nix-community.cachix.org"
+      "https://cache.nixos.org/"
+
+    ];
+    trusted-public-keys = [ 
+      "hydra.soopy.moe:IZ/bZ1XO3IfGtq66g+C85fxU/61tgXLaJ2MlcGGXU8Q="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" 
+      "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+    ];
   };
 
   # Bootloader.
