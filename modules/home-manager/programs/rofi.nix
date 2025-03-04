@@ -8,5 +8,5 @@
     package = pkgs.rofi-wayland;
   };
 
-  catppuccin.rofi.enable = true;
+  #catppuccin.rofi.enable = true;
 }

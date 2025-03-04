@@ -72,7 +72,7 @@
           };
           modules = [
             ./hosts/${hostname}
-            catppuccin.nixosModules.catppuccin
+            #catppuccin.nixosModules.catppuccin
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -81,7 +81,7 @@
 
               home-manager.users.${username}.imports = [
                 (./. + "/home/${username}/${hostname}/default.nix")
-                catppuccin.homeManagerModules.catppuccin
+                #catppuccin.homeManagerModules.catppuccin
               ];
               home-manager.extraSpecialArgs = {
                 inherit inputs outputs;

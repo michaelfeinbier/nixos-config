@@ -23,5 +23,5 @@
   };
 
   # Enable catppuccin theming for starship.
-  catppuccin.starship.enable = true;
+  #catppuccin.starship.enable = true;
 }

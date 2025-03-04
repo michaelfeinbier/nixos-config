@@ -17,20 +17,14 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
-    # set the flake package
-    #package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    #portalPackage =
-    #  inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-    package = null;
-    portalPackage = null;
 
     # Disable this here to avoid conflict with NIX wayland
     systemd.enable = false;
   };
 
-  catppuccin.flavor = "mocha";
+  #catppuccin.flavor = "mocha";
   # for now global enable, maybe finetune later
-  catppuccin.enable = true;
+  #catppuccin.enable = true;
 
   # Install swaync via home-manager module
   services.swaync = {
@@ -59,7 +53,7 @@
   wayland.windowManager.hyprland.settings = {
 
     # General settings
-    monitor = ",3840x2160@144,auto,2";
+    monitor = ",3840x2160@144,auto,1";
     "$mainMod" = "SUPER";
     "$mod" = "alt";
     "$reverse" = "grave";
@@ -192,7 +186,7 @@
       force_default_wallpaper = 0;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
-      vrr = 2;
+      vrr = 1;
     };
 
     dwindle = {
