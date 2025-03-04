@@ -3,4 +3,4 @@
 #sudo nixos-rebuild --upgrade switch -I nixos-config=/home/michael/NixOS/nix-os-config/nixos/configuration.nix
 
 #sudo nixos-rebuild --upgrade switch
-sudo nixos-rebuild --flake .#saturn switch --impure
+sudo nixos-rebuild --flake .#saturn switch --show-trace

@@ -55,10 +55,8 @@
       # Define user configurations
       users = {
         michael = {
-          #avatar = ./files/avatar/face;
           email = "michael@feinbier.net";
           fullName = "Michael Feinbier";
-          #gitKey = "C5810093";
           name = "michael";
         };
       };
@@ -74,14 +72,23 @@
           };
           modules = [
             ./hosts/${hostname}
+            catppuccin.nixosModules.catppuccin
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
+              home-manager.backupFileExtension = "bckp";
 
-              #home-manager.users.${username} = import ./home/${username}/${hostname};
+              home-manager.users.${username}.imports = [
+                (./. + "/home/${username}/${hostname}/default.nix")
+                catppuccin.homeManagerModules.catppuccin
+              ];
+              home-manager.extraSpecialArgs = {
+                inherit inputs outputs;
+                userConfig = users.${username};
+                homeModules = "${self}/modules/home-manager";
+              };
             }
-            #/home/${username}/${hostname}
           ];
         };
 
@@ -137,8 +144,9 @@
         saturn = mkNixosConfiguration "saturn" "michael";
       };
 
-      homeConfigurations = {
-        "michael@saturn" = mkHomeConfiguration "x86_64-linux" "michael" "saturn";
-      };
+      # is now part of the nixosConfiguration
+      # homeConfigurations = {
+      #   "michael@saturn" = mkHomeConfiguration "x86_64-linux" "michael" "saturn";
+      # };
     };
 }

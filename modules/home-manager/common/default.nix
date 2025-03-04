@@ -19,10 +19,7 @@
     "${homeModules}/programs/mangohud.nix"
     "${homeModules}/misc/wallpaper.nix"
     "${homeModules}/misc/gtk.nix"
-
   ];
-
-  nixpkgs.config.allowUnfree = true;
 
   home = {
     username = "${userConfig.name}";

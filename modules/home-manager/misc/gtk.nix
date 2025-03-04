@@ -3,7 +3,8 @@
   pkgs,
   lib,
   ...
-}: {
+}:
+{
   # Consistent cursor theme across all applications.
   home.pointerCursor = {
     gtk.enable = true;
@@ -51,8 +52,6 @@
       };
     };
   };
-
-
 
   # Other dconf settings
   dconf.settings = {

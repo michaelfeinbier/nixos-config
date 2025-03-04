@@ -63,6 +63,7 @@
     nautilus # file manager
     seahorse # keyring manager
     totem # Video player
+    vscode
 
     kitty
     waybar

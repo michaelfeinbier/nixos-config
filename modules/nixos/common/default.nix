@@ -16,16 +16,16 @@
       "nix-command"
       "flakes"
     ];
-    substituters = [ 
+    substituters = [
       "https://hyprland.cachix.org"
       "https://cache.soopy.moe"
       "https://nix-community.cachix.org"
       "https://cache.nixos.org/"
 
     ];
-    trusted-public-keys = [ 
+    trusted-public-keys = [
       "hydra.soopy.moe:IZ/bZ1XO3IfGtq66g+C85fxU/61tgXLaJ2MlcGGXU8Q="
-      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" 
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
     ];
   };
@@ -124,6 +124,23 @@
     nerd-fonts.fira-mono
     roboto
     dejavu_fonts
+  ];
+
+  # Some basic shell programs
+  environment.systemPackages = with pkgs; [
+    nnn # terminal file manager
+    eza # ls replacement
+    fzf # fuzzy finder
+    dua # disk usage
+    vim
+    git
+
+    dnsutils
+    ldns
+    nmap
+
+    which
+    tree
   ];
 
   # Enable automatic login for the user.
