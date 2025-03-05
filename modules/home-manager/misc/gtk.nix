@@ -6,12 +6,12 @@
 }:
 {
   # Consistent cursor theme across all applications.
-  home.pointerCursor = {
+  home.pointerCursor = lib.mkDefault {
     gtk.enable = true;
     #x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size = 16;
+    size =  16;
   };
 
   # GTK theme configuration
@@ -19,8 +19,8 @@
     enable = true;
 
     theme = {
-      name = "Flat-Remix-GTK-Grey-Darkest";
-      package = pkgs.flat-remix-gtk;
+      name = lib.mkForce "Flat-Remix-GTK-Grey-Darkest";
+      package = lib.mkForce pkgs.flat-remix-gtk;
       #package = pkgs.juno-theme;
     };
     iconTheme = {
@@ -33,8 +33,8 @@
     #   size = 24;
     # };
 
-    font = {
-      name = "Sans";
+    font = lib.mkDefault {
+      name =  "Sans";
       size = 11;
     };
     gtk3 = {

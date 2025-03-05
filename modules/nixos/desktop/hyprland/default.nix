@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, lib, ... }:
 {
   # From https://github.com/AlexNabokikh/nix-config/blob/master/modules/nixos/desktop/hyprland/default.nix
 
@@ -49,7 +49,7 @@
   environment.sessionVariables = {
     NIXOS_OZONE_WL = "1";
     QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
-    XCURSOR_SIZE = "24";
+    #XCURSOR_SIZE = lib.mkDefault "24";
     ELECTRON_OZONE_PLATFORM_HINT = "auto";
   };
 

@@ -1,5 +1,14 @@
 { ... }:
 {
+
+  stylix.targets.waybar = {
+    enable = true;
+    enableCenterBackColors = true;
+
+
+    addCss = false;
+  };
+
   # Install and configure waybar via home-manager module
   # FROM https://github.com/AlexNabokikh/nix-config/blob/7ceae47f38537077fce16bb353658eea112accdf/modules/home-manager/services/waybar/default.nix
   programs.waybar = {

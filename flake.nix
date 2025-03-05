@@ -13,6 +13,11 @@
     # Global catppuccin theme
     catppuccin.url = "github:catppuccin/nix";
 
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,6 +78,7 @@
           modules = [
             ./hosts/${hostname}
             #catppuccin.nixosModules.catppuccin
+            inputs.stylix.nixosModules.stylix
             home-manager.nixosModules.home-manager
             {
               home-manager.useGlobalPkgs = true;
@@ -80,7 +86,7 @@
               home-manager.backupFileExtension = "bckp";
 
               home-manager.users.${username}.imports = [
-                (./. + "/home/${username}/${hostname}/default.nix")
+                ./home/${username}/${hostname}/default.nix
                 #catppuccin.homeManagerModules.catppuccin
               ];
               home-manager.extraSpecialArgs = {
@@ -120,7 +126,7 @@
           modules = [
 
             ./home/${username}/${hostname}
-            catppuccin.homeManagerModules.catppuccin
+            #catppuccin.homeManagerModules.catppuccin
           ];
         };
 

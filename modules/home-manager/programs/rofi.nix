@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
 
   programs.rofi = {
     enable = true;
-    font = "DejaVu 24";
+    font = lib.mkDefault "DejaVu 24";
     yoffset = -500;
     package = pkgs.rofi-wayland;
   };

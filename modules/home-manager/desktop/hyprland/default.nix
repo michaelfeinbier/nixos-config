@@ -4,7 +4,7 @@
   config,
   lib,
   inputs,
-  catppuccin,
+  #catppuccin,
   ...
 }:
 {
@@ -53,7 +53,7 @@
   wayland.windowManager.hyprland.settings = {
 
     # General settings
-    monitor = ",3840x2160@144,auto,1";
+    monitor = ",3840x2160@144,auto,1.6";
     "$mainMod" = "SUPER";
     "$mod" = "alt";
     "$reverse" = "grave";
@@ -106,9 +106,9 @@
     ];
 
     env = [
-      "XCURSOR_SIZE,24"
-      "HYPRCURSOR_SIZE,24"
-      "GTK_THEME,juno"
+      #"XCURSOR_SIZE,24"
+      #"HYPRCURSOR_SIZE,24"
+      #"GTK_THEME,juno"
 
       # nvidia specific
       "LIBVA_DRIVER_NAME,nvidia"
@@ -138,7 +138,7 @@
         enabled = false;
         range = 4;
         render_power = 3;
-        color = "rgba(1a1a1aee)";
+        color = lib.mkDefault "rgba(1a1a1aee)";
       };
     };
 
