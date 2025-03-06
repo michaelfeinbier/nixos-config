@@ -4,6 +4,7 @@
   config,
   lib,
   inputs,
+  nixosModules,
   #catppuccin,
   ...
 }:
@@ -13,6 +14,7 @@
     #"${homeModules}/services/stylix.nix"
 
     "${homeModules}/programs/rofi.nix"
+    "${homeModules}/services/stylix.nix"
   ];
 
   wayland.windowManager.hyprland = {
@@ -32,22 +34,22 @@
   };
 
   # Set the wallpaper
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = "off";
-      splash = false;
+  # services.hyprpaper = {
+  #   enable = true;
+  #   settings = {
+  #     ipc = "off";
+  #     splash = false;
 
-      preload = [
-        config.wallpaper
+  #     preload = [
+  #       config.wallpaper
 
-      ];
+  #     ];
 
-      wallpaper = [
-        ",${config.wallpaper}"
-      ];
-    };
-  };
+  #     wallpaper = [
+  #       ",${config.wallpaper}"
+  #     ];
+  #   };
+  # };
 
   ## MAIN HYPRLAND CONFIGURATION
   wayland.windowManager.hyprland.settings = {
@@ -65,9 +67,10 @@
 
     exec-once = [
       "gnome-keyring-daemon --start --components=secrets"
-      "waybar & swaync & hyprpaper & hyprsunset"
+      "waybar & swaync & hyprpaper"
       "hyprswitch init --show-title &"
-      "1password --silent"
+      "1password"
+      "wlsunset -l 51.23 -L 6.78"
     ];
 
     bind =
@@ -81,6 +84,14 @@
         "$mainMod, C, killactive,"
         "$mainMod, M, exit,"
         "$mainMod, SPACE, exec, $menu"
+        "$mainMod, E, exec, $fileManager"
+        "$mainMod, V, togglefloating,"
+
+        # Move between workspaces
+        "$mainMod, mouse_down, workspace, e+1"
+        "$mainMod, mouse_up, workspace, e-1"
+        "$mainMod, right, workspace, e+1"
+        "$mainMod, left, workspace, e-1"
       ]
       ++ (builtins.concatLists (
         builtins.genList (
@@ -97,6 +108,11 @@
 
     general = {
       allow_tearing = true;
+      layout = "master";
+      gaps_in = 10;
+      gaps_out = "20 30";
+
+      border_size = 2;
     };
 
     bindm = [
@@ -179,7 +195,8 @@
 
     cursor = {
       no_warps = true;
-      no_hardware_cursors = true;
+      no_hardware_cursors = 2;
+      use_cpu_buffer = 2;
     };
 
     misc = {
@@ -200,13 +217,24 @@
 
     windowrulev2 = [
       # Steam on WS3
-      "workspace 3, class:steam"
 
       # Ignore maximize
       "suppressevent maximize, class:.*"
 
       #x11 bugfix
       "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+
+      # Volume control
+      "float, class:org.pulseaudio.pavucontrol"
+      "center 1, class:org.pulseaudio.pavucontrol"
+      "size 50%, class:org.pulseaudio.pavucontrol"
+      "stayfocused, class:org.pulseaudio.pavucontrol"
+
+      # Steam Settings
+      "workspace 3, class:steam"
+      "float, class:steam,title: Friends List"
+      "size 294 721, class:steam,title: Friends List"
+      "float, class:steam,title: Steam Settings"
     ];
   };
 

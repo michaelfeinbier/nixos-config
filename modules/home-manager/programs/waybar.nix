@@ -5,7 +5,6 @@
     enable = true;
     enableCenterBackColors = true;
 
-
     addCss = false;
   };
 

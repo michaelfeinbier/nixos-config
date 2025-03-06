@@ -1,4 +1,9 @@
-{ pkgs, inputs, lib, ... }:
+{
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   # From https://github.com/AlexNabokikh/nix-config/blob/master/modules/nixos/desktop/hyprland/default.nix
 
@@ -71,7 +76,8 @@
     # swaynotificationcenter via package now
     inputs.hyprswitch.packages.x86_64-linux.default
     hyprpaper
-    hyprsunset
-    nwg-dock-hyprland
+    wf-recorder
+    wlr-randr
+    wlsunset
   ];
 }

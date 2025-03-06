@@ -11,7 +11,7 @@
     #x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Modern-Classic";
-    size =  16;
+    size = 16;
   };
 
   # GTK theme configuration
@@ -34,7 +34,7 @@
     # };
 
     font = lib.mkDefault {
-      name =  "Sans";
+      name = "Sans";
       size = 11;
     };
     gtk3 = {

@@ -128,19 +128,8 @@
 
   # Some basic shell programs
   environment.systemPackages = with pkgs; [
-    nnn # terminal file manager
-    eza # ls replacement
-    fzf # fuzzy finder
-    dua # disk usage
     vim
     git
-
-    dnsutils
-    ldns
-    nmap
-
-    which
-    tree
   ];
 
   # Enable automatic login for the user.

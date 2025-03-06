@@ -1,16 +1,16 @@
-{ pkgs, config, inputs, self, homeModules, ... } : {
+{
+  pkgs,
+  config,
+  ...
+}:
+{
 
-  # home.packages = with pkgs; [
-  #   base16-schemes
-  # ];
-
-  imports = [
-  ];
-
-  stylix = { 
+  stylix = {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
     enable = true;
-    image = "${inputs.self}/files/wallpaper/catppuccin_triangle.png";
+    #image = "${inputs.self}/files/wallpaper/catppuccin_triangle.png";
+    #image = ~/.local/share/backgrounds/misc/comfy-home.png;
+    image = config.wallpaper;
 
     cursor = {
       package = pkgs.bibata-cursors;
@@ -21,5 +21,5 @@
   };
 
   # Per application
-  
+
 }
