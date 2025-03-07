@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, flake, ... }:
+let
+  inherit (flake) config inputs;
+  inherit (inputs) self;
+in
 {
   
   programs.hyprland = {

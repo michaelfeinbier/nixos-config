@@ -6,6 +6,11 @@
 }:
 {
 
+  imports = [
+    ./rofi.nix
+    ./waybar.nix
+  ];
+
   wayland.windowManager.hyprland = {
     enable = true;
 
@@ -58,7 +63,7 @@
       "gnome-keyring-daemon --start --components=secrets"
       "waybar & swaync & hyprpaper"
       "hyprswitch init --show-title &"
-      "1password"
+      "1password --silent"
       "wlsunset -l 51.23 -L 6.78"
     ];
 

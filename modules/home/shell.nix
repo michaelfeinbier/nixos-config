@@ -26,6 +26,11 @@
       logoutExtra = ''
         # Custom ~/.zlogout goes here
       '';
+      initExtra = ''
+        if uwsm check may-start; then
+          exec uwsm start hyprland-uwsm.desktop
+        fi
+      '';
     };
 
     # Type `z <pat>` to cd to some directory

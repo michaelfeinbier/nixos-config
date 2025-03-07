@@ -17,6 +17,12 @@
             type = lib.types.str;
             description = "Your email for use in Git config";
           };
+          sshKey = lib.mkOption {
+            type = lib.types.str;
+            description = ''
+              SSH public key
+            '';
+          };
         };
       };
     };

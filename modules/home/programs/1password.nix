@@ -2,13 +2,17 @@
 {
   home.packages = with pkgs; [
     gh
-    _1password
+    _1password-cli
+    _1password-gui-beta
   ];
 
   programs.zsh.envExtra = ''
     # For 1Password CLI. This requires `pkgs.gh` to be installed.
     # source $HOME/.config/op/plugins.sh
   '';
+
+  #programs._1password.enable = true;
+  #programs._1password-gui.enable = true;
 
   programs.ssh = {
     enable = true;

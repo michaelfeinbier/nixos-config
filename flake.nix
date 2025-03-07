@@ -17,6 +17,16 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
+
+    hyprswitch.url = "github:h3rmt/hyprswitch/release";
+    hyprland.url = "github:hyprwm/Hyprland";
+    hardware.url = "github:nixos/nixos-hardware";
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   # Wired using https://nixos-unified.org/autowiring.html

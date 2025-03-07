@@ -1,5 +1,4 @@
 {
-  userConfig,
   pkgs,
   lib,
   ...
@@ -38,10 +37,6 @@
       size = 11;
     };
     gtk3 = {
-      bookmarks = [
-        "file:///home/${userConfig.name}/Documents"
-        "file:///home/${userConfig.name}/Downloads"
-      ];
       extraConfig = {
         gtk-application-prefer-dark-theme = 1;
       };
