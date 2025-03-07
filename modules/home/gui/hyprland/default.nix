@@ -1,21 +1,10 @@
 {
-  homeModules,
   pkgs,
-  config,
   lib,
   inputs,
-  nixosModules,
-  #catppuccin,
   ...
 }:
 {
-  imports = [
-    "${homeModules}/programs/waybar.nix"
-    #"${homeModules}/services/stylix.nix"
-
-    "${homeModules}/programs/rofi.nix"
-    "${homeModules}/services/stylix.nix"
-  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
