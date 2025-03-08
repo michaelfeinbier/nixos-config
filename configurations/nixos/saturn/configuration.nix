@@ -56,7 +56,10 @@
     description = "Michael";
     extraGroups = [ "networkmanager" "wheel" ];
     packages = with pkgs; [];
+    shell = pkgs.zsh;
   };
+  # not sure why i need this .. but nix complains without it (even if in home-manager it is set)
+  programs.zsh.enable = true;
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "michael";

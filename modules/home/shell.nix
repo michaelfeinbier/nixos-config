@@ -1,17 +1,16 @@
 { ... }:
+  let
+    #test = builtins.trace programs.zsh programs;
+  in
 {
+
   programs = {
-    # on macOS, you probably don't need this
-    bash = {
-      enable = true;
-      initExtra = ''
-        # Custom bash profile goes here
-      '';
-    };
+    bash.enable = false;
 
     # For macOS's default shell.
     zsh = {
       enable = true;
+      enableCompletion = true;
       autosuggestion.enable = true;
       syntaxHighlighting.enable = true;
       envExtra = ''
