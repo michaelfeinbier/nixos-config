@@ -6,10 +6,11 @@
 }:
 {
 
-  imports = [
-    ./rofi.nix
-    ./waybar.nix
-  ];
+  imports =
+    with builtins;
+    map
+      (fn: ./${fn})
+      (filter (fn: fn != "default.nix") (attrNames (readDir ./.)));
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -50,55 +51,22 @@
 
     # General settings
     monitor = ",3840x2160@144,auto,1.6";
-    "$mainMod" = "SUPER";
-    "$mod" = "alt";
-    "$reverse" = "grave";
-    "$key" = "Tab";
+
 
     "$terminal" = "alacritty";
     "$fileManager" = "nautilus";
-    "$menu " = "rofi -show drun -show-icons";
+    "$menu " = "rofi -show drun -show-icons -run-command \"uwsm app -- {cmd}\"";
 
     exec-once = [
       "gnome-keyring-daemon --start --components=secrets"
       "waybar & swaync & hyprpaper"
-      "hyprswitch init --show-title &"
-      "1password --silent"
-      "wlsunset -l 51.23 -L 6.78"
+      "uwsm app -- hyprswitch init --show-title &"
+      "uwsm app -- 1password --silent --ozone-platform-hint=x11"
+      "uwsm app -- wlsunset -l 51.23 -L 6.78"
+      "wl-paste --watch cliphist store"
     ];
 
-    bind =
-      [
-        # Alt+Tab to switch between windows
-        "$mod, $key, exec, hyprswitch gui --mod-key $mod --key $key --close mod-key-release --reverse-key=key=$reverse && hyprswitch dispatch"
-        "$mod $reverse, $key, exec, hyprswitch gui --mod-key $mod --key $key --close mod-key-release --reverse-key=key=$reverse && hyprswitch dispatch -r"
-
-        # Default behaviours
-        "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
-        "$mainMod, SPACE, exec, $menu"
-        "$mainMod, E, exec, $fileManager"
-        "$mainMod, V, togglefloating,"
-
-        # Move between workspaces
-        "$mainMod, mouse_down, workspace, e+1"
-        "$mainMod, mouse_up, workspace, e-1"
-        "$mainMod, right, workspace, e+1"
-        "$mainMod, left, workspace, e-1"
-      ]
-      ++ (builtins.concatLists (
-        builtins.genList (
-          i:
-          let
-            ws = i + 1;
-          in
-          [
-            "$mainMod, ${toString ws}, workspace, ${toString ws}"
-            "$mainMod SHIFT, ${toString ws}, movetoworkspace, ${toString ws}"
-          ]
-        ) 9
-      ));
+    
 
     general = {
       allow_tearing = true;
@@ -109,16 +77,11 @@
       border_size = 2;
     };
 
-    bindm = [
-      # Move windows
-      "$mainMod, mouse:272, movewindow"
-      "$mainMod, mouse:273, resizewindow"
-    ];
-
     env = [
       #"XCURSOR_SIZE,24"
       #"HYPRCURSOR_SIZE,24"
       #"GTK_THEME,juno"
+      "GDK_SCALE,2"
 
       # nvidia specific
       "LIBVA_DRIVER_NAME,nvidia"
@@ -210,8 +173,7 @@
     };
 
     windowrulev2 = [
-      # Steam on WS3
-
+      "workspace 2, class:brave-browser"
       # Ignore maximize
       "suppressevent maximize, class:.*"
 

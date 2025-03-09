@@ -10,12 +10,13 @@ in
 {
 
   imports = [
+    flake.inputs.stylix.nixosModules.stylix
     self.nixosModules.default
     self.nixosModules.gui
+    self.nixosModules.steam
     inputs.hardware.nixosModules.common-cpu-intel
     #inputs.hardware.nixosModules.common-gpu-nvidia
     inputs.hardware.nixosModules.common-pc-ssd
-    #flake.inputs.stylix.nixosModules.stylix
     ./configuration.nix
   ];
 

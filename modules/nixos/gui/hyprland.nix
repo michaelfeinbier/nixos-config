@@ -51,7 +51,6 @@ in
     nautilus # file manager
     seahorse # keyring manager
     totem # Video player
-    vscode
 
     kitty
     waybar
@@ -62,6 +61,9 @@ in
     wf-recorder
     wlr-randr
     wlsunset
+    pavucontrol
+    wl-clip-persist
+    wl-clipboard-rs
   ];
 
 }

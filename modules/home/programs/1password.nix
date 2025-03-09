@@ -31,14 +31,14 @@
   # For this to work on GitHub, you must have added the SSH pub key as a signing key, see
   # https://1password.community/discussion/comment/667515/#Comment_667515
   programs.git.includes = [{
-    condition = "gitdir:~/code/**"; # Personal repos only
+    #condition = "gitdir:~/code/**"; # Personal repos only
     contents = {
       user.signingKey = flake.config.me.sshKey;
       gpg.format = "ssh";
       gpg.ssh.program =
         if pkgs.stdenv.isDarwin
         then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-        else "/run/current-system/sw/bin/op-ssh-sign";
+        else "op-ssh-sign";
       commit.gpgsign = true;
     };
   }];
