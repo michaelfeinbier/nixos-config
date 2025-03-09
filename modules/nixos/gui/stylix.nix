@@ -32,5 +32,7 @@ in
 
   # Per application
 
+  # own plymouth theme
+  stylix.targets.plymouth.enable = false;
   
 }
