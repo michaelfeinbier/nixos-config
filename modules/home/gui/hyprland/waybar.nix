@@ -5,6 +5,8 @@
   stylix.targets.waybar = {
     enable = true;
     enableCenterBackColors = true;
+    enableLeftBackColors = true;
+    enableRightBackColors = true;
     addCss = true;
   };
 

@@ -31,6 +31,7 @@
     consoleLogLevel = 0;
     initrd.verbose = false;
     kernelParams = [
+      "nomodeset"
       "quiet"
       "splash"
       "boot.shell_on_fail"
