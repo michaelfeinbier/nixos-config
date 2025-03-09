@@ -216,8 +216,8 @@
     };
     style = ''
       * {
-        font-family: "JetBrainsMono Nerd Font";
-        font-weight: bold;
+        font-family: "SFProDisplay Nerd Font";
+        font-weight: normal;
         min-height: 0;
         font-size: 100%;
         font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';

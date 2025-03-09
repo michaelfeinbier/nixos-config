@@ -1,6 +1,7 @@
 {
   pkgs,
   flake,
+  config,
   ...
 }:
 
@@ -13,18 +14,31 @@ in
   stylix = {
     base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
     enable = true;
-    image = ./path-to-heaven.jpg;
-    #image = "${inputs.self}/files/wallpaper/catppuccin_triangle.png";
-  #   image = pkgs.fetchurl {
-  #   url = "https://www.pixelstalk.net/wp-content/uploads/2016/05/Epic-Anime-Awesome-Wallpapers.jpg";
-  #   sha256 = "enQo3wqhgf0FEPHj2coOCvo7DuZv+x5rL/WIo4qPI50=";
-  # };
-    #image = ~/.local/share/backgrounds/misc/comfy-home.png;
-    #image = config.wallpaper;
+    #image = ./path-to-heaven.jpg;
+    image = config.lib.stylix.pixel "base04";
 
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Modern-Classic";
+    };
+
+    fonts = {
+      serif = {
+        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+        name = "SFProDisplay Nerd Font";
+      };
+
+      sansSerif = config.stylix.fonts.serif;
+
+      monospace = {
+        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "Jetbrains Mono Nerd Font";
+      };
+    };
+
+    opacity = {
+      popups = .9;
+      terminal = .6;
     };
 
     polarity = "dark";
