@@ -214,115 +214,115 @@
         };
       };
     };
-    style = ''
-      * {
-        font-family: "SFProDisplay Nerd Font";
-        font-weight: normal;
-        min-height: 0;
-        font-size: 100%;
-        font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-        padding: 0px;
-        margin-top: 1px;
-        margin-bottom: 1px;
-        color: @text;
-      }
+    # style = ''
+    #   * {
+    #     font-family: "SFProDisplay Nerd Font";
+    #     font-weight: normal;
+    #     min-height: 0;
+    #     font-size: 100%;
+    #     font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
+    #     padding: 0px;
+    #     margin-top: 1px;
+    #     margin-bottom: 1px;
+    #     color: @text;
+    #   }
 
-      window#waybar {
-        background: rgba(0, 0, 0, 0);
-      }
+    #   window#waybar {
+    #     background: rgba(0, 0, 0, 0);
+    #   }
 
-      window#waybar.hidden {
-        opacity: 0.5;
-      }
+    #   window#waybar.hidden {
+    #     opacity: 0.5;
+    #   }
 
-      tooltip {
-        background: #1e1e2e;
-        border-radius: 8px;
-      }
+    #   tooltip {
+    #     background: #1e1e2e;
+    #     border-radius: 8px;
+    #   }
 
-      tooltip label {
-        color: #cad3f5;
-        margin-right: 5px;
-        margin-left: 5px;
-      }
+    #   tooltip label {
+    #     color: #cad3f5;
+    #     margin-right: 5px;
+    #     margin-left: 5px;
+    #   }
 
-      .modules-right,
-      .modules-center,
-      .modules-left {
-        background-color: alpha(@base, 0.6);
-        border: 0px solid #b4befe;
-        border-radius: 8px;
-      }
+    #   .modules-right,
+    #   .modules-center,
+    #   .modules-left {
+    #     background-color: alpha(@base, 0.6);
+    #     border: 0px solid #b4befe;
+    #     border-radius: 8px;
+    #   }
 
-      #workspaces button {
-        padding: 2px;
-        color: #6e6a86;
-        margin-right: 5px;
-      }
+    #   #workspaces button {
+    #     padding: 2px;
+    #     color: #6e6a86;
+    #     margin-right: 5px;
+    #   }
 
-      #workspaces button.active {
-        color: #dfdfdf;
-        border-radius: 3px 3px 3px 3px;
-      }
+    #   #workspaces button.active {
+    #     color: #dfdfdf;
+    #     border-radius: 3px 3px 3px 3px;
+    #   }
 
-      #workspaces button.focused {
-        color: #d8dee9;
-      }
+    #   #workspaces button.focused {
+    #     color: #d8dee9;
+    #   }
 
-      #workspaces button.urgent {
-        color: #ed8796;
-        border-radius: 8px;
-      }
+    #   #workspaces button.urgent {
+    #     color: #ed8796;
+    #     border-radius: 8px;
+    #   }
 
-      #workspaces button:hover {
-        color: #dfdfdf;
-        border-radius: 3px;
-      }
+    #   #workspaces button:hover {
+    #     color: #dfdfdf;
+    #     border-radius: 3px;
+    #   }
 
-      #backlight,
-      #battery,
-      #bluetooth,
-      #clock,
-      #cpu,
-      #custom-notification,
-      #custom-recorder,
-      #language,
-      #memory,
-      #tray,
-      #pulseaudio,
-      #temperature,
-      #workspaces {
-        color: @text;
-        padding: 0px 10px;
-        border-radius: 8px;
-      }
+    #   #backlight,
+    #   #battery,
+    #   #bluetooth,
+    #   #clock,
+    #   #cpu,
+    #   #custom-notification,
+    #   #custom-recorder,
+    #   #language,
+    #   #memory,
+    #   #tray,
+    #   #pulseaudio,
+    #   #temperature,
+    #   #workspaces {
+    #     color: @text;
+    #     padding: 0px 10px;
+    #     border-radius: 8px;
+    #   }
 
-      #temperature.critical {
-        background-color: #ff0000;
-      }
+    #   #temperature.critical {
+    #     background-color: #ff0000;
+    #   }
 
-      @keyframes blink {
-        to {
-          color: #000000;
-        }
-      }
+    #   @keyframes blink {
+    #     to {
+    #       color: #000000;
+    #     }
+    #   }
 
-      #taskbar button.active {
-        background-color: #7f849c;
-      }
+    #   #taskbar button.active {
+    #     background-color: #7f849c;
+    #   }
 
-      #battery.critical:not(.charging) {
-        color: #f53c3c;
-        animation-name: blink;
-        animation-duration: 0.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
+    #   #battery.critical:not(.charging) {
+    #     color: #f53c3c;
+    #     animation-name: blink;
+    #     animation-duration: 0.5s;
+    #     animation-timing-function: linear;
+    #     animation-iteration-count: infinite;
+    #     animation-direction: alternate;
+    #   }
 
-      #custom-recorder {
-        color: #ff2800;
-      }
-    '';
+    #   #custom-recorder {
+    #     color: #ff2800;
+    #   }
+    # '';
   };
 }

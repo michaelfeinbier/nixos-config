@@ -38,7 +38,7 @@ in
 
     opacity = {
       popups = .9;
-      terminal = .6;
+      terminal = .8;
     };
 
     polarity = "dark";
