@@ -16,8 +16,14 @@ in {
 
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+    capSysNice = false;
   };
 
   programs.gamemode.enable = true;
+
+  # supposed to fix issues with gamescope
+  programs.nix-ld = {
+    enable = true;
+    libraries = pkgs.steam-run.args.multiPkgs pkgs;
+  };
 }
