@@ -31,6 +31,7 @@
 
         # Clipboard History Mac Style
         "$mainMod $mod, C, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+        #"$mainMod $mod, C, exec, alacritty --class clipse -e 'clipse'"
       ]
       ++ (builtins.concatLists (
         builtins.genList (

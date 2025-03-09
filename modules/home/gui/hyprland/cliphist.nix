@@ -2,6 +2,6 @@
 
   services.cliphist = {
     enable = true;
-    systemdTargets = "graphical.target";
+    systemdTargets = ["graphical.target"];
   };
 }

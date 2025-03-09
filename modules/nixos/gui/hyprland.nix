@@ -58,12 +58,14 @@ in
     # swaynotificationcenter via package now
     inputs.hyprswitch.packages.x86_64-linux.default
     hyprpaper
-    wf-recorder
     wlr-randr
     wlsunset
     pavucontrol
+    
+    #clipboard tests
+    #wf-recorder
     wl-clip-persist
-    wl-clipboard-rs
+    wl-clipboard
   ];
 
 }

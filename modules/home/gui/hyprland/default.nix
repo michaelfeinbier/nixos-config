@@ -66,8 +66,6 @@
       "wl-paste --watch cliphist store"
     ];
 
-    
-
     general = {
       allow_tearing = true;
       layout = "master";
