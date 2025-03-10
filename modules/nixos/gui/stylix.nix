@@ -12,8 +12,9 @@ in
 {
 
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
     enable = true;
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
     #image = ./path-to-heaven.jpg;
     image = config.lib.stylix.pixel "base04";
 
@@ -39,6 +40,9 @@ in
     opacity = {
       popups = .9;
       terminal = .8;
+
+      # remove waybar background
+      desktop = 0;
     };
 
     polarity = "dark";

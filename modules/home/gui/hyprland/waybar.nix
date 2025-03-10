@@ -40,11 +40,11 @@
         ];
 
         modules-right = [
-          "hyprland/language"
+          #"hyprland/language"
           "tray"
           #"bluetooth"
           "pulseaudio"
-          "pulseaudio#microphone"
+          #"pulseaudio#microphone"
           #"battery"
           "clock"
           "custom/notification"
@@ -105,7 +105,7 @@
         };
 
         clock = {
-          format = "{:%b %d %H:%M}";
+          format = "{:%d.%b %H:%M}";
           format-alt = " {:%H:%M   %Y, %d %B, %A}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
           calendar = {
@@ -136,11 +136,11 @@
           all-outputs = true;
           format = "{icon}";
           format-icons = {
-            "1" = "";
-            "2" = "";
-            "3" = "";
-            "4" = "";
-            "5" =  "";
+            # "1" = "";
+            # "2" = "";
+            # "3" = "";
+            # "4" = "";
+            # "5" =  "";
             active = "";
             default =  "";
           };
@@ -229,110 +229,31 @@
     };
     style = ''
       * {
-        font-family: "SFProDisplay Nerd Font";
         font-weight: bold;
-        min-height: 0;
-        font-size: 100%;
-        font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-        padding: 0px;
-        color: @text;
       }
 
-      window#waybar {
-        background: rgba(0, 0, 0, 0);
+      #waybar .module {
+        border-radius: 5px;
+        margin: 5px 5px 5px 5px;
+        padding: 0 5px;
       }
 
-      window#waybar.hidden {
-        opacity: 0.5;
-      }
-
-      tooltip {
-        background: #1e1e2e;
-        border-radius: 8px;
-      }
-
-      tooltip label {
-        color: #cad3f5;
-        margin-right: 5px;
-        margin-left: 5px;
-      }
-
-      .modules-right,
-      .modules-center,
-      .modules-left {
-        background-color: alpha(@base, 0.6);
-        border: 0px solid #b4befe;
-        border-radius: 8px;
+      #waybar .modules-left .module,
+      #waybar .modules-right .module {
+        box-shadow: 0 0 4px @base00;
       }
 
       #workspaces button {
-        padding: 2px;
-        color: #6e6a86;
-        margin-right: 5px;
+        margin: 0 2px;
       }
 
-      #workspaces button.active {
-        color: #dfdfdf;
-        border-radius: 3px 3px 3px 3px;
+      #cpu,#temperature,#memory {
+        min-width: 50px;
       }
 
-      #workspaces button.focused {
-        color: #d8dee9;
-      }
-
-      #workspaces button.urgent {
-        color: #ed8796;
-        border-radius: 8px;
-      }
-
-      #workspaces button:hover {
-        color: #dfdfdf;
-        border-radius: 3px;
-      }
-
-      #backlight,
-      #battery,
-      #bluetooth,
-      #clock,
-      #cpu,
-      #custom-notification,
-      #custom-recorder,
-      #language,
-      #memory,
-      #tray,
-      #pulseaudio,
-      #temperature,
-      #workspaces {
-        color: @text;
-        padding: 0px 10px;
-        border-radius: 8px;
-      }
-
-      #temperature.critical {
-        background-color: #ff0000;
-      }
-
-      @keyframes blink {
-        to {
-          color: #000000;
-        }
-      }
-
-      #taskbar button.active {
-        background-color: #7f849c;
-      }
-
-      #battery.critical:not(.charging) {
-        color: #f53c3c;
-        animation-name: blink;
-        animation-duration: 0.5s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-        animation-direction: alternate;
-      }
-
-      #custom-recorder {
-        color: #ff2800;
+      #custom-notification {
+        background-color: @base0D;
+        color: @base00;
       }
     '';
   };

@@ -1,7 +1,8 @@
-{ ... }:
-  let
-    #test = builtins.trace programs.zsh programs;
-  in
+{ flake, pkgs, lib, ... }:
+let
+  inherit (flake) config inputs;
+  inherit (inputs) self;
+in
 {
 
   programs = {
@@ -38,35 +39,39 @@
     # Better shell prmot!
     starship = {
       enable = true;
-      settings = {
-        username = {
-          style_user = "blue bold";
-          style_root = "red bold";
-          format = "[$user]($style) ";
-          disabled = false;
-          show_always = true;
-        };
-        hostname = {
-          ssh_only = false;
-          ssh_symbol = "🌐 ";
-          format = "on [$hostname](bold red) ";
-          trim_at = ".local";
-          disabled = false;
-        };
-      };
+
+      # load from rawfile
+      settings = (builtins.fromTOML (builtins.readFile "${self}/raw-files/starship.toml"));
+
+      # settings = {
+      #   username = {
+      #     style_user = "blue bold";
+      #     style_root = "red bold";
+      #     format = "[$user]($style) ";
+      #     disabled = false;
+      #     show_always = true;
+      #   };
+      #   hostname = {
+      #     ssh_only = false;
+      #     ssh_symbol = "🌐 ";
+      #     format = "on [$hostname](bold red) ";
+      #     trim_at = ".local";
+      #     disabled = false;
+      #   };
+      # };
     };
   };
 
   # Fastfetch
   programs.fastfetch = {
     enable = true;
-    settings = {
-      logo = {
-        source = "nixos_small";
-        padding = {
-          right = 1;
-        };
-      };
-    };
+    # settings = {
+    #   logo = {
+    #     source = "nixos_small";
+    #     padding = {
+    #       right = 1;
+    #     };
+    #   };
+    # };
   };
 }

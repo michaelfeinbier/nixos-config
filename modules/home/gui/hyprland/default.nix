@@ -158,7 +158,7 @@
       force_default_wallpaper = 0;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
-      vrr = 1;
+      vrr = 2;
     };
 
     dwindle = {
@@ -189,6 +189,17 @@
       "float, class:steam,title: Friends List"
       "size 294 721, class:steam,title: Friends List"
       "float, class:steam,title: Steam Settings"
+
+      # Smart Gaps
+      "bordersize 0, floating:0, onworkspace:w[tv1]"
+      "rounding 0, floating:0, onworkspace:w[tv1]"
+      "bordersize 0, floating:0, onworkspace:f[1]"
+      "rounding 0, floating:0, onworkspace:f[1]"
+    ];
+
+    workspace = [
+      "w[tv1], gapsout:0, gapsin:0"
+      "f[1], gapsout:0, gapsin:0"
     ];
   };
 

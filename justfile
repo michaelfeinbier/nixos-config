@@ -30,3 +30,13 @@ dev:
 [group('Main')]
 run:
   nix run
+
+# Run astal
+[group('Astal')]
+ags:
+  ags run --gtk4
+
+# Build astal
+[group('Astal')]
+bundle:
+  ags bundle astal/app.ts dnkwt-shell
