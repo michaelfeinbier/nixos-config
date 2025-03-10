@@ -12,6 +12,8 @@
 
   # Bootloader.
   boot = {
+    kernelPackages = pkgs.linuxPackages_zen;
+
     loader.systemd-boot.enable = true;
     loader.efi.canTouchEfiVariables = true;
 
@@ -31,7 +33,6 @@
     consoleLogLevel = 0;
     initrd.verbose = false;
     kernelParams = [
-      "nomodeset"
       "quiet"
       "splash"
       "boot.shell_on_fail"
