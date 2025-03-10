@@ -28,6 +28,8 @@
     };
 
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+    astal.url = "github:aylur/astal";
+    ags.url = "github:aylur/ags";
   };
 
   # Wired using https://nixos-unified.org/autowiring.html
