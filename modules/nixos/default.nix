@@ -11,6 +11,11 @@ in
   # These users can add Nix caches.
   nix.settings.trusted-users = [ "root" me.username ];
 
+  imports = [
+    ./packages.nix
+    ./sound.nix
+  ];
+
   services.openssh.enable = true;
 
   # Passwordless sudo

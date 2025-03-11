@@ -114,7 +114,7 @@
     };
 
     animations = {
-      enabled = true;
+      enabled = false;
 
       bezier = [
         "easeOutQuint,0.23,1,0.32,1"
@@ -158,7 +158,7 @@
       force_default_wallpaper = 0;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
-      vrr = 2;
+      vrr = 1;
     };
 
     dwindle = {

@@ -8,15 +8,15 @@
 let
   inherit (flake) inputs;
   inherit (inputs) self;
+  inherit (flake.config) me;
 in
 {
 
   stylix = {
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
     enable = true;
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
-    #image = ./path-to-heaven.jpg;
-    image = config.lib.stylix.pixel "base04";
+    image = "${inputs.aesthetic-wallpapers}/images/colorful-planets.jpg";
 
     cursor = {
       package = pkgs.bibata-cursors;
@@ -42,7 +42,7 @@ in
       terminal = .8;
 
       # remove waybar background
-      desktop = 0;
+      desktop = 0.0;
     };
 
     polarity = "dark";

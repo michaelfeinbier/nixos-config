@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   options = {
     me = lib.mkOption {
@@ -22,6 +22,11 @@
             description = ''
               SSH public key
             '';
+          };
+          wallpaper = lib.mkOption {
+            type = lib.types.path;
+            description = "Path to your wallpaper";
+            default = /home/michael/.local/share/wallpaper/aesthetic-wallpapers/images/colorful-planets.jpg;
           };
         };
       };

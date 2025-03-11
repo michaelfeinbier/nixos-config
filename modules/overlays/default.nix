@@ -9,15 +9,7 @@ in {
 final: prev: {
   #nuenv = (inputs.nuenv.overlays.nuenv self super).nuenv;
   #fuckport = self.callPackage "${packages}/fuckport.nix" { };
-  base16-schemes = prev.stylix.overrideArgs(old: {
-    src = prev.fetchFromGitHub {
-      owner = "merrkry";
-      repo = "stylix";
-      rev = "fix-palette";
-      #sha
-    };
-  }) 
 
-  is-this-even-reead
+  is-this-even-reead ? seems like not
 };
 }

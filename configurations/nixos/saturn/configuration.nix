@@ -84,7 +84,7 @@
   users.users.michael = {
     isNormalUser = true;
     description = "Michael";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ "networkmanager" "wheel" "gamemode"];
     packages = with pkgs; [];
     shell = pkgs.zsh;
   };

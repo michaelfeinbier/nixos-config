@@ -30,6 +30,10 @@
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
+
+    # non flakes
+    aesthetic-wallpapers.url = "github:D3Ext/aesthetic-wallpapers";
+    aesthetic-wallpapers.flake = false;
   };
 
   # Wired using https://nixos-unified.org/autowiring.html
