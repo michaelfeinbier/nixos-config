@@ -1,9 +1,13 @@
 {
   pkgs,
   lib,
-  inputs,
+  flake,
   ...
 }:
+let 
+  inherit (flake) config inputs;
+  inherit (inputs) self;
+in
 {
 
   imports =
@@ -14,6 +18,7 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    #package = inputs.hyprland.packages.hyprland;
 
     # Disable this here to avoid conflict with NIX wayland
     systemd.enable = false;
@@ -49,8 +54,15 @@
   ## MAIN HYPRLAND CONFIGURATION
   wayland.windowManager.hyprland.settings = {
 
+
+
     # General settings
-    monitor = ",3840x2160@144,auto,1.6";
+    monitor = [
+      # AORUS FI32U
+      "HDMI-A-1,3840x2160,auto,2"
+      # M27Q
+      "HDMI-A-2,2560x1440,auto-right,2"
+    ];
 
 
     "$terminal" = "alacritty";
@@ -74,6 +86,10 @@
 
       border_size = 2;
     };
+
+    plugins = [
+      #inputs.hyprland-virtual-desktops.packages.virtual-desktops
+    ];
 
     env = [
       #"XCURSOR_SIZE,24"
@@ -114,7 +130,7 @@
     };
 
     animations = {
-      enabled = false;
+      enabled = true;
 
       bezier = [
         "easeOutQuint,0.23,1,0.32,1"
@@ -191,15 +207,15 @@
       "float, class:steam,title: Steam Settings"
 
       # Smart Gaps
-      "bordersize 0, floating:0, onworkspace:w[tv1]"
-      "rounding 0, floating:0, onworkspace:w[tv1]"
-      "bordersize 0, floating:0, onworkspace:f[1]"
-      "rounding 0, floating:0, onworkspace:f[1]"
+      # "bordersize 0, floating:0, onworkspace:w[tv1]"
+      # "rounding 0, floating:0, onworkspace:w[tv1]"
+      # "bordersize 0, floating:0, onworkspace:f[1]"
+      # "rounding 0, floating:0, onworkspace:f[1]"
     ];
 
     workspace = [
-      "w[tv1], gapsout:0, gapsin:0"
-      "f[1], gapsout:0, gapsin:0"
+      # "w[tv1], gapsout:0, gapsin:0"
+      # "f[1], gapsout:0, gapsin:0"
     ];
   };
 

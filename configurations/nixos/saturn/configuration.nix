@@ -2,8 +2,11 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib,... }:
-
+{ config, pkgs, lib, flake, ... }:
+let
+  inherit (flake) config inputs;
+  inherit (inputs) self;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
@@ -96,6 +99,9 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.overlays = [
+      inputs.nix-vscode-extensions.overlays.default
+  ];
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

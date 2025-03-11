@@ -20,6 +20,8 @@
 
     hyprswitch.url = "github:h3rmt/hyprswitch/release";
     hyprland.url = "github:hyprwm/Hyprland";
+    hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
+    hyprland-virtual-desktops.inputs.hyprland.follows = "hyprland";
     hardware.url = "github:nixos/nixos-hardware";
 
     stylix = {
@@ -30,6 +32,7 @@
     apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
 
     # non flakes
     aesthetic-wallpapers.url = "github:D3Ext/aesthetic-wallpapers";

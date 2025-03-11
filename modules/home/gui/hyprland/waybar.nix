@@ -17,6 +17,7 @@
     settings = {
       mainBar = {
         layer = "top";
+        output = "HDMI-A-1";
         position = "top";
         exclusive = true;
         passthrough = false;
@@ -43,7 +44,8 @@
           #"hyprland/language"
           "tray"
           #"bluetooth"
-          "pulseaudio"
+          #"pulseaudio"
+          "pulseaudio/slider"
           #"pulseaudio#microphone"
           #"battery"
           "clock"
@@ -133,7 +135,7 @@
         };
 
         "hyprland/workspaces" = {
-          all-outputs = true;
+          all-outputs = false;
           format = "{icon}";
           format-icons = {
             # "1" = "";
@@ -149,6 +151,7 @@
           sort-by-number = true;
           persistent-workspaces = {
              "*" = 4;
+             "HDMI-A-2" = 1;
           };
 
         };
@@ -180,6 +183,12 @@
           on-click-right = "pamixer -t";
           smooth-scrolling-threshold = 1;
           ignored-sinks = [ "Easy Effects Sink" ];
+        };
+
+        "pulseaudio/slider" = {
+          min = 0;
+          max = 100;
+          orientation = "horizontal";
         };
 
         "pulseaudio#microphone" = {
@@ -254,6 +263,26 @@
       #custom-notification {
         background-color: @base0D;
         color: @base00;
+      }
+
+      #pulseaudio-slider slider {
+          min-height: 0px;
+          min-width: 0px;
+          opacity: 0;
+          background-image: none;
+          border: none;
+          box-shadow: none;
+      }
+      #pulseaudio-slider trough {
+          min-height: 10px;
+          min-width: 80px;
+          border-radius: 5px;
+          background-color: black;
+      }
+      #pulseaudio-slider highlight {
+          min-width: 10px;
+          border-radius: 5px;
+          background-color: green;
       }
     '';
   };
