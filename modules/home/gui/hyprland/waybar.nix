@@ -15,6 +15,23 @@
   programs.waybar = {
     enable = true;
     settings = {
+      sideBar = {
+        layer = "top";
+        output = "HDMI-A-2";
+        position = "top";
+        exclusive = true;
+        passthrough = false;
+        fixed-center = true;
+        ipc = true;
+        margin-top = 3;
+        margin-left = 4;
+        margin-right = 4;
+
+        modules-right = [
+          "clock"
+          "custom/notification"
+        ];
+      };
       mainBar = {
         layer = "top";
         output = "HDMI-A-1";
@@ -269,7 +286,7 @@
           min-height: 0px;
           min-width: 0px;
           opacity: 0;
-          background-image: none;
+          background-color: @base04;
           border: none;
           box-shadow: none;
       }
@@ -277,12 +294,14 @@
           min-height: 10px;
           min-width: 80px;
           border-radius: 5px;
-          background-color: black;
+          border: none;
+          background-color: @base01;
       }
       #pulseaudio-slider highlight {
           min-width: 10px;
           border-radius: 5px;
-          background-color: green;
+          border: none;
+          background-color: @base04;
       }
     '';
   };

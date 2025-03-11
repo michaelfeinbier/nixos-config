@@ -22,6 +22,9 @@
       golang.go
       hashicorp.terraform
       k--kato.intellij-idea-keybindings
+      vue.volar
+      ms-azuretools.vscode-docker
+      eamodio.gitlens
     ];
   };
 
