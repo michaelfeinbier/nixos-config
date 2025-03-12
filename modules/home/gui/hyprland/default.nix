@@ -54,12 +54,10 @@ in
   ## MAIN HYPRLAND CONFIGURATION
   wayland.windowManager.hyprland.settings = {
 
-
-
     # General settings
     monitor = [
       # AORUS FI32U
-      "HDMI-A-1,3840x2160,auto,2"
+      "HDMI-A-1,3840x2160@144,auto,2"
       # M27Q
       "HDMI-A-2,2560x1440,auto-right,2"
     ];
@@ -174,7 +172,7 @@ in
       force_default_wallpaper = 0;
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
-      vrr = 1;
+      vrr = 2;
     };
 
     dwindle = {
@@ -216,6 +214,9 @@ in
     workspace = [
       # "w[tv1], gapsout:0, gapsin:0"
       # "f[1], gapsout:0, gapsin:0"
+
+      "2, monitor:HDMI-A-1"
+      "5, monitor:HDMI-A-2"
     ];
   };
 
