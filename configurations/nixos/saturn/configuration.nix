@@ -96,12 +96,29 @@ in
 
   # Enable automatic login for the user.
   services.getty.autologinUser = "michael";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "michael";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowAliases = false;
   nixpkgs.overlays = [
       inputs.nix-vscode-extensions.overlays.default
+
+      # GNOME 46: triple-buffering-v4-46
+      # (final: prev: {
+      #   mutter = prev.mutter.overrideAttrs (old: {
+      #     src = pkgs.fetchFromGitLab  {
+      #       domain = "gitlab.gnome.org";
+      #       owner = "vanvugt";
+      #       repo = "mutter";
+      #       rev = "triple-buffering-v4-46";
+      #       hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
+      #     };
+      #   });
+      # })
   ];
+  #nixpkgs.overlays = lib.attrValues self.overlays;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

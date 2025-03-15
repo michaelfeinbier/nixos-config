@@ -15,12 +15,14 @@ in
   stylix = {
     enable = true;
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
     image = "${inputs.aesthetic-wallpapers}/images/colorful-planets.jpg";
 
     cursor = {
       package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Classic";
+      name = "Bibata-Original-Ice";
+      size = 12;
     };
 
     fonts = {
@@ -39,10 +41,10 @@ in
 
     opacity = {
       popups = .9;
-      terminal = .8;
+      terminal = .9;
 
       # remove waybar background
-      desktop = 0.0;
+      #desktop = 0.0;
     };
 
     polarity = "dark";

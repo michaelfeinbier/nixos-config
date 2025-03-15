@@ -11,6 +11,7 @@
         "git.confirmSync" = true;
         "git.autofetch" = true;
         "git.enableSmartCommit" = true;
+        "editor.codeLensFontFamily" = "Jetbrains Mono Nerd Font";
       };
 
       extensions = with pkgs.vscode-marketplace; [
@@ -30,5 +31,5 @@
   };
 
   stylix.targets.vscode.enable = true;
-  stylix.targets.vscode.profileNames = [ "Default" ];
+  stylix.targets.vscode.profileNames = [ "default" ];
 }

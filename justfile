@@ -40,3 +40,7 @@ ags:
 [group('Astal')]
 bundle:
   ags bundle astal/app.ts dnkwt-shell
+
+[group('History')]
+history:
+  nix profile history --profile /nix/var/nix/profiles/system

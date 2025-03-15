@@ -43,4 +43,28 @@
   outputs = inputs:
     inputs.nixos-unified.lib.mkFlake
       { inherit inputs; root = ./.; };
+
+  # Wired with flakeParts
+  # outputs = inputs@{ self, ... }:
+  #   inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+  #     systems = [ "x86_64-linux" "aarch64-linux" "aarch64-darwin" ];
+  #     imports = (with builtins;
+  #       map
+  #         (fn: ./modules/flake/${fn})
+  #         (attrNames (readDir ./modules/flake)));
+
+  #     perSystem = { lib, system, ... }: {
+  #       # Make our overlay available to the devShell
+  #       # "Flake parts does not yet come with an endorsed module that initializes the pkgs argument.""
+  #       # So we must do this manually; https://flake.parts/overlays#consuming-an-overlay
+  #       _module.args.pkgs = import inputs.nixpkgs {
+  #         inherit system;
+  #         #overlays = lib.attrValues self.overlays;
+  #         overlays = [
+  #           inputs.nix-vscode-extensions.overlays.default
+  #         ];
+  #         config.allowUnfree = true;
+  #       };
+  #     };
+  #   };
 }

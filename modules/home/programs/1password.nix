@@ -14,6 +14,19 @@
   #programs._1password.enable = true;
   #programs._1password-gui.enable = true;
 
+  #make an own desktop item for 1password "silent"
+  xdg.configFile."autostart/1password.desktop".text = ''
+    [Desktop Entry]
+    Name=1Password Tray Icon
+    Exec=1password --silent %U
+    Terminal=false
+    Type=Application
+    Icon=1password
+    StartupWMClass=1Password
+    Comment=Password manager and secure wallet
+    MimeType=x-scheme-handler/onepassword4
+  '';
+
   programs.ssh = {
     enable = true;
     matchBlocks = {
