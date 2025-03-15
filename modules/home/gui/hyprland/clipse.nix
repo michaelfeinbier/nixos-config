@@ -1,4 +1,4 @@
-{...}: 
+{ ... }:
 {
   services.clipse = {
     enable = false;

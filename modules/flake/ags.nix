@@ -4,7 +4,5 @@ let
   inherit (inputs) self;
 in
 {
-  perSystem = { pkgs, inputs', ... }: {
-
-  };
+  perSystem = { pkgs, inputs', ... }: { };
 }

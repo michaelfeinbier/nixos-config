@@ -1,10 +1,9 @@
-{
-  pkgs,
-  lib,
-  flake,
-  ...
+{ pkgs
+, lib
+, flake
+, ...
 }:
-let 
+let
   inherit (flake) config inputs;
   inherit (inputs) self;
 in

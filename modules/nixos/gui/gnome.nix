@@ -12,7 +12,7 @@
     cheese # webcam tool
     gnome-music
     gedit # text editor
-  #]) ++ (with pkgs.gnome; [
+    #]) ++ (with pkgs.gnome; [
     epiphany # web browser
     geary # email reader
     gnome-characters

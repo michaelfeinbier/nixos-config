@@ -9,7 +9,8 @@ let
 in
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
+      # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
 
@@ -60,7 +61,7 @@ in
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
@@ -87,8 +88,8 @@ in
   users.users.michael = {
     isNormalUser = true;
     description = "Michael";
-    extraGroups = [ "networkmanager" "wheel" "gamemode"];
-    packages = with pkgs; [];
+    extraGroups = [ "networkmanager" "wheel" "gamemode" ];
+    packages = with pkgs; [ ];
     shell = pkgs.zsh;
   };
   # not sure why i need this .. but nix complains without it (even if in home-manager it is set)
@@ -103,28 +104,28 @@ in
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowAliases = false;
   nixpkgs.overlays = [
-      inputs.nix-vscode-extensions.overlays.default
+    inputs.nix-vscode-extensions.overlays.default
 
-      # GNOME 46: triple-buffering-v4-46
-      # (final: prev: {
-      #   mutter = prev.mutter.overrideAttrs (old: {
-      #     src = pkgs.fetchFromGitLab  {
-      #       domain = "gitlab.gnome.org";
-      #       owner = "vanvugt";
-      #       repo = "mutter";
-      #       rev = "triple-buffering-v4-46";
-      #       hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
-      #     };
-      #   });
-      # })
+    # GNOME 46: triple-buffering-v4-46
+    # (final: prev: {
+    #   mutter = prev.mutter.overrideAttrs (old: {
+    #     src = pkgs.fetchFromGitLab  {
+    #       domain = "gitlab.gnome.org";
+    #       owner = "vanvugt";
+    #       repo = "mutter";
+    #       rev = "triple-buffering-v4-46";
+    #       hash = "sha256-C2VfW3ThPEZ37YkX7ejlyumLnWa9oij333d5c4yfZxc=";
+    #     };
+    #   });
+    # })
   ];
   #nixpkgs.overlays = lib.attrValues self.overlays;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
+    #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
+    #  wget
   ];
 
   # Some programs need SUID wrappers, can be configured further or are

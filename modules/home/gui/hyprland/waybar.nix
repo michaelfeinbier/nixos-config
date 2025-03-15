@@ -1,7 +1,7 @@
 { ... }:
 {
 
-  
+
   stylix.targets.waybar = {
     enable = true;
     enableCenterBackColors = true;
@@ -161,14 +161,14 @@
             # "4" = "";
             # "5" =  "";
             active = "";
-            default =  "";
+            default = "";
           };
           on-click = "activate";
           show-special = false;
           sort-by-number = true;
           persistent-workspaces = {
-             "*" = 4;
-             "HDMI-A-2" = 1;
+            "*" = 4;
+            "HDMI-A-2" = 1;
           };
 
         };

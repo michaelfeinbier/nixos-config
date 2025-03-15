@@ -4,7 +4,7 @@ let
   inherit (inputs) self;
 in
 {
-  
+
   programs.hyprland = {
     enable = true;
     # Whether to enable XWayland
@@ -61,7 +61,7 @@ in
     wlr-randr
     wlsunset
     pavucontrol
-    
+
     #clipboard tests
     #wf-recorder
     wl-clip-persist

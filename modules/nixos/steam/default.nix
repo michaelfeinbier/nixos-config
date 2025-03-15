@@ -1,8 +1,9 @@
-{flake, pkgs, ...}:
+{ flake, pkgs, ... }:
 let
   inherit (flake) config inputs;
   inherit (inputs) self;
-in {
+in
+{
 
   programs.steam = {
     enable = true;

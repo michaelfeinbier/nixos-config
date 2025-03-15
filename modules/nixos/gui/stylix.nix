@@ -1,8 +1,7 @@
-{
-  pkgs,
-  flake,
-  config,
-  ...
+{ pkgs
+, flake
+, config
+, ...
 }:
 
 let
@@ -37,6 +36,11 @@ in
         package = pkgs.nerd-fonts.jetbrains-mono;
         name = "Jetbrains Mono Nerd Font";
       };
+
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
     };
 
     opacity = {
@@ -54,5 +58,5 @@ in
 
   # own plymouth theme
   stylix.targets.plymouth.enable = false;
-  
+
 }

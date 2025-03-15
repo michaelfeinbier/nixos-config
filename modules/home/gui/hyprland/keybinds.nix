@@ -1,4 +1,4 @@
-{...}:
+{ ... }:
 
 {
   wayland.windowManager.hyprland.settings = {
@@ -34,16 +34,17 @@
         #"$mainMod $mod, C, exec, alacritty --class clipse -e 'clipse'"
       ]
       ++ (builtins.concatLists (
-        builtins.genList (
-          i:
-          let
-            ws = i + 1;
-          in
-          [
-            "$mainMod, ${toString ws}, workspace, ${toString ws}"
-            "$mainMod SHIFT, ${toString ws}, movetoworkspace, ${toString ws}"
-          ]
-        ) 9
+        builtins.genList
+          (
+            i:
+            let
+              ws = i + 1;
+            in
+            [
+              "$mainMod, ${toString ws}, workspace, ${toString ws}"
+              "$mainMod SHIFT, ${toString ws}, movetoworkspace, ${toString ws}"
+            ]
+          ) 9
       ));
 
     # Mouse binds
