@@ -21,6 +21,7 @@
     hitori # sudoku game
     atomix # puzzle game
     yelp # Help view
+    orca # screen reader
     gnome-contacts
     gnome-initial-setup
   ]);

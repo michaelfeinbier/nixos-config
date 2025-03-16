@@ -8,7 +8,7 @@
       userSettings = {
         "editor.fontLigatures" = true;
         "terminal.integrated.fontLigatures.enabled" = true;
-        "git.confirmSync" = true;
+        "git.confirmSync" = false;
         "git.autofetch" = true;
         "git.enableSmartCommit" = true;
         "editor.codeLensFontFamily" = "Jetbrains Mono Nerd Font";
