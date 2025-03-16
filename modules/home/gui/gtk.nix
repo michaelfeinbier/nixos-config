@@ -5,13 +5,15 @@
 }:
 {
   # Consistent cursor theme across all applications.
-  home.pointerCursor = lib.mkDefault {
-    gtk.enable = true;
-    #x11.enable = true;
-    package = pkgs.bibata-cursors;
-    name = "Bibata-Original-Ice";
-    size = 24;
-  };
+
+  # Also set by stylix - this has no effect!
+  # home.pointerCursor = lib.mkDefault {
+  #   gtk.enable = true;
+  #   #x11.enable = true;
+  #   package = pkgs.bibata-cursors;
+  #   name = "Bibata-Original-Ice";
+  #   size = 24;
+  # };
 
   # GTK theme configuration
   gtk = {

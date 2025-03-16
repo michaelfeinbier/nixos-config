@@ -16,12 +16,14 @@ in
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
-    image = "${inputs.aesthetic-wallpapers}/images/colorful-planets.jpg";
+
+    # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
+    image = "${inputs.aesthetic-wallpapers}/images/vader.png";
 
     cursor = {
       package = pkgs.bibata-cursors;
       name = "Bibata-Original-Ice";
-      size = 12;
+      size = 24;
     };
 
     fonts = {

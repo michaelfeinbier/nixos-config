@@ -1,4 +1,11 @@
 { config, pkgs, ... }:
+let 
+  defaultWindowConfigs = [
+    # Gaming Stuff
+    "discord.desktop:2"
+    "steam.desktop:2"
+  ];
+in
 {
 
   # GNOME extension config ... this is additonal gconf settings to whats in ../gtk.nix
@@ -14,6 +21,7 @@
       workspace-buttons-with-app-icons.extensionUuid
       appindicator.extensionUuid
       emoji-copy.extensionUuid
+      auto-move-windows.extensionUuid
     ];
   };
 
@@ -26,6 +34,7 @@
     workspace-buttons-with-app-icons
     appindicator
     emoji-copy
+    auto-move-windows
   ];
 
   # Configure extenions
@@ -54,6 +63,13 @@
       wsb-icon-size = 22;
       wsb-icon-spacing = 5;
       wsb-show-workspace-number = true;
+    };
+    "org/gnome/shell/extensions/emoji-copy" = {
+      always-show = false;
+    };
+
+    "org/gnome/shell/extensions/auto-move-windows" = {
+      application-list = defaultWindowConfigs;
     };
   };
 }

@@ -99,6 +99,7 @@ in
       "__GLX_VENDOR_LIBRARY_NAME,nvidia"
       "__GL_VRR_ALLOWED,1"
       "WLR_DRM_NO_ATOMIC,1"
+      "NVD_BACKEND,direct"
     ];
 
     input = {
