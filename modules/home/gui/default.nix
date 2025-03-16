@@ -2,8 +2,8 @@
 
 {
   imports = [
-    #./hyprland
+    ./hyprland
+    ./gnome
     ./gtk.nix
-    #./stylix.nix
   ];
 }

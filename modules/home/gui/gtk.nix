@@ -10,7 +10,7 @@
     #x11.enable = true;
     package = pkgs.bibata-cursors;
     name = "Bibata-Original-Ice";
-    size = 12;
+    size = 24;
   };
 
   # GTK theme configuration
@@ -30,11 +30,9 @@
       name = "Zafiro-icons-Dark";
       package = pkgs.zafiro-icons;
     };
-    # cursorTheme = {
-    #   name = "Bibata-Modern-Ice";
-    #   package = pkgs.bibata-cursors;
-    #   size = 24;
-    # };
+    cursorTheme = lib.mkDefault {
+      # managed via stylix
+    };
 
     font = lib.mkDefault {
       name = "Sans";
@@ -52,30 +50,7 @@
     };
   };
 
-  # GNOME Shell extensions
-  dconf.settings."org/gnome/shell" = {
-    disable-user-extensions = false;
 
-    # Enablement is not enough, the extension must be installed
-    enabled-extensions = with pkgs.gnomeExtensions; [
-      blur-my-shell.extensionUuid
-      pano.extensionUuid
-      dash-to-dock.extensionUuid
-      search-light.extensionUuid
-      workspace-buttons-with-app-icons.extensionUuid
-      appindicator.extensionUuid
-    ];
-  };
-
-  # Enable the extensions
-  home.packages = with pkgs.gnomeExtensions; [
-    blur-my-shell
-    pano
-    dash-to-dock
-    search-light
-    workspace-buttons-with-app-icons
-    appindicator
-  ];
 
   # Other dconf settings
   dconf.settings = {
@@ -91,33 +66,6 @@
 
     "org/gnome/desktop/interface" = {
       color-scheme = lib.mkForce "prefer-dark";
-    };
-
-    # Configure extenions
-    "org/gnome/shell/extensions/pano" = {
-      global-shortcut = "<Alt><Super>c";
-      send-notification-on-copy = false;
-      keep-search-entry = false;
-      show-indicator = false;
-      session-only-mode = true; # clear history on restart / logout
-    };
-    "org/gnome/shell/extensions/appindicator" = {
-      icon-opacity = 100;
-      legacy-tray-enabled = false;
-      tray-pos = "right";
-    };
-    "org/gnome/shell/extensions/workspace-buttons-with-app-icons" = {
-      wsb-active-button-background-color = config.lib.stylix.colors.withHashtag.base04;
-      wsb-inactive-button-background-color = config.lib.stylix.colors.withHashtag.base02;
-
-      wsb-active-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base04;
-      wsb-inactive-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base02;
-
-      wsb-button-spacing = "2";
-      wsb-desaturate-icons = true;
-      wsb-icon-size = 22;
-      wsb-icon-spacing = 5;
-      wsb-show-workspace-number = true;
     };
 
     "org/gnome/nautilus/preferences" = {

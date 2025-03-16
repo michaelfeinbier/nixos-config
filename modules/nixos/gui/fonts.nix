@@ -6,5 +6,6 @@
     nerd-fonts.fira-mono
     roboto
     dejavu_fonts
+    texlivePackages.clearsans
   ];
 }

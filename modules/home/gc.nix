@@ -1,7 +1,7 @@
 {
   # Garbage collect the Nix store
   nix.gc = {
-    automatic = false;
+    automatic = true;
     # Change how often the garbage collector runs (default: weekly)
     frequency = "weekly";
   };

@@ -26,8 +26,10 @@ in
 
     fonts = {
       serif = {
-        package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
-        name = "SFProDisplay Nerd Font";
+        #package = inputs.apple-fonts.packages.${pkgs.system}.sf-pro-nerd;
+        #name = "SFProDisplay Nerd Font";
+        package = pkgs.texlivePackages.clearsans;
+        name = "Clear Sans";
       };
 
       sansSerif = config.stylix.fonts.serif;
