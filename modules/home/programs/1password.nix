@@ -14,6 +14,13 @@
   #programs._1password.enable = true;
   #programs._1password-gui.enable = true;
 
+  imports = [ flake.inputs._1password-shell-plugins.hmModules.default ];
+
+  programs._1password-shell-plugins = {
+    enable = true;
+    plugins = with pkgs; [ gh awscli2 cachix ];
+  };
+
   #make an own desktop item for 1password "silent"
   xdg.configFile."autostart/1password.desktop".text = ''
     [Desktop Entry]

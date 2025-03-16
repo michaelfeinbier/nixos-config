@@ -29,10 +29,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
+    #apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     astal.url = "github:aylur/astal";
     ags.url = "github:aylur/ags";
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    _1password-shell-plugins.url = "github:1Password/shell-plugins";
 
     # non flakes
     aesthetic-wallpapers.url = "github:D3Ext/aesthetic-wallpapers";

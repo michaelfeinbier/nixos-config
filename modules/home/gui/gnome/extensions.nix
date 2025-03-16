@@ -43,6 +43,7 @@ in
       global-shortcut = "<Alt><Super>c";
       send-notification-on-copy = false;
       keep-search-entry = false;
+      play-audio-on-copy = false;
       show-indicator = false;
       session-only-mode = true; # clear history on restart / logout
     };
