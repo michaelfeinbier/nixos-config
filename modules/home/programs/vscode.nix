@@ -36,6 +36,7 @@
         vue.volar
         ms-azuretools.vscode-docker
         catppuccin.catppuccin-vsc
+        tamasfe.even-better-toml
       ];
     };
   };

@@ -22,6 +22,7 @@ in
       appindicator.extensionUuid
       emoji-copy.extensionUuid
       auto-move-windows.extensionUuid
+      xremap.extensionUuid
     ];
   };
 
@@ -35,12 +36,13 @@ in
     appindicator
     emoji-copy
     auto-move-windows
+    xremap
   ];
 
   # Configure extenions
   dconf.settings = {
     "org/gnome/shell/extensions/pano" = {
-      global-shortcut = "<Alt><Super>c";
+      global-shortcut = ["<Alt><Super>c"];
       send-notification-on-copy = false;
       keep-search-entry = false;
       play-audio-on-copy = false;

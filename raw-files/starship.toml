@@ -1,15 +1,15 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
-[](color_orange)\
+[](orange)\
 $os\
 $username\
-[](bg:color_yellow fg:color_orange)\
+[](bg:yellow fg:orange)\
 $directory\
-[](fg:color_yellow bg:color_aqua)\
+[](fg:yellow bg:cyan)\
 $git_branch\
 $git_status\
-[](fg:color_aqua bg:color_blue)\
+[](fg:cyan bg:blue)\
 $c\
 $rust\
 $golang\
@@ -19,15 +19,16 @@ $java\
 $kotlin\
 $haskell\
 $python\
-[](fg:color_blue bg:color_bg3)\
+[](fg:blue bg:bright-black)\
 $docker_context\
 $conda\
-[](fg:color_bg3 bg:color_bg1)\
+[](fg:bright_black bg:base02)\
 $time\
-[ ](fg:color_bg1)\
+[ ](fg:base02)\
 $line_break$character"""
 
-palette = 'gruvbox_dark'
+# Set now via stylix
+# palette = 'gruvbox_dark'
 
 [palettes.gruvbox_dark]
 color_fg0 = '#fbf1c7'
@@ -43,7 +44,7 @@ color_yellow = '#d79921'
 
 [os]
 disabled = false
-style = "bg:color_orange fg:color_fg0"
+style = "bg:orange fg:color_fg0"
 
 [os.symbols]
 Windows = "󰍲"
@@ -67,15 +68,16 @@ Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
 Pop = ""
+NixOS = ""
 
 [username]
 show_always = true
-style_user = "bg:color_orange fg:color_fg0"
-style_root = "bg:color_orange fg:color_fg0"
+style_user = "bg:orange fg:white"
+style_root = "bg:orange fg:white"
 format = '[ $user ]($style)'
 
 [directory]
-style = "fg:color_fg0 bg:color_yellow"
+style = "fg:white bg:yellow"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"

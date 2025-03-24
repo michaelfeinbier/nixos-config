@@ -4,6 +4,7 @@
     opentofu
     nodenv
     corepack
+    jetbrains.phpstorm
     #corepack_18
 
     # PHP

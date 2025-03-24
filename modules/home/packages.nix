@@ -15,6 +15,7 @@
     dnsutils # `dig`
     ldns
     nmap
+    warp-terminal
 
     # Nix dev
     cachix

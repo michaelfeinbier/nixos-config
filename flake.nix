@@ -23,6 +23,7 @@
     hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
     hyprland-virtual-desktops.inputs.hyprland.follows = "hyprland";
     hardware.url = "github:nixos/nixos-hardware";
+    xremap.url = "github:xremap/nix-flake";
 
     stylix = {
       url = "github:danth/stylix";

@@ -62,7 +62,6 @@
         "brave-browser.desktop"
         "code.desktop"
         "steam.desktop"
-        "Alacritty.desktop"
       ];
     };
 

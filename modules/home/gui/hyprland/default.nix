@@ -62,7 +62,7 @@ in
     ];
 
 
-    "$terminal" = "alacritty";
+    "$terminal" = "warp-terminal";
     "$fileManager" = "nautilus";
     "$menu " = "rofi -show drun -show-icons -run-command \"uwsm app -- {cmd}\"";
 
