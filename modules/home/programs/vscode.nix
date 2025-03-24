@@ -13,6 +13,7 @@
         "editor.codeLensFontFamily" = "Jetbrains Mono Nerd Font";
         "editor.inlayHints.fontFamily" = "Jetbrains Mono Nerd Font";
         "editor.semanticHighlighting.enabled" = true;
+        "editor.minimap.enabled" = false;
 
         # prevent VSCode from modifying the terminal colors
         "terminal.integrated.minimumContrastRatio" = 1;
