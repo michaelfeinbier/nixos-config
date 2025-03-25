@@ -14,6 +14,7 @@ in
   imports = [
     ./packages.nix
     ./sound.nix
+    ./xremap.nix
   ];
 
   services.openssh.enable = true;
