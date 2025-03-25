@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./hyprland
+    #./hyprland
     ./gnome
     ./gtk.nix
   ];

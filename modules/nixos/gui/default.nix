@@ -1,7 +1,7 @@
 {
   imports = [
     ./gnome.nix
-    ./hyprland.nix
+    #./hyprland.nix
     ./fonts.nix
     ./stylix.nix
   ];
