@@ -1,14 +1,14 @@
 { flake, pkgs, lib, ... }:
 {
-  home.packages = with pkgs; [
-    gh
-    _1password-cli
-    _1password-gui-beta
-  ];
+  # home.packages = with pkgs; [
+  #   gh
+  #   _1password-cli
+  #   _1password-gui-beta
+  # ];
 
   programs.zsh.envExtra = ''
     # For 1Password CLI. This requires `pkgs.gh` to be installed.
-    # source $HOME/.config/op/plugins.sh
+    source $HOME/.config/op/plugins.sh
   '';
 
   #programs._1password.enable = true;
@@ -18,7 +18,11 @@
 
   programs._1password-shell-plugins = {
     enable = true;
-    plugins = with pkgs; [ gh awscli2 cachix ];
+    plugins = with pkgs; [ 
+      gh
+      awscli2
+      hcloud
+    ];
   };
 
   #make an own desktop item for 1password "silent"

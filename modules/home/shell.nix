@@ -29,6 +29,16 @@ in
       initExtra = ''
         fastfetch
       '';
+      shellAliases = {
+        tofu = "op run --env-file='./auth.env' -- tofu";
+      };
+
+      oh-my-zsh = {
+        enable = true;
+        plugins = [
+          "git"
+        ];
+      };
     };
 
     # Type `z <pat>` to cd to some directory

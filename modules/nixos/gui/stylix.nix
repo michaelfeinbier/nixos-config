@@ -18,7 +18,7 @@ in
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
 
     # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
-    image = "${inputs.aesthetic-wallpapers}/images/vader.png";
+    image = "${inputs.aesthetic-wallpapers}/images/lake.jpg";
 
     cursor = {
       package = pkgs.bibata-cursors;
