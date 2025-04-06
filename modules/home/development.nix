@@ -5,6 +5,7 @@
     nodenv
     corepack
     jetbrains.phpstorm
+    ansible
     #corepack_18
 
     # PHP

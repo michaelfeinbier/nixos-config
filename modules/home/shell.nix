@@ -77,57 +77,58 @@ in
         "break"
         {
           key = "     OS           ";
-          keyColor = "red";
+          keyColor = "green";
           type = "os";
         }
         {
           key = "    󰌢 Machine      ";
-          keyColor = "green";
+          keyColor = "cyan";
           type = "host";
         }
         {
           key = "     Kernel       ";
-          keyColor = "magenta";
+          keyColor = "blue";
           type = "kernel";
         }
         {
           key = "    󰏖 Packages     ";
+          keyColor = "green";
           type = "packages";
         }
         {
           key = "    󰅐 Uptime       ";
-          keyColor = "red";
+          keyColor = "cyan";
           type = "uptime";
         }
         {
           key = "    󰍹 Resolution   ";
-          keyColor = "yellow";
+          keyColor = "blue";
           type = "display";
           compactType = "original-with-refresh-rate";
         }
         {
           key = "     WM           ";
-          keyColor = "blue";
+          keyColor = "green";
           type = "wm";
         }
         {
           key = "     DE           ";
-          keyColor = "green";
+          keyColor = "cyan";
           type = "de";
         }
         {
           key = "     Shell        ";
-          keyColor = "cyan";
+          keyColor = "blue";
           type = "shell";
         }
         {
           key = "     Terminal     ";
-          keyColor = "red";
+          keyColor = "green";
           type = "terminal";
         }
         {
           key = "    󰻠 CPU          ";
-          keyColor = "yellow";
+          keyColor = "cyan";
           type = "cpu";
         }
         {
@@ -137,17 +138,17 @@ in
         }
         {
           key = "    󰑭 Memory       ";
-          keyColor = "magenta";
+          keyColor = "green";
           type = "memory";
         }
         {
           key = "    󰩟 Local IP     ";
-          keyColor = "red";
+          keyColor = "cyan";
           type = "localip";
         }
         {
           key = "    󰩠 Public IP    ";
-          keyColor = "cyan";
+          keyColor = "blue";
           type = "publicip";
         }
         "break"
@@ -160,6 +161,9 @@ in
           paddingLeft = 34;
           symbol = "circle";
           type = "colors";
+          block = {
+            width = 10;
+          };
         }
       ];
     };
