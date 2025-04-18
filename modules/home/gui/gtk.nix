@@ -59,7 +59,7 @@
     "org/gnome/shell" = {
       favorite-apps = [
         "org.gnome.Nautilus.desktop"
-        "brave-browser.desktop"
+        "chromium-browser.desktop"
         "code.desktop"
         "steam.desktop"
       ];
