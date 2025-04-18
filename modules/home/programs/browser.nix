@@ -14,8 +14,10 @@
       # Chrome is lagging with these settings
       #"--enable-features=UseOzonePlatform"
       #"--ozone-platform=wayland"
-      "-enable-features=WaylandWindowDecorations"
-      "--ozone-platform-hint=auto"
+
+      # Diable them to fix chrome?
+      #"-enable-features=WaylandWindowDecorations"
+      #"--ozone-platform-hint=auto"
     ];
   };
 }

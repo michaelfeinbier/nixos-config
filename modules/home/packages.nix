@@ -17,6 +17,7 @@
     # work.
     less
     vlc
+    cider-2
   ];
 
   # Programs natively supported by home-manager.

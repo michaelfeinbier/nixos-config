@@ -43,5 +43,5 @@
   };
 
   stylix.targets.vscode.enable = false;
-  stylix.targets.vscode.profileNames = [ "default" ];
+  #stylix.targets.vscode.profileNames = [ "default" ];
 }

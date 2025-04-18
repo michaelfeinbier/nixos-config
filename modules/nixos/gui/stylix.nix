@@ -37,7 +37,10 @@ in
       sansSerif = config.stylix.fonts.serif;
 
       monospace = {
+        #use this after 24.11
         package = pkgs.nerd-fonts.jetbrains-mono;
+        #package = pkgs.nerdfonts;
+        
         name = "Jetbrains Mono Nerd Font";
       };
 

@@ -4,6 +4,7 @@
   inputs = {
     # Principle inputs (updated by `nix run .#update`)
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    #nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
     nix-darwin.url = "github:LnL7/nix-darwin";
     nix-darwin.inputs.nixpkgs.follows = "nixpkgs";
     home-manager.url = "github:nix-community/home-manager";
@@ -25,11 +26,8 @@
     hardware.url = "github:nixos/nixos-hardware";
     xremap.url = "github:xremap/nix-flake";
     xremap.inputs.nixpkgs.follows = "nixpkgs";
-
-    stylix = {
-      url = "github:danth/stylix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #stylix.url = "github:danth/stylix/release-24.11";
+    stylix.url = "github:danth/stylix";
 
     #apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     astal.url = "github:aylur/astal";
