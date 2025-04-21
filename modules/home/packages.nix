@@ -18,6 +18,8 @@
     less
     vlc
     cider-2
+    nextcloud-client
+    obsidian
   ];
 
   # Programs natively supported by home-manager.

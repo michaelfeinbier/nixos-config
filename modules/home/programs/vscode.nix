@@ -8,6 +8,7 @@
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Mocha";
 
+        "editor.fontSize" = 11;
         "editor.fontLigatures" = true;
         "editor.acceptSuggestionOnEnter" = "off";
         "editor.codeLensFontFamily" = "Jetbrains Mono Nerd Font";
