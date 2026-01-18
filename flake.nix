@@ -19,10 +19,6 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
 
-    hyprswitch.url = "github:h3rmt/hyprswitch/release";
-    hyprland.url = "github:hyprwm/Hyprland";
-    hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
-    hyprland-virtual-desktops.inputs.hyprland.follows = "hyprland";
     hardware.url = "github:nixos/nixos-hardware";
     xremap.url = "github:xremap/nix-flake";
     xremap.inputs.nixpkgs.follows = "nixpkgs";

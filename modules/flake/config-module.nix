@@ -24,9 +24,9 @@
             '';
           };
           wallpaper = lib.mkOption {
-            type = lib.types.path;
+            type = lib.types.nullOr lib.types.path;
             description = "Path to your wallpaper";
-            default = /home/michael/.local/share/wallpaper/aesthetic-wallpapers/images/colorful-planets.jpg;
+            default = null;
           };
         };
       };
