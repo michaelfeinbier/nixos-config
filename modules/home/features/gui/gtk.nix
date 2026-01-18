@@ -10,15 +10,15 @@ in
       enable = true;
 
       theme = {
-        #name = lib.mkForce "Marble";
-        #package = lib.mkForce pkgs.marble-shell-theme;
+        name = lib.mkDefault "Adwaita-dark";
       };
       iconTheme = {
         name = "Zafiro-icons-Dark";
         package = pkgs.zafiro-icons;
       };
-      cursorTheme = lib.mkDefault {
-        # managed via stylix
+      cursorTheme = {
+        name = lib.mkDefault "Adwaita";
+        size = lib.mkDefault 24;
       };
 
       font = lib.mkDefault {

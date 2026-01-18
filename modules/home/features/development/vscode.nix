@@ -12,23 +12,23 @@ in
 
       profiles.default = {
         userSettings = {
-          "workbench.colorTheme" = "Catppuccin Mocha";
+          "workbench.colorTheme" = lib.mkDefault "Catppuccin Mocha";
 
-          "editor.fontSize" = 11;
-          "editor.fontLigatures" = true;
-          "editor.acceptSuggestionOnEnter" = "off";
-          "editor.codeLensFontFamily" = "Jetbrains Mono Nerd Font";
-          "editor.inlayHints.fontFamily" = "Jetbrains Mono Nerd Font";
-          "editor.semanticHighlighting.enabled" = true;
-          "editor.minimap.enabled" = false;
+          "editor.fontSize" = lib.mkDefault 11;
+          "editor.fontLigatures" = lib.mkDefault true;
+          "editor.acceptSuggestionOnEnter" = lib.mkDefault "off";
+          "editor.codeLensFontFamily" = lib.mkDefault "Jetbrains Mono Nerd Font";
+          "editor.inlayHints.fontFamily" = lib.mkDefault "Jetbrains Mono Nerd Font";
+          "editor.semanticHighlighting.enabled" = lib.mkDefault true;
+          "editor.minimap.enabled" = lib.mkDefault false;
 
           # prevent VSCode from modifying the terminal colors
-          "terminal.integrated.minimumContrastRatio" = 1;
-          "terminal.integrated.fontLigatures.enabled" = true;
-          "git.confirmSync" = false;
-          "git.autofetch" = true;
-          "git.enableSmartCommit" = true;
-          "window.titleBarStyle" = "custom";
+          "terminal.integrated.minimumContrastRatio" = lib.mkDefault 1;
+          "terminal.integrated.fontLigatures.enabled" = lib.mkDefault true;
+          "git.confirmSync" = lib.mkDefault false;
+          "git.autofetch" = lib.mkDefault true;
+          "git.enableSmartCommit" = lib.mkDefault true;
+          "window.titleBarStyle" = lib.mkDefault "custom";
         };
 
         extensions = with pkgs.vscode-marketplace; [
@@ -48,7 +48,5 @@ in
         ];
       };
     };
-
-    stylix.targets.vscode.enable = false;
   };
 }

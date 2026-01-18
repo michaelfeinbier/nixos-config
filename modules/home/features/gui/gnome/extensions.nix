@@ -1,6 +1,12 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, options, ... }:
 let
   cfg = config.myConfig.features.gui;
+  hasStylex = options ? stylix;
+  # Stylix colors with fallbacks for standalone home-manager
+  stylixColors =
+    if hasStylex && config.lib ? stylix
+    then config.lib.stylix.colors.withHashtag
+    else { base02 = "#3c3836"; base04 = "#7c6f64"; }; # Fallback gruvbox-like colors
   defaultWindowConfigs = [
     # Gaming Stuff
     "discord.desktop:2"
@@ -56,11 +62,11 @@ in
         tray-pos = "right";
       };
       "org/gnome/shell/extensions/workspace-buttons-with-app-icons" = {
-        wsb-active-button-background-color = config.lib.stylix.colors.withHashtag.base04;
-        wsb-inactive-button-background-color = config.lib.stylix.colors.withHashtag.base02;
+        wsb-active-button-background-color = stylixColors.base04;
+        wsb-inactive-button-background-color = stylixColors.base02;
 
-        wsb-active-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base04;
-        wsb-inactive-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base02;
+        wsb-active-workspace-number-background-color = stylixColors.base04;
+        wsb-inactive-workspace-number-background-color = stylixColors.base02;
 
         wsb-button-spacing = "2";
         wsb-desaturate-icons = true;
