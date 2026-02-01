@@ -55,11 +55,11 @@ in
       tray-pos = "right";
     };
     "org/gnome/shell/extensions/workspace-buttons-with-app-icons" = {
-      wsb-active-button-background-color = config.lib.stylix.colors.withHashtag.base04;
-      wsb-inactive-button-background-color = config.lib.stylix.colors.withHashtag.base02;
+      #wsb-active-button-background-color = config.lib.stylix.colors.withHashtag.base04;
+      #wsb-inactive-button-background-color = config.lib.stylix.colors.withHashtag.base02;
 
-      wsb-active-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base04;
-      wsb-inactive-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base02;
+      #wsb-active-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base04;
+      #wsb-inactive-workspace-number-background-color = config.lib.stylix.colors.withHashtag.base02;
 
       wsb-button-spacing = "2";
       wsb-desaturate-icons = true;

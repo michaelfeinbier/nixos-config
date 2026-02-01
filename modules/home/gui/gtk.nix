@@ -19,22 +19,22 @@
   gtk = {
     enable = true;
 
-    theme = {
+    #theme = {
       #name = lib.mkForce "Marble";
       #package = lib.mkForce pkgs.marble-shell-theme;
       #name = lib.mkDefault "Flat-Remix-GTK-Grey-Darkest";
       #package = lib.mkDefault pkgs.flat-remix-gtk;
       #package = pkgs.juno-theme;
-    };
+    #};
     iconTheme = {
       #name = "Tela-ubuntu-dark";
       #package = pkgs.tela-icon-theme;
       name = "Zafiro-icons-Dark";
       package = pkgs.zafiro-icons;
     };
-    cursorTheme = lib.mkDefault {
+    #cursorTheme = lib.mkDefault {
       # managed via stylix
-    };
+    #};
 
     font = lib.mkDefault {
       name = "Sans";
