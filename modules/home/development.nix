@@ -10,9 +10,9 @@
 
     # PHP
     php82
+    phpstan
   ]) ++ (with pkgs.php82Packages; [
     composer
     php-cs-fixer
-    phpstan
   ]);
 }

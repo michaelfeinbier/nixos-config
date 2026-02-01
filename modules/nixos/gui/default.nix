@@ -3,7 +3,7 @@
     ./gnome.nix
     #./hyprland.nix
     ./fonts.nix
-    ./stylix.nix
+    #./stylix.nix
   ];
   #services.xserver.enable = true;
 }

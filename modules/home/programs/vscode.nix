@@ -1,18 +1,20 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   programs.vscode = {
     enable = true;
+    package = pkgs.vscodium;
 
     profiles.default = {
       userSettings = {
         "workbench.colorTheme" = "Catppuccin Mocha";
 
-        "editor.fontSize" = 11;
+        "editor.fontSize" = 13;
+        "editor.fontFamily" = "'JetbrainsMono Nerd Font', 'Droid Sans Mono', monospace";
         "editor.fontLigatures" = true;
         "editor.acceptSuggestionOnEnter" = "off";
-        "editor.codeLensFontFamily" = "Jetbrains Mono Nerd Font";
-        "editor.inlayHints.fontFamily" = "Jetbrains Mono Nerd Font";
+        "editor.codeLensFontFamily" = "JetbrainsMono Nerd Font";
+        "editor.inlayHints.fontFamily" = "JetbrainsMono Nerd Font";
         "editor.semanticHighlighting.enabled" = true;
         "editor.minimap.enabled" = false;
 
@@ -25,24 +27,25 @@
         "window.titleBarStyle" = "custom";
       };
 
-      extensions = with pkgs.vscode-marketplace; [
-        bierner.markdown-mermaid
-        jnoortheen.nix-ide
-        bluebrown.yamlfmt
-        bmewburn.vscode-intelephense-client
-        github.copilot
-        github.copilot-chat
-        golang.go
-        hashicorp.terraform
-        k--kato.intellij-idea-keybindings
-        vue.volar
-        ms-azuretools.vscode-docker
-        catppuccin.catppuccin-vsc
-        tamasfe.even-better-toml
-      ];
+      # @FIXME - does not work with home-manager only
+      # extensions = with pkgs.vscode-marketplace; [
+      #   bierner.markdown-mermaid
+      #   jnoortheen.nix-ide
+      #   bluebrown.yamlfmt
+      #   bmewburn.vscode-intelephense-client
+      #   github.copilot
+      #   github.copilot-chat
+      #   golang.go
+      #   hashicorp.terraform
+      #   k--kato.intellij-idea-keybindings
+      #   vue.volar
+      #   ms-azuretools.vscode-docker
+      #   catppuccin.catppuccin-vsc
+      #   tamasfe.even-better-toml
+      # ];
     };
   };
 
-  stylix.targets.vscode.enable = false;
+  #stylix.targets.vscode.enable = false;
   #stylix.targets.vscode.profileNames = [ "default" ];
 }
