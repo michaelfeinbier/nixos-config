@@ -62,7 +62,7 @@
       gpg.ssh.program =
         if pkgs.stdenv.isDarwin
         then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
-        else "op-ssh-sign";
+        else "/opt/1Password/op-ssh-sign";
       commit.gpgsign = true;
     };
   }];

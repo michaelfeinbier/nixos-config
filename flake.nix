@@ -19,7 +19,7 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
 
-    hyprswitch.url = "github:h3rmt/hyprswitch/release";
+    #hyprswitch.url = "github:h3rmt/hyprswitch/release";
     hyprland.url = "github:hyprwm/Hyprland";
     hyprland-virtual-desktops.url = "github:levnikmyskin/hyprland-virtual-desktops";
     hyprland-virtual-desktops.inputs.hyprland.follows = "hyprland";
@@ -27,7 +27,7 @@
     xremap.url = "github:xremap/nix-flake";
     xremap.inputs.nixpkgs.follows = "nixpkgs";
     #stylix.url = "github:danth/stylix/release-24.11";
-    stylix.url = "github:danth/stylix";
+    #stylix.url = "github:danth/stylix";
 
     #apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
     astal.url = "github:aylur/astal";
