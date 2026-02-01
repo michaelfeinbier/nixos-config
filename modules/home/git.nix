@@ -12,16 +12,17 @@ in
   programs = {
     git = {
       enable = true;
-      userName = me.fullname;
-      userEmail = me.email;
+      settings = {
+        alias = {
+          ci = "commit";
+        };
+        user = {
+          email = me.email;
+          name = me.fullname;
+        };
+      };
+      
       ignores = [ "*~" "*.swp" ];
-      aliases = {
-        ci = "commit";
-      };
-      extraConfig = {
-        # init.defaultBranch = "master";
-        # pull.rebase = "false";
-      };
     };
     lazygit.enable = true;
   };
