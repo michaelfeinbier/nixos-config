@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(tree:*)",
+      "Bash(wc:*)",
+      "Bash(nix flake check:*)",
+      "Bash(nix flake prefetch:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRefactor: Restructure home-manager modules with profiles and features\n\n- Add feature flags \\(gui, development, gaming, productivity\\)\n- Add profile presets \\(minimal, desktop, server\\)\n- Create core/ directory for always-loaded modules\n- Create features/ directory for conditionally-loaded modules\n- Add platform/ directory for platform-specific configs\n- Add standalone homeConfigurations for non-NixOS use\n- Remove Hyprland modules and flake inputs\n\nCo-Authored-By: Claude Opus 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(nix store gc:*)",
+      "Bash(nix eval:*)"
+    ]
+  }
+}

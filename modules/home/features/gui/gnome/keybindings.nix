@@ -1,7 +1,7 @@
 { lib, config, ... }:
 
 let
-  cfg = config.myConfig.features.gui;
+  cfg = config.me.features.gui;
 in
 {
   config = lib.mkIf cfg.enable {

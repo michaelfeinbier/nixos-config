@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.myConfig.features.development;
-  guiEnabled = config.myConfig.features.gui.enable;
+  cfg = config.me.features.development;
+  guiEnabled = config.me.features.gui.enable;
 in
 {
   # VSCode only makes sense with GUI enabled
@@ -15,6 +15,7 @@ in
           "workbench.colorTheme" = lib.mkDefault "Catppuccin Mocha";
 
           "editor.fontSize" = lib.mkDefault 11;
+          "editor.fontFamily" = lib.mkDefault "'JetbrainsMono Nerd Font', 'Droid Sans Mono', monospace";
           "editor.fontLigatures" = lib.mkDefault true;
           "editor.acceptSuggestionOnEnter" = lib.mkDefault "off";
           "editor.codeLensFontFamily" = lib.mkDefault "Jetbrains Mono Nerd Font";

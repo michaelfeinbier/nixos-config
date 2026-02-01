@@ -1,7 +1,7 @@
 { flake, lib, config, ... }:
 
 let
-  cfg = config.myConfig.features.development;
+  cfg = config.me.features.development;
 in
 {
   imports = [

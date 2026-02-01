@@ -2,6 +2,15 @@
 {
   # CLI-only packages that should always be available
   home.packages = with pkgs; [
+    omnix
+
+    # Unix tools
+    ripgrep # Better `grep`
+    fd
+    sd
+    tree
+    gnumake
+
     # Nix dev
     cachix
     nil # Nix language server

@@ -2,7 +2,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.myConfig.features.gaming;
+  cfg = config.me.features.gaming;
 in
 {
   imports = [

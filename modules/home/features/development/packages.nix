@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.myConfig.features.development;
+  cfg = config.me.features.development;
 in
 {
   config = lib.mkIf cfg.enable {
@@ -14,10 +14,10 @@ in
 
       # PHP
       php82
+      phpstan
     ]) ++ (with pkgs.php82Packages; [
       composer
       php-cs-fixer
-      phpstan
     ]);
   };
 }

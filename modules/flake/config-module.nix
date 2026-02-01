@@ -1,4 +1,5 @@
-{ lib, config, ... }:
+# Defines the 'me' option schema for flake.config.me
+{ lib, ... }:
 {
   options = {
     me = lib.mkOption {
@@ -19,9 +20,7 @@
           };
           sshKey = lib.mkOption {
             type = lib.types.str;
-            description = ''
-              SSH public key
-            '';
+            description = "SSH public key";
           };
           wallpaper = lib.mkOption {
             type = lib.types.nullOr lib.types.path;

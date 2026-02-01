@@ -1,7 +1,7 @@
 { flake, pkgs, lib, config, ... }:
 
 let
-  cfg = config.myConfig.features.productivity;
+  cfg = config.me.features.productivity;
 in
 {
   imports = [ flake.inputs._1password-shell-plugins.hmModules.default ];

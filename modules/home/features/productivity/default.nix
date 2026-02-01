@@ -2,7 +2,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.myConfig.features.productivity;
+  cfg = config.me.features.productivity;
 in
 {
   imports = [

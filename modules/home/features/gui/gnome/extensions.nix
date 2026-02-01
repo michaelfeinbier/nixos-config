@@ -1,6 +1,6 @@
 { config, pkgs, lib, options, ... }:
 let
-  cfg = config.myConfig.features.gui;
+  cfg = config.me.features.gui;
   hasStylex = options ? stylix;
   # Stylix colors with fallbacks for standalone home-manager
   stylixColors =

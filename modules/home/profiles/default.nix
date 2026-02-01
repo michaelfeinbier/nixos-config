@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  cfg = config.myConfig;
+  cfg = config.me;
 in
 {
   imports = [
@@ -14,7 +14,7 @@ in
   config = lib.mkMerge [
     # Minimal profile: only core tools
     (lib.mkIf cfg.profiles.minimal {
-      myConfig.features = {
+      me.features = {
         gui.enable = lib.mkDefault false;
         development.enable = lib.mkDefault false;
         gaming.enable = lib.mkDefault false;
@@ -24,7 +24,7 @@ in
 
     # Desktop profile: full desktop experience
     (lib.mkIf cfg.profiles.desktop {
-      myConfig.features = {
+      me.features = {
         gui.enable = lib.mkDefault true;
         development.enable = lib.mkDefault true;
         gaming.enable = lib.mkDefault false;
@@ -34,7 +34,7 @@ in
 
     # Server profile: headless server
     (lib.mkIf cfg.profiles.server {
-      myConfig.features = {
+      me.features = {
         gui.enable = lib.mkDefault false;
         development.enable = lib.mkDefault true;
         gaming.enable = lib.mkDefault false;

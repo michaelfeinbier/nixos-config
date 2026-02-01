@@ -1,7 +1,7 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.myConfig.features.gaming;
+  cfg = config.me.features.gaming;
 in
 {
   config = lib.mkIf cfg.enable {

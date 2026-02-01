@@ -1,12 +1,9 @@
-# Global configuration for this repo
-#
-# See ./modules/flake-parts/config-module.nix for schema
+# Import and apply the global configuration values
+{ ... }:
 {
-  me = {
-    username = "michael";
-    fullname = "Michael Feinbier";
-    email = "johndoe@saturn.com";
-    sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDaFHBcj6B1u0SpHEatrJ3RExPPhD88mCO9xHmF09rZQ";
+  imports = [
+    ./config-module.nix
+  ];
 
-  };
+  config = import ../../config.nix;
 }

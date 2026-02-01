@@ -1,6 +1,7 @@
 { pkgs
 , flake
 , config
+, lib
 , ...
 }:
 
@@ -45,7 +46,7 @@ in
       };
 
       emoji = {
-        package = pkgs.noto-fonts-emoji;
+        package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
     };
@@ -65,5 +66,8 @@ in
 
   # own plymouth theme
   stylix.targets.plymouth.enable = false;
+
+  # Use qtct - the only fully supported platform by stylix
+  stylix.targets.qt.platform = lib.mkForce "qtct";
 
 }

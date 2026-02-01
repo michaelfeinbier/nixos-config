@@ -1,7 +1,9 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 {
-  options.myConfig = {
+  options = {
+    me = {
+
     # Feature flags for fine-grained control
     features = {
       gui = {
@@ -27,5 +29,6 @@
       desktop = lib.mkEnableOption "desktop profile (full desktop experience)";
       server = lib.mkEnableOption "server profile (headless server config)";
     };
+  };
   };
 }

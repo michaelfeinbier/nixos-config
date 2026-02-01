@@ -1,7 +1,4 @@
-{ flake, ... }:
-let
-  inherit (flake.config) me;
-in
+{ config, ... }:
 {
   home.shellAliases = {
     g = "git";
@@ -12,16 +9,17 @@ in
   programs = {
     git = {
       enable = true;
-      userName = me.fullname;
-      userEmail = me.email;
+      settings = {
+        alias = {
+          ci = "commit";
+        };
+        user = {
+          email = config.me.email;
+          name = config.me.fullname;
+        };
+      };
+      
       ignores = [ "*~" "*.swp" ];
-      aliases = {
-        ci = "commit";
-      };
-      extraConfig = {
-        # init.defaultBranch = "master";
-        # pull.rebase = "false";
-      };
     };
     lazygit.enable = true;
   };

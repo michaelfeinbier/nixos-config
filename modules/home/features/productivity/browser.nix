@@ -1,8 +1,8 @@
 { pkgs, lib, config, ... }:
 
 let
-  cfg = config.myConfig.features.productivity;
-  guiEnabled = config.myConfig.features.gui.enable;
+  cfg = config.me.features.productivity;
+  guiEnabled = config.me.features.gui.enable;
 in
 {
   # Browser only makes sense with GUI enabled

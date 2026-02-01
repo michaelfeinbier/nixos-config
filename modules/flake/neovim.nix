@@ -4,7 +4,7 @@
     let
       neovimWithConfig = inputs.nixvim.legacyPackages.${system}.makeNixvimWithModule {
         inherit pkgs;
-        module = import ../home/neovim/nixvim.nix;
+        module = import ../home/features/development/neovim/nixvim.nix;
       };
     in
     {
