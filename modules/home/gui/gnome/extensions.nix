@@ -54,6 +54,9 @@ in
       legacy-tray-enabled = false;
       tray-pos = "right";
     };
+    "org/gnome/shell/extensions/search-light" = {
+      shortcut-search = ["<Super>space"];
+    };
     "org/gnome/shell/extensions/workspace-buttons-with-app-icons" = {
       #wsb-active-button-background-color = config.lib.stylix.colors.withHashtag.base04;
       #wsb-inactive-button-background-color = config.lib.stylix.colors.withHashtag.base02;

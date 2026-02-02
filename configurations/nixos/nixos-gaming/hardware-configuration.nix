@@ -24,6 +24,11 @@
       options = [ "fmask=0777" "dmask=0777" ];
     };
 
+  fileSystems."/games-fast" = 
+   { device = "/dev/disk/by-label/fast";
+     fsType = "btrfs"; 
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking

@@ -6,6 +6,7 @@
     corepack
     jetbrains.phpstorm
     ansible
+    claude-code
     #corepack_18
 
     # PHP

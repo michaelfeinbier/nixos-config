@@ -4,9 +4,6 @@
   #
   # Search for packages here: https://search.nixos.org/packages
   home.packages = with pkgs; [
-
-    warp-terminal
-
     # Nix dev
     cachix
     nil # Nix language server

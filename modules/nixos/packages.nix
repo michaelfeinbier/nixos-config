@@ -13,10 +13,13 @@ in
     tree
     gnumake
     dua
+    vim
+    gparted
 
     dnsutils # `dig`
     ldns
     nmap
     btop
+    tealdeer # tldr
   ];
  }

@@ -2,13 +2,19 @@
 # your system. Help is available in the configuration.nix(5) man page, on
 # https://search.nixos.org/options and in the NixOS manual (`nixos-help`).
 
-{ config, lib, pkgs, ... }:
-
+{ config, lib, pkgs, flake, ... }:
+let
+  inherit (flake) config inputs;
+  inherit (inputs) self;
+in
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
     ];
+
+  nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -39,6 +45,14 @@
 
 nix.settings.experimental-features = [ "nix-command" "flakes" ];
 nixpkgs.config.allowUnfree = true;  
+  nix.settings.substituters = [ 
+    "https://attic.xuyh0120.win/lantian" 
+    "https://cache.garnix.io"
+  ];
+  nix.settings.trusted-public-keys = [ 
+    "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" 
+    "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
+  ];
 
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
@@ -69,15 +83,6 @@ nixpkgs.config.allowUnfree = true;
 
   # programs.firefox.enable = true;
 
-  # List packages installed in system profile.
-  # You can use https://search.nixos.org/ to find more packages (and options).
-  environment.systemPackages = with pkgs; [
-     vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-     wget
-    git
-	gh
-  ];
-
 users.users.michael = {
  isNormalUser = true;
  extraGroups = ["networkmanager" "wheel" "gamemode"];
@@ -86,7 +91,33 @@ users.users.michael = {
 
 programs.zsh.enable = true;
 
+  # Select internationalisation properties.
+  i18n.defaultLocale = "en_US.UTF-8";
 
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "de_DE.UTF-8";
+    LC_IDENTIFICATION = "de_DE.UTF-8";
+    LC_MEASUREMENT = "de_DE.UTF-8";
+    LC_MONETARY = "de_DE.UTF-8";
+    LC_NAME = "de_DE.UTF-8";
+    LC_NUMERIC = "de_DE.UTF-8";
+    LC_PAPER = "de_DE.UTF-8";
+    LC_TELEPHONE = "de_DE.UTF-8";
+    LC_TIME = "de_DE.UTF-8";
+  };
+
+  # Configure keymap in X11
+  services.xserver.xkb = {
+    layout = "us";
+    variant = "mac";
+  };
+
+  # Enable automatic login for the user.
+  services.getty.autologinUser = "michael";
+  services.displayManager.autoLogin.enable = true;
+  services.displayManager.autoLogin.user = "michael";
+
+  
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;

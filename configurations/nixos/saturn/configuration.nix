@@ -104,7 +104,7 @@ in
   nixpkgs.config.allowUnfree = true;
   # nixpkgs.config.allowAliases = false;
   nixpkgs.overlays = [
-    inputs.nix-vscode-extensions.overlays.default
+    #inputs.nix-vscode-extensions.overlays.default
 
     # GNOME 46: triple-buffering-v4-46
     # (final: prev: {

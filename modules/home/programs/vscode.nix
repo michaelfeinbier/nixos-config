@@ -28,21 +28,21 @@
       };
 
       # @FIXME - does not work with home-manager only
-      # extensions = with pkgs.vscode-marketplace; [
-      #   bierner.markdown-mermaid
-      #   jnoortheen.nix-ide
+      extensions = with pkgs.vscode-extensions; [
+         bierner.markdown-mermaid
+         jnoortheen.nix-ide
       #   bluebrown.yamlfmt
-      #   bmewburn.vscode-intelephense-client
+         bmewburn.vscode-intelephense-client
       #   github.copilot
       #   github.copilot-chat
       #   golang.go
-      #   hashicorp.terraform
-      #   k--kato.intellij-idea-keybindings
-      #   vue.volar
+         hashicorp.terraform
+         k--kato.intellij-idea-keybindings
+         vue.volar
       #   ms-azuretools.vscode-docker
-      #   catppuccin.catppuccin-vsc
-      #   tamasfe.even-better-toml
-      # ];
+         catppuccin.catppuccin-vsc
+         tamasfe.even-better-toml
+      ];
     };
   };
 
