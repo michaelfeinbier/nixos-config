@@ -5,7 +5,7 @@
   me = {
     username = "michael";
     fullname = "Michael Feinbier";
-    email = "michael@feinbier.io";
+    email = "mf@tiberianmaster.net";
     sshKey = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDaFHBcj6B1u0SpHEatrJ3RExPPhD88mCO9xHmF09rZQ";
   };
 }
