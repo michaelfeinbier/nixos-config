@@ -1,12 +1,12 @@
-{ config, pkgs, ... }:
-let 
+{ config, pkgs, lib, ... }:
+let
   defaultWindowConfigs = [
     # Gaming Stuff
     "discord.desktop:2"
     "steam.desktop:2"
   ];
 in
-{
+lib.mkIf pkgs.stdenv.isLinux {
 
   # GNOME extension config ... this is additonal gconf settings to whats in ../gtk.nix
   dconf.settings."org/gnome/shell" = {

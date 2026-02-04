@@ -1,6 +1,8 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+
+# Chromium packaging differs on macOS - use Homebrew cask instead
 {
-  programs.chromium = {
+  programs.chromium = lib.mkIf (!pkgs.stdenv.isDarwin) {
     enable = true;
     package = pkgs.chromium;
     extensions = [

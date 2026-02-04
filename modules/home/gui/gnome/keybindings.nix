@@ -1,6 +1,6 @@
-{lib, ...}:
+{ pkgs, lib, ... }:
 
-{
+lib.mkIf pkgs.stdenv.isLinux {
   dconf.settings."org/gnome/desktop/wm/keybindings" = {
     close = ["<Control>q"];
   };

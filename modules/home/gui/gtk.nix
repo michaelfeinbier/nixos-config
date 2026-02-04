@@ -3,7 +3,7 @@
 , config
 , ...
 }:
-{
+lib.mkIf pkgs.stdenv.isLinux {
   # Consistent cursor theme across all applications.
 
   # Also set by stylix - this has no effect!
