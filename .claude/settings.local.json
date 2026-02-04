@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(nix flake check:*)",
+      "Bash(readlink:*)",
+      "Bash(xargs nix-store:*)",
+      "Bash(xargs:*)",
+      "Bash(nix show-config:*)"
+    ]
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "nixos"
+  ]
+}

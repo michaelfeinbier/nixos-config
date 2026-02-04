@@ -11,7 +11,12 @@ in
   # These users can add Nix caches.
   nix.settings.trusted-users = [ "root" me.username ];
 
+   nixpkgs = {
+    config.allowUnfree = true;
+   };
+
   imports = [
+    ./nix.nix
     ./packages.nix
 
     # these go from toplevel

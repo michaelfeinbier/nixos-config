@@ -43,17 +43,6 @@ in
   # Enable the X11 windowing system.
   # services.xserver.enable = true;
 
-nix.settings.experimental-features = [ "nix-command" "flakes" ];
-nixpkgs.config.allowUnfree = true;  
-  nix.settings.substituters = [ 
-    "https://attic.xuyh0120.win/lantian" 
-    "https://cache.garnix.io"
-  ];
-  nix.settings.trusted-public-keys = [ 
-    "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" 
-    "cache.garnix.io:CTFPyKSLcx5RMJKfLo5EEPUObbA78b0YQ2DTCJXqr9g="
-  ];
-
   # Configure keymap in X11
   # services.xserver.xkb.layout = "us";
   # services.xserver.xkb.options = "eurosign:e,caps:escape";
