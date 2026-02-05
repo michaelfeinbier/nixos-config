@@ -14,8 +14,9 @@ in
     self.nixosModules.default
     self.nixosModules.sound
     #self.nixosModules.xremap
-    self.nixosModules.gui
+    self.nixosModules.cosmic
     self.nixosModules.steam
+    self.nixosModules.terminal
     self.nixosModules._1password
     inputs.hardware.nixosModules.common-cpu-intel
     #inputs.hardware.nixosModules.common-gpu-nvidia
@@ -27,6 +28,7 @@ in
   home-manager.users."${me.username}" = {
     imports = [ (self + /configurations/home/${me.username}.nix) ];
   };
+  home-manager.backupFileExtension = "bckp";
 
   hardware.graphics = {
     enable = true;
@@ -35,7 +37,7 @@ in
 
   services.xserver = {
     #enable = true;
-    videoDrivers = [ "nvidia" ];
+    #videoDrivers = [ "nvidia" ];
   };
 
   hardware.nvidia = {

@@ -7,8 +7,12 @@ in
 {
   imports = [
     self.homeModules.default
+    inputs.zen-browser.homeModules.twilight
   ];
-  
+
+  # Note: nixpkgs.config.allowUnfree should be set at the system level
+  # when using home-manager.useGlobalPkgs = true
+
   home.username = me.username;
   home.homeDirectory = lib.mkDefault "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${me.username}";
   home.stateVersion = "24.11";

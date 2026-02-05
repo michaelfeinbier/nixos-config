@@ -13,6 +13,9 @@ in
       ./hardware-configuration.nix
     ];
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
   boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
 

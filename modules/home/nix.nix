@@ -9,5 +9,6 @@
     config.nix.package
   ];
 
-  nixpkgs.config.allowUnfree = true;
+  # Note: nixpkgs.config.allowUnfree should be set at the system level
+  # when using home-manager.useGlobalPkgs = true
 }
