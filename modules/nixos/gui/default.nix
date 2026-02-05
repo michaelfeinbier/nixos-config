@@ -1,8 +1,7 @@
 {
   imports = [
-    ./gnome.nix
+    #./gnome.nix  # Kept but not imported
     #./hyprland.nix
-    ./fonts.nix
     #./stylix.nix
   ];
   #services.xserver.enable = true;

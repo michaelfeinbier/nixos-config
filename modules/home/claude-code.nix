@@ -2,6 +2,6 @@
 {
   home.packages = (with pkgs; [
     claude-code
-    mcp-nixos
+    uv # package manager for nixos-mcp
   ]);
 }

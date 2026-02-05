@@ -18,6 +18,7 @@
     nixvim.url = "github:nix-community/nixvim";
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
+    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
 
     hardware.url = "github:nixos/nixos-hardware";
     #stylix.url = "github:danth/stylix/release-24.11";

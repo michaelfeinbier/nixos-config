@@ -14,6 +14,7 @@ in
     gnumake
     dua
     vim
+    git
     gparted
 
     dnsutils # `dig`

@@ -18,6 +18,7 @@ in
   imports = [
     ./nix.nix
     ./packages.nix
+    ./fonts.nix
 
     # these go from toplevel
     # ./sound.nix

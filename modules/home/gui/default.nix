@@ -1,11 +1,12 @@
 { lib, ... }:
 
-# Linux-only GUI modules (Hyprland, GNOME, GTK)
+# Linux-only GUI modules (Hyprland, GNOME, COSMIC, GTK)
 # These modules internally use mkIf to guard Linux-specific settings
 {
   imports = [
     #./hyprland
-    ./gnome
-    ./gtk.nix
+    ./cosmic
+    #./gnome  # Kept but not imported
+    #./gtk.nix
   ];
 }
