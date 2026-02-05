@@ -125,6 +125,28 @@
         "type": "github"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1770177820,
+        "narHash": "sha256-0iGDl/ct3rW+h6+sLq4RZaze/U/aQo2L5sLLuyjuVTk=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "c7794d3f46304de5234008c31b5b28a9d5709184",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
     "flake-compat": {
       "flake": false,
       "locked": {
@@ -499,6 +521,7 @@
         "aesthetic-wallpapers": "aesthetic-wallpapers",
         "ags": "ags",
         "astal": "astal_2",
+        "firefox-addons": "firefox-addons",
         "flake-parts": "flake-parts",
         "hardware": "hardware",
         "home-manager": "home-manager",
@@ -508,7 +531,8 @@
         "nixos-cosmic": "nixos-cosmic",
         "nixos-unified": "nixos-unified",
         "nixpkgs": "nixpkgs_6",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "zen-browser": "zen-browser"
       }
     },
     "rust-overlay": {
@@ -559,6 +583,29 @@
       "original": {
         "owner": "nix-systems",
         "repo": "default",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1770266898,
+        "narHash": "sha256-RGFUUbo2AABP17BlCH240tyDFVGcMhz8R+HwmYsv7pc=",
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
+        "rev": "8098fd20ce52c78d0a6227ab675f29f1195642d3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "0xc000022070",
+        "repo": "zen-browser-flake",
         "type": "github"
       }
     }
