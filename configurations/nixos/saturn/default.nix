@@ -15,7 +15,7 @@ in
     self.nixosModules.sound
     #self.nixosModules.xremap
     self.nixosModules.gui
-    self.nixosModules.steam
+    self.nixosModules.gaming
     self.nixosModules._1password
     inputs.hardware.nixosModules.common-cpu-intel
     #inputs.hardware.nixosModules.common-gpu-nvidia

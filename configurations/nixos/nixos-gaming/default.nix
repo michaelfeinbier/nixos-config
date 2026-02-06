@@ -14,8 +14,8 @@ in
     self.nixosModules.default
     self.nixosModules.sound
     #self.nixosModules.xremap
-    self.nixosModules.cosmic
-    self.nixosModules.steam
+    self.nixosModules.plasma
+    self.nixosModules.gaming
     self.nixosModules.terminal
     self.nixosModules._1password
     inputs.hardware.nixosModules.common-cpu-intel
@@ -37,7 +37,7 @@ in
 
   services.xserver = {
     #enable = true;
-    #videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" ];
   };
 
   hardware.nvidia = {

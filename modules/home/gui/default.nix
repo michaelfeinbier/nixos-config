@@ -5,7 +5,7 @@
 {
   imports = [
     #./hyprland
-    ./cosmic
+    #./cosmic
     #./gnome  # Kept but not imported
     #./gtk.nix
   ];

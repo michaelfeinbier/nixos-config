@@ -8,6 +8,6 @@
   xdg.mimeApps = {
     enable = true;
 
-    defaultApplications."text/html" = "zen-twilight.desktop"
+    defaultApplications."text/html" = "zen-twilight.desktop";
   };
 }
