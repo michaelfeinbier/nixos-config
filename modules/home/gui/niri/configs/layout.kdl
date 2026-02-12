@@ -3,7 +3,7 @@
 // Find more information on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
-    background-color: "transparent"
+    background-color "transparent"
 
     // Set gaps around windows in logical pixels.
     gaps 6
