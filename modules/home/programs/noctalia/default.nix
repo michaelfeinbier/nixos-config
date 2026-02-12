@@ -53,14 +53,6 @@ in
         }
       ];
       states = {
-        screen-recorder = {
-          enabled = false;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-        };
-        privacy-indicator = {
-          enabled = false;
-          sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
-        };
         clipper = {
           enabled = true;
           sourceUrl = "https://github.com/noctalia-dev/noctalia-plugins";
@@ -124,18 +116,13 @@ in
         widgets = {
           center = [
             {
-              customFont = "";
+              customFont = "Jetbrains Mono";
               formatHorizontal = "HH:mm ddd, MMM dd";
               formatVertical = "HH mm - dd MM";
               id = "Clock";
               tooltipFormat = "HH:mm ddd, MMM dd";
-              useCustomFont = false;
-              usePrimaryColor = false;
-            }
-            {
-              hideWhenZero = false;
-              id = "NotificationHistory";
-              showUnreadBadge = true;
+              useCustomFont = true;
+              usePrimaryColor = true;
             }
           ];
           left = [
@@ -171,6 +158,7 @@ in
             {
               displayMode = "onhover";
               id = "Network";
+              hideIfNotDetected = true;
             }
             {
               displayMode = "onhover";
@@ -187,24 +175,15 @@ in
               warningThreshold = 30;
             }
             {
-              defaultSettings = {
-                audioCodec = "opus";
-                audioSource = "default_output";
-                colorRange = "limited";
-                copyToClipboard = false;
-                directory = "";
-                filenamePattern = "recording_yyyyMMdd_HHmmss";
-                frameRate = "60";
-                hideInactive = true;
-                quality = "very_high";
-                showCursor = true;
-                videoCodec = "h264";
-                videoSource = "portal";
-              };
-              id = "plugin:screen-recorder";
+              id = "plugin:tailscale";
             }
             {
-              id = "plugin:privacy-indicator";
+              id = "controlcenter";
+            }
+            {
+              hideWhenZero = false;
+              id = "NotificationHistory";
+              showUnreadBadge = true;
             }
           ];
         };
@@ -329,13 +308,13 @@ in
       };
       general = {
         allowPanelsOnScreenWithoutBar = true;
-        animationDisabled = true;
-        animationSpeed = 1;
+        animationDisabled = false;
+        animationSpeed = 1.6;
         # avatarImage = "";  # TODO: Configure avatar path
         boxRadiusRatio = 1;
         compactLockScreen = true;
         dimmerOpacity = 0.2;
-        enableShadows = false;
+        enableShadows = true;
         forceBlackScreenCorners = false;
         iRadiusRatio = 1;
         language = "";
