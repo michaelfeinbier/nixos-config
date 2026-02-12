@@ -501,7 +501,7 @@ in
         foot = false;
         wezterm = false;
         fuzzel = false;
-        discord = false;
+        discord = true;
         pywalfox = false;
         vicinae = false;
         walker = false;
@@ -535,7 +535,7 @@ in
         wifiDetailsViewMode = "grid";
       };
       wallpaper = {
-        directory = "";
+        directory = "${flake.inputs.aesthetic-wallpapers}/images";
         enableMultiMonitorDirectories = false;
         enabled = true;
         fillColor = "#000000";

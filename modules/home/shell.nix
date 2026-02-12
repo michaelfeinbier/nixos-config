@@ -26,7 +26,7 @@ in
       logoutExtra = ''
         # Custom ~/.zlogout goes here
       '';
-      initExtra = ''
+      initContent = ''
         fastfetch
       '';
       shellAliases = {

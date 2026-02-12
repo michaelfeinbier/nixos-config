@@ -2,7 +2,7 @@
 let
   inherit (flake) inputs;
   # Access the vscode extensions from the nix-vscode-extensions flake
-  vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
+  vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
 in
 
 {
