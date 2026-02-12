@@ -8,6 +8,7 @@ in
   imports = [
     self.homeModules.default
     inputs.zen-browser.homeModules.twilight
+    inputs.catppuccin.homeModules.catppuccin
   ];
 
   # Note: nixpkgs.config.allowUnfree should be set at the system level
@@ -16,4 +17,8 @@ in
   home.username = me.username;
   home.homeDirectory = lib.mkDefault "/${if pkgs.stdenv.isDarwin then "Users" else "home"}/${me.username}";
   home.stateVersion = "24.11";
+
+  # Catppuccin theming
+  catppuccin.flavor = lib.mkDefault "mocha";
+  catppuccin.accent = lib.mkDefault "teal";
 }

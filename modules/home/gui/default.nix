@@ -8,5 +8,6 @@
     #./cosmic
     #./gnome  # Kept but not imported
     #./gtk.nix
+    ./niri
   ];
 }
