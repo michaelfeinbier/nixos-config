@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{ pkgs, lib, flake, ... }:
+let
+  inherit (flake) inputs;
+  # Access the vscode extensions from the nix-vscode-extensions flake
+  vscode-extensions = inputs.nix-vscode-extensions.extensions.${pkgs.system};
+in
 
 {
   programs.vscode = {
@@ -27,12 +32,11 @@
         "window.titleBarStyle" = "custom";
       };
 
-      # @FIXME - does not work with home-manager only
-      extensions = with pkgs.vscode-extensions; [
+      # Extensions from nix-vscode-extensions flake
+      extensions = (with vscode-extensions.vscode-marketplace; [
          bierner.markdown-mermaid
          jnoortheen.nix-ide
       #   bluebrown.yamlfmt
-         bmewburn.vscode-intelephense-client
       #   github.copilot
       #   github.copilot-chat
       #   golang.go
@@ -42,6 +46,17 @@
       #   ms-azuretools.vscode-docker
          catppuccin.catppuccin-vsc
          tamasfe.even-better-toml
+      ]) ++ (with pkgs.vscode-extensions; [
+         # Unfree extensions that need pkgs.vscode-extensions
+         bmewburn.vscode-intelephense-client
+      ]) ++ pkgs.vscode-utils.extensionsFromVscodeMarketplace [
+         # Manually fetched extensions
+         {
+           name = "kdl";
+           publisher = "kdl-org";
+           version = "2.1.3";
+           sha256 = "sha256-Jssmb5owrgNWlmLFSKCgqMJKp3sPpOrlEUBwzZSSpbM=";
+         }
       ];
     };
   };

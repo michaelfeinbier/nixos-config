@@ -5,7 +5,8 @@
       "Bash(readlink:*)",
       "Bash(xargs nix-store:*)",
       "Bash(xargs:*)",
-      "Bash(nix show-config:*)"
+      "Bash(nix show-config:*)",
+      "Bash(just run:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

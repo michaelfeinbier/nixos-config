@@ -309,7 +309,7 @@ in
         colorizeIcons = false;
         deadOpacity = 0.6;
         displayMode = "auto_hide";
-        enabled = false;
+        enabled = true;
         floatingRatio = 1;
         inactiveIndicators = false;
         monitors = [ ];
@@ -515,7 +515,7 @@ in
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
         boxBorderEnabled = false;
-        fontDefault = "Roboto";
+        fontDefault = "Clear Sans Medium";
         fontDefaultScale = 1;
         fontFixed = "JetBrainsMono Nerd Font Mono";
         fontFixedScale = 1;

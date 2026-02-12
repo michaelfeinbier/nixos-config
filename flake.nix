@@ -37,6 +37,10 @@
     nixvim.inputs.nixpkgs.follows = "nixpkgs";
     nixvim.inputs.flake-parts.follows = "flake-parts";
     nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
       inputs = {

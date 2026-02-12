@@ -20,5 +20,5 @@ in
 
   # Catppuccin theming
   catppuccin.flavor = lib.mkDefault "mocha";
-  catppuccin.accent = lib.mkDefault "blue";
+  catppuccin.accent = lib.mkDefault "teal";
 }

@@ -1,0 +1,100 @@
+
+// Window rules let you adjust behavior for individual windows.
+// Find more information on the wiki:
+// https://niri-wm.github.io/niri/Configuration:-Window-Rules
+
+
+// Workspaces
+workspace "main"
+workspace "terminal"
+workspace "steam"
+workspace "games"
+
+// Layer rules
+layer-rule {
+    match namespace="^noctalia-overview.*"
+    place-within-backdrop true
+}
+
+// Window rules (global)
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+// Workspace assignments
+window-rule {
+    match app-id=r#"^zen-twilight$"#
+    default-column-width { proportion 1.0; }
+    open-on-workspace "main"
+}
+
+window-rule {
+    match app-id=r#"^Alacritty$"#
+    default-column-width { proportion 1.0; }
+    open-on-workspace "terminal"
+}
+
+window-rule {
+    match app-id=r#"^steam$"#
+    default-column-width { proportion 1.0; }
+    open-on-workspace "steam"
+}
+
+window-rule {
+    match app-id=r#"^steam_app_\d+$"#
+    open-on-workspace "games"
+}
+
+// Games
+window-rule {
+    match app-id=r#"^steam_app_\d+$"#
+    exclude title="^$" 
+    open-fullscreen true
+    variable-refresh-rate true
+}
+
+// Floating dialogs
+window-rule {
+    match app-id=r#"^org\.pulseaudio\.pavucontrol$"#
+    open-floating true
+}
+
+window-rule {
+    match title=r#"^_crx_.*$"#
+    open-floating true
+    block-out-from "screencast"
+}
+
+window-rule {
+    match app-id=r#"^(gnome-calculator|org\.gnome\.Calculator)$"#
+    open-floating true
+}
+// Launchers
+window-rule {
+    match title="^Albert$"
+    focus-ring {
+      off
+    }
+    border {
+      off
+    }
+    shadow {
+      off
+    }
+    open-floating true
+    default-floating-position x=0 y=300 relative-to="top"
+}
+
+// Screen sharing
+window-rule {
+    match title=r#"^.*is sharing (your screen|a window)\.$"#
+    focus-ring {
+      off
+    }
+    border {
+      off
+    }
+    open-floating true
+    default-floating-position x=0 y=0 relative-to="bottom"
+}
