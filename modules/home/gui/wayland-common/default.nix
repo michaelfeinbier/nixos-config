@@ -13,7 +13,7 @@ in
   imports = [
     (self + /modules/home/gui/gtk.nix)
     (self + /modules/home/gui/qt.nix)
-    #"${nhModules}/misc/xdg"
+    (self + /modules/home/gui/xdg.nix)
     (self + /modules/home/programs/noctalia)
     # "${nhModules}/programs/swappy"
     # "${nhModules}/services/hypridle"

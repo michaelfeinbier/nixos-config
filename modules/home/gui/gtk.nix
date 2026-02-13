@@ -38,7 +38,7 @@ lib.mkIf pkgs.stdenv.isLinux {
       size = 24;
     };
     font = {
-      name = "Roboto";
+      name = "Open Sans";
       size = 11;
     };
     # gtk3 = {
