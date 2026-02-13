@@ -45,8 +45,16 @@ window-rule {
 
 window-rule {
     match app-id=r#"^steam$"#
-    default-column-width { proportion 1.0; }
+    default-column-width { proportion 0.66; }
     open-on-workspace "steam"
+}
+
+// Steam Friends
+window-rule {
+    match app-id=r#"^steam$"# title="Friends List"
+    default-column-width { proportion 0.33; }
+    open-on-workspace "steam"
+    open-floating true
 }
 
 window-rule {
@@ -54,13 +62,14 @@ window-rule {
     open-on-workspace "games"
 }
 
-// Games
+// Games - Steam
 window-rule {
     match app-id=r#"^steam_app_\d+$"#
     exclude title="^$" 
     open-fullscreen true
     variable-refresh-rate true
 }
+
 
 // Floating dialogs
 window-rule {
