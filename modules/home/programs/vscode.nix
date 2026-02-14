@@ -12,7 +12,7 @@ in
 
     profiles.default = {
       userSettings = {
-        "workbench.colorTheme" = "Catppuccin Frappe";
+        "workbench.colorTheme" = "Catppuccin Frappé";
 
         "editor.fontSize" = 13;
         "editor.fontFamily" = "'JetbrainsMono Nerd Font', 'Droid Sans Mono', monospace";
