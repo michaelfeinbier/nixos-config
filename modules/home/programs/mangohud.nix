@@ -8,4 +8,6 @@ lib.mkIf pkgs.stdenv.isLinux {
       vram = true;
     };
   };
+
+  catppuccin.mangohud.enable = true;
 }
