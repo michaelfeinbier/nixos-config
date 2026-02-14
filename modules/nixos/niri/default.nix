@@ -14,5 +14,6 @@ in
   # Enable Xwayland
   environment.systemPackages = with pkgs; [
     xwayland-satellite
+    wl-clipboard
   ];
 }

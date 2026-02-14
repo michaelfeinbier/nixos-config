@@ -14,6 +14,7 @@ in
     (self + /modules/home/gui/gtk.nix)
     (self + /modules/home/gui/qt.nix)
     (self + /modules/home/gui/xdg.nix)
+    (self + /modules/home/gui/cliphist.nix)
     (self + /modules/home/programs/noctalia)
     # "${nhModules}/programs/swappy"
     # "${nhModules}/services/hypridle"

@@ -65,10 +65,6 @@ in
       version = 1;
     };
     pluginSettings = {
-      privacy-indicator = {
-        hideInactive = true;
-        removeMargins = true;
-      };
     };
     systemd.enable = true;
     settings = {
@@ -116,29 +112,29 @@ in
         widgets = {
           center = [
             {
-              customFont = "Jetbrains Mono";
-              formatHorizontal = "HH:mm ddd, MMM dd";
-              formatVertical = "HH mm - dd MM";
-              id = "Clock";
-              tooltipFormat = "HH:mm ddd, MMM dd";
-              useCustomFont = true;
-              usePrimaryColor = true;
-            }
-          ];
-          left = [
-            {
               characterCount = 2;
               colorizeIcons = false;
               enableScrollWheel = true;
               followFocusedScreen = false;
               groupedBorderOpacity = 1;
               hideUnoccupied = true;
-              iconScale = 0.8;
+              iconScale = 0.4;
               id = "Workspace";
-              labelMode = "index";
+              labelMode = "none";
               showApplications = false;
               showLabelsOnlyWhenOccupied = true;
               unfocusedIconsOpacity = 1;
+            }
+          ];
+          left = [
+            {
+              id = "ControlCenter";
+            }
+            {
+              id = "SystemMonitor";
+            }
+            {
+              id = "ActiveWindow";
             }
           ];
           right = [
@@ -184,6 +180,15 @@ in
               hideWhenZero = false;
               id = "NotificationHistory";
               showUnreadBadge = true;
+            }
+            {
+              customFont = "Jetbrains Mono";
+              formatHorizontal = "ddd MMM dd HH:mm";
+              formatVertical = "HH mm - dd MM";
+              id = "Clock";
+              tooltipFormat = "ddd MMM dd HH:mm";
+              useCustomFont = false;
+              usePrimaryColor = false;
             }
           ];
         };
@@ -360,7 +365,8 @@ in
         bluetoothRssiPollIntervalMs = 10000;
         bluetoothRssiPollingEnabled = false;
         wifiDetailsViewMode = "grid";
-        wifiEnabled = true;
+        wifiEnabled = false;
+        airplaneModeEnabled = false;
       };
       nightLight = {
         autoSchedule = true;
