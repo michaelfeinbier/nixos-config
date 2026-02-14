@@ -19,6 +19,6 @@ in
   home.stateVersion = "24.11";
 
   # Catppuccin theming
-  catppuccin.flavor = lib.mkDefault "mocha";
-  catppuccin.accent = lib.mkDefault "teal";
+  catppuccin.flavor = lib.mkDefault "frappe";
+  catppuccin.accent = lib.mkDefault "blue";
 }
