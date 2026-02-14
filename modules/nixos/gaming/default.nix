@@ -4,5 +4,6 @@
     ./steam.nix
     ./launcher.nix
     ./vmware.nix
+    ./razer.nix
   ];
 }
