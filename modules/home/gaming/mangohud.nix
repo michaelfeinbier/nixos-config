@@ -6,9 +6,8 @@ lib.mkIf pkgs.stdenv.isLinux {
     enable = true;
     settings = {
       vram = true;
-      frametime = false;
-      frame_timing = false;
-      gamemode = true;
+      frametime = 0;
+      frame_timing = 0;
     };
   };
 

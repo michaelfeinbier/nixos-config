@@ -6,15 +6,6 @@
 lib.mkIf pkgs.stdenv.isLinux {
   # Consistent cursor theme across all applications.
 
-  # Also set by stylix - this has no effect!
-  # home.pointerCursor = lib.mkDefault {
-  #   gtk.enable = true;
-  #   #x11.enable = true;
-  #   package = pkgs.bibata-cursors;
-  #   name = "Bibata-Original-Ice";
-  #   size = 24;
-  # };
-
   # GTK theme configuration
   gtk = {
     enable = true;
@@ -29,8 +20,8 @@ lib.mkIf pkgs.stdenv.isLinux {
       };
     };
     iconTheme = {
-      name = "Tela-circle-dark";
-      package = pkgs.tela-circle-icon-theme;
+      name = "WhiteSur";
+      package = pkgs.whitesur-icon-theme;
     };
     cursorTheme = {
       name = "Yaru";

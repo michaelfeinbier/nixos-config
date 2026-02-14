@@ -72,7 +72,6 @@ in
       "uwsm app -- hyprswitch init --show-title &"
       "uwsm app -- 1password --silent --ozone-platform-hint=x11"
       "uwsm app -- wlsunset -l 51.23 -L 6.78"
-      "wl-paste --watch cliphist store"
     ];
 
     general = {
