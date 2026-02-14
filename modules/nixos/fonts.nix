@@ -7,7 +7,7 @@ let
       owner = "0xsharkboy";
       repo = "Apple-Fonts-Collection";
       rev = "a792c102edc93ca575d2c73bc8b727b2e0928b31";
-      hash = "sha256-8EZ7fYy6CONkyj3dHOsaVSF0oMRH+SRZclwdrMSA0h8=";
+      hash = "sha256-8EZ7fYy6CONgyj3dHOsaVSF0oMRH+SRZclwdrMSA0h8=";
     };
     installPhase = ''
       runHook preInstall
