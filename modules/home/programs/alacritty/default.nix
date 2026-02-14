@@ -24,6 +24,7 @@
       window = {
         decorations = if pkgs.stdenv.hostPlatform.isDarwin then "buttonless" else "full";
         dynamic_title = false;
+        opacity = 0.8;
         dynamic_padding = true;
         dimensions = {
           columns = 170;

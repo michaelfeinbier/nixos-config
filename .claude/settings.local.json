@@ -6,7 +6,8 @@
       "Bash(xargs nix-store:*)",
       "Bash(xargs:*)",
       "Bash(nix show-config:*)",
-      "Bash(just run:*)"
+      "Bash(just run:*)",
+      "Bash(nix-build:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
