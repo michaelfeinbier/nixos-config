@@ -1,6 +1,6 @@
 {flakes, ...}:
 let
-  inherit (flake.config) me;
+  inherit (flakes.config) me;
 in
 {
   hardware.openrazer = {
