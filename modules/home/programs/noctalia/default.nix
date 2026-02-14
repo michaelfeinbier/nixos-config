@@ -128,13 +128,14 @@ in
           ];
           left = [
             {
-              id = "ControlCenter";
+              id = "SessionMenu";
+              iconColor = "primary";
+            }
+            {
+              id = "Spacer";
             }
             {
               id = "SystemMonitor";
-            }
-            {
-              id = "ActiveWindow";
             }
           ];
           right = [
@@ -162,10 +163,10 @@ in
               middleClickCommand = "";
             }
             {
+              id = "Battery";
               deviceNativePath = "";
               displayMode = "onhover";
               hideIfNotDetected = true;
-              id = "Battery";
               showNoctaliaPerformance = false;
               showPowerProfiles = false;
               warningThreshold = 30;
@@ -174,18 +175,15 @@ in
               id = "plugin:tailscale";
             }
             {
-              id = "controlcenter";
-            }
-            {
-              hideWhenZero = false;
               id = "NotificationHistory";
+              hideWhenZero = false;
               showUnreadBadge = true;
             }
             {
+              id = "Clock";
               customFont = "Jetbrains Mono";
               formatHorizontal = "ddd MMM dd HH:mm";
               formatVertical = "HH mm - dd MM";
-              id = "Clock";
               tooltipFormat = "ddd MMM dd HH:mm";
               useCustomFont = false;
               usePrimaryColor = false;
