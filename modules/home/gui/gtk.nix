@@ -29,7 +29,7 @@ lib.mkIf pkgs.stdenv.isLinux {
       size = 24;
     };
     font = {
-      name = "Open Sans";
+      name = "SF Pro Display";
       size = 11;
     };
     # gtk3 = {

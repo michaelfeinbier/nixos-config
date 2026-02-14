@@ -506,9 +506,11 @@ in
         bluetoothDetailsViewMode = "grid";
         bluetoothHideUnnamedDevices = false;
         boxBorderEnabled = false;
-        fontDefault = "Clear Sans Medium";
+        # fontDefault = "Clear Sans Medium"; use default from system
+        fontDefault = "";
         fontDefaultScale = 1;
-        fontFixed = "JetBrainsMono Nerd Font Mono";
+        # fontFixed = "JetBrainsMono Nerd Font Mono";
+        fontFixed = "";
         fontFixedScale = 1;
         networkPanelView = "wifi";
         panelBackgroundOpacity = 0.93;

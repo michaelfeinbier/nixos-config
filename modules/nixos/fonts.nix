@@ -28,7 +28,6 @@ in
     roboto
     dejavu_fonts
     texlivePackages.clearsans
-    meslo-lg
     apple-fonts
   ];
 }
