@@ -13,7 +13,7 @@ in
     #flake.inputs.stylix.nixosModules.stylix
     self.nixosModules.default
     self.nixosModules.sound
-    #self.nixosModules.xremap
+    self.nixosModules.xremap
     self.nixosModules.niri
     self.nixosModules.gaming
     self.nixosModules.terminal

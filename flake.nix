@@ -68,10 +68,11 @@
     # non flakes
     aesthetic-wallpapers.url = "github:D3Ext/aesthetic-wallpapers";
     aesthetic-wallpapers.flake = false;
-    #xremap.url = "github:xremap/nix-flake";
-    #xremap.inputs.nixpkgs.follows = "nixpkgs";
-    #xremap-wayland.url = "github:petrstepanov/gnome-macos-remap-wayland";
-    #xremap-wayland.flake = false;
+
+    xremap = {
+      url = "github:xremap/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   # Wired using https://nixos-unified.org/autowiring.html
