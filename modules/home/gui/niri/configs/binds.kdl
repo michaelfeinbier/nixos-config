@@ -22,10 +22,10 @@ binds {
 
     // Application launcher
     Mod+A hotkey-overlay-title="Open Albert Apps" { spawn "albert" "show" "apps "; }
-    Ctrl+Space hotkey-overlay-title="Toggle Albert" { spawn "albert" "toggle"; }
+    Super+Space hotkey-overlay-title="Toggle Albert" { spawn "albert" "toggle"; }
 
     // Clipboard history
-    Mod+Alt+c hotkey-overlay-title="Clipboard History" { spawn-sh "noctalia-shell ipc call plugin:clipper toggle"; }
+    Mod+Super+c hotkey-overlay-title="Clipboard History" { spawn-sh "noctalia-shell ipc call plugin:clipper toggle"; }
 
 
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
@@ -58,9 +58,9 @@ binds {
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
     // or do a four-finger swipe up on a touchpad.
-    Mod+O repeat=false { toggle-overview; }
+    Super+O repeat=false { toggle-overview; }
 
-    Mod+Q repeat=false { close-window; }
+    Super+Q repeat=false { close-window; }
 
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }

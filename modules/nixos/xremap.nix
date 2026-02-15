@@ -53,6 +53,7 @@ in
             application = {
               not = [
                 "com.mitchellh.ghostty"
+                "alacritty"
               ];
             };
             exact_match = false;
@@ -96,6 +97,7 @@ in
             application = {
               only = [
                 "com.mitchellh.ghostty"
+                "alacritty"
               ];
             };
             exact_match = false;

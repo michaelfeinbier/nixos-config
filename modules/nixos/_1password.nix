@@ -17,6 +17,7 @@ in
     "1password/custom_allowed_browsers" = {
       text = ''
         zen
+        zen-twilight
       '';
       mode = "0755";
     };
