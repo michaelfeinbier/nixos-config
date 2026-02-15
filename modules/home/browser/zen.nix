@@ -17,12 +17,6 @@ in
   programs.zen-browser = {
     enable = true;
 
-    # Extensions
-    profiles."*".extensions.packages = [
-      firefox-addons.ublock-origin
-      onepassword-unfree
-    ];
-
     policies = {
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;
@@ -40,6 +34,98 @@ in
         Cryptomining = true;
         Fingerprinting = true;
       };
+    };
+
+    # Spaces and container definitons
+    profiles."default" = let
+      # extensions 
+      extensions.packages = [
+        firefox-addons.ublock-origin
+        onepassword-unfree
+      ];
+
+
+      # Zen containers - hold the pins and profile settings
+      containers = {
+        Personal = {
+          color = "blue";
+          icon = "fingerprint";
+          id = 1;
+        };
+        Billie = {
+          color = "toolbar";
+          icon = "briefcase";
+          id = 2;
+        };
+      };
+
+      spaces = {
+        "NixOS" = {
+          id = "d5894f5e-9a6a-4519-b0dc-799d3ab21f3b";
+          position = 1000;
+          icon = "❄️";
+          theme = {
+            type = "gradient";
+            colors = [
+              {
+                red = 150;
+                green = 190;
+                blue = 230;
+                algorithm = "floating";
+                type = "explicit-lightness";
+              }
+            ];
+            opacity = 0.2;
+            texture = 0.5;
+          };
+        };
+      };
+
+      pins = {
+        "mail" = {
+          id = "9d8a8f91-7e29-4688-ae2e-da4e49d4a179";
+          container = containers.Personal.id;
+          url = "https://gmail.com";
+          isEssential = true;
+          position = 101;
+        };
+        "Nix awesome" = {
+          id = "d85a9026-1458-4db6-b115-346746bcc692";
+          workspace = spaces.NixOS.id;
+          isGroup = true;
+          isFolderCollapsed = false;
+          editedTitle = true;
+          position = 200;
+        };
+        "Nix Packages" = {
+          id = "f8dd784e-11d7-430a-8f57-7b05ecdb4c77";
+          workspace = spaces.NixOS.id;
+          folderParentId = pins."Nix awesome".id;
+          url = "https://search.nixos.org/packages";
+          position = 201;
+        };
+        "Nix Options" = {
+          id = "92931d60-fd40-4707-9512-a57b1a6a3919";
+          workspace = spaces.NixOS.id;
+          folderParentId = pins."Nix awesome".id;
+          url = "https://search.nixos.org/options";
+          position = 202;
+        };
+        "Home Manager Options" = {
+          id = "2eed5614-3896-41a1-9d0a-a3283985359b";
+          workspace = spaces.NixOS.id;
+          folderParentId = pins."Nix awesome".id;
+          url = "https://home-manager-options.extranix.com";
+          position = 203;
+        };
+      };
+
+     in {
+      containersForce = true;
+      spacesForce = true;
+      pinsForce = true;
+
+      inherit containers pins spaces extensions;
     };
   };
 }
