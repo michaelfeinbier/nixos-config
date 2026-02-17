@@ -25,6 +25,9 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # It's enable by default still explicitly setting it here
+  services.fstrim.enable = true;
+
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/2b0aa395-e023-4896-8641-e8c937066b99";
     fsType = "ext4";

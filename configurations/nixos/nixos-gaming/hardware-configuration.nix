@@ -13,6 +13,9 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  # It's enable by default still explicitly setting it here
+  services.fstrim.enable = true;
+  
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/c2cbdab7-f309-42dc-9aae-45fccff9594e";
       fsType = "btrfs";
