@@ -20,7 +20,7 @@ in
     policies = {
       AutofillAddressEnabled = true;
       AutofillCreditCardEnabled = false;
-      DisableAppUpdate = true;
+      DisableAppUpdate = false;
       DisableFeedbackCommands = true;
       DisableFirefoxStudies = true;
       DisablePocket = true;

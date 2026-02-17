@@ -50,6 +50,8 @@
       };
     };
 
+    nix-proton-cachyos.url = "github:kimjongbing/nix-proton-cachyos";
+
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";

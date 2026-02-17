@@ -19,7 +19,7 @@ layer-rule {
 // Window rules (global)
 window-rule {
   // Rounded corners for a modern look.
-  geometry-corner-radius 20
+  geometry-corner-radius 12
 
   // Clips window contents to the rounded corner boundaries.
   clip-to-geometry true
@@ -32,7 +32,7 @@ debug {
 
 // Workspace assignments
 window-rule {
-    match app-id=r#"^zen-twilight$"#
+    match app-id=r#"^zen$"#
     default-column-width { proportion 1.0; }
     open-on-workspace "main"
 }

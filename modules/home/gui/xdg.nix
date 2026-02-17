@@ -31,7 +31,7 @@ in
       enable = true;
       defaultApplicationPackages = [
         pkgs.vscodium
-        inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".twilight
+        inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".beta
       ];
     };
 
