@@ -79,6 +79,12 @@ in
             texture = 0.5;
           };
         };
+        "Gaming" = {
+          id = "13474083-fa68-417c-a8c9-49e4aad56968";
+          position = 2000;
+          icon = "chrome://browser/skin/zen-icons/selectable/baseball.svg";
+          container = containers."Personal".id;
+        };
       };
 
       pins = {
@@ -91,7 +97,7 @@ in
         };
         "Nix awesome" = {
           id = "d85a9026-1458-4db6-b115-346746bcc692";
-          workspace = spaces.NixOS.id;
+          workspace = spaces."NixOS".id;
           isGroup = true;
           isFolderCollapsed = false;
           editedTitle = true;
@@ -99,21 +105,21 @@ in
         };
         "Nix Packages" = {
           id = "f8dd784e-11d7-430a-8f57-7b05ecdb4c77";
-          workspace = spaces.NixOS.id;
+          workspace = spaces."NixOS".id;
           folderParentId = pins."Nix awesome".id;
           url = "https://search.nixos.org/packages";
           position = 201;
         };
         "Nix Options" = {
           id = "92931d60-fd40-4707-9512-a57b1a6a3919";
-          workspace = spaces.NixOS.id;
+          workspace = spaces."NixOS".id;
           folderParentId = pins."Nix awesome".id;
           url = "https://search.nixos.org/options";
           position = 202;
         };
         "Home Manager Options" = {
           id = "2eed5614-3896-41a1-9d0a-a3283985359b";
-          workspace = spaces.NixOS.id;
+          workspace = spaces."NixOS".id;
           folderParentId = pins."Nix awesome".id;
           url = "https://home-manager-options.extranix.com";
           position = 203;
