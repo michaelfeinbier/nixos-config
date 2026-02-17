@@ -26,15 +26,7 @@ in
         noDisplay = true;
       };
     };
-
-    mimeApps = {
-      enable = true;
-      defaultApplicationPackages = [
-        pkgs.vscodium
-        inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".beta
-      ];
-    };
-
+    
     userDirs = {
       enable = true;
       createDirectories = true;

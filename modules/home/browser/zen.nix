@@ -37,7 +37,7 @@ in
     };
 
     # Spaces and container definitons
-    profiles."default" = let
+    profiles."*" = let
       # extensions 
       extensions.packages = [
         firefox-addons.ublock-origin
