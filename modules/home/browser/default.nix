@@ -1,7 +1,7 @@
 {
   imports = [
     ./chromium.nix
-    ./zen.nix
+    #./zen.nix
   ];
 
   # Make zen the default browser
