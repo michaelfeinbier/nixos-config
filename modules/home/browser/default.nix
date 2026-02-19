@@ -12,7 +12,7 @@ in
   
   xdg.mimeApps = let
     value = let
-      zen-browser = inputs.zen-browser.packages.${system}.beta; # or twilight
+      zen-browser = inputs.zen-browser.packages.${system}.twilight; # or beta
     in
       zen-browser.meta.desktopFileName;
 

@@ -42,7 +42,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     zen-browser = {
-      url = "github:0xc000022070/zen-browser-flake/beta";
+      url = "github:0xc000022070/zen-browser-flake";
       inputs = {
         # IMPORTANT: To ensure compatibility with the latest Firefox version, use nixpkgs-unstable.
         nixpkgs.follows = "nixpkgs";
@@ -52,10 +52,10 @@
 
     nix-proton-cachyos.url = "github:kimjongbing/nix-proton-cachyos";
 
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # firefox-addons = {
+    #   url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
 
     hardware.url = "github:nixos/nixos-hardware";
     #stylix.url = "github:danth/stylix/release-24.11";

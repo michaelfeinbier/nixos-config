@@ -7,7 +7,7 @@ in
 {
   imports = [
     self.homeModules.default
-    inputs.zen-browser.homeModules.beta
+    inputs.zen-browser.homeModules.twilight
     inputs.catppuccin.homeModules.catppuccin
   ];
 
