@@ -3,14 +3,14 @@ let
   inherit (flake) inputs;
   inherit (inputs) self;
 
-  # firefox-addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
+  firefox-addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
 
-  # # Override onepassword to bypass the unfree license check for nix flake check
-  # onepassword-unfree = firefox-addons.onepassword-password-manager.overrideAttrs (old: {
-  #   meta = old.meta or {} // {
-  #     license = lib.licenses.free;
-  #   };
-  # });
+  # Override onepassword to bypass the unfree license check for nix flake check
+  onepassword-unfree = firefox-addons.onepassword-password-manager.overrideAttrs (old: {
+    meta = old.meta or {} // {
+      license = lib.licenses.free;
+    };
+  });
 in
 {
 
@@ -41,8 +41,8 @@ in
     profiles."*" = let
       # extensions 
       extensions.packages = [
-        # firefox-addons.ublock-origin
-        # onepassword-unfree
+        firefox-addons.ublock-origin
+        onepassword-unfree
       ];
 
 
