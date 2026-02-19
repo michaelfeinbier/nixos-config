@@ -64,6 +64,7 @@ in
         "NixOS" = {
           id = "d5894f5e-9a6a-4519-b0dc-799d3ab21f3b";
           position = 1000;
+          container = containers."Personal".id;
           icon = "❄️";
           theme = {
             type = "gradient";
@@ -92,7 +93,7 @@ in
         "mail" = {
           id = "9d8a8f91-7e29-4688-ae2e-da4e49d4a179";
           container = containers.Personal.id;
-          url = "https://gmail.com";
+          url = "https://mail.google.com/mail/u/0/#inbox";
           isEssential = true;
           position = 101;
         };
