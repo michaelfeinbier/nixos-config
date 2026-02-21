@@ -12,7 +12,10 @@
       "WebSearch",
       "WebFetch(domain:api.github.com)",
       "WebFetch(domain:github.com)",
-      "WebFetch(domain:nixos-unified.org)"
+      "WebFetch(domain:nixos-unified.org)",
+      "mcp__nixos__nix",
+      "Bash(git -C*)",
+      "Bash(curl:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
