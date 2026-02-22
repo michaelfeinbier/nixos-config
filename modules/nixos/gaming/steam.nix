@@ -12,8 +12,7 @@ in
 
     extraCompatPackages = with pkgs; [
       proton-ge-bin
-      # Seems broken upstream?
-      # inputs.nix-proton-cachyos.packages.${system}.proton-cachyos
+      inputs.nix-proton-cachyos.packages.${system}.proton-cachyos
     ];
   };
 
