@@ -15,7 +15,10 @@
       "WebFetch(domain:nixos-unified.org)",
       "mcp__nixos__nix",
       "Bash(git -C*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(niri msg config:*)",
+      "Bash(niri msg:*)",
+      "Bash(niri validate:*)"
     ]
   },
   "enableAllProjectMcpServers": true,
