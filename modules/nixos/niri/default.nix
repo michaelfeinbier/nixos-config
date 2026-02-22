@@ -18,9 +18,4 @@ in
     xwayland-satellite
     wl-clipboard
   ];
-
-  # Provide niri home-manager settings to all users on this machine
-  home-manager.sharedModules = [
-    (self + /modules/home/gui/niri/settings.nix)
-  ];
 }

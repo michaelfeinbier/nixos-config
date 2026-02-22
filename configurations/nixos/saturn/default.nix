@@ -14,7 +14,7 @@ in
     self.nixosModules.default
     self.nixosModules.sound
     self.nixosModules.xremap
-    self.nixosModules.desktop
+    self.nixosModules.niri
     self.nixosModules.gaming
     self.nixosModules._1password
     inputs.hardware.nixosModules.common-cpu-intel
