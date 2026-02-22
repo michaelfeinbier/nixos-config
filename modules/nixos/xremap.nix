@@ -58,6 +58,7 @@ in
             };
             exact_match = false;
             remap = {
+              "Super-Alt-c" = "Super-Alt-c"; # passthrough for niri clipboard shortcut
               "Super-c" = "C-c";
               "Super-x" = "C-x";
               "Super-v" = "C-v";

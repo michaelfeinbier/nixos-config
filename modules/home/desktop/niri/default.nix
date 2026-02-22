@@ -144,14 +144,14 @@ in
       # Steam
       {
         matches = [{ app-id = "^steam$"; }];
-        default-column-width = { proportion = 0.66; };
+        default-column-width = { proportion = 0.75; };
         open-on-workspace = "steam";
       }
 
       # Steam Friends
       {
         matches = [{ app-id = "^steam$"; title = "Friends List"; }];
-        default-column-width = { proportion = 0.33; };
+        default-column-width = { proportion = 0.25; };
         open-on-workspace = "steam";
       }
 
@@ -258,8 +258,8 @@ in
       };
 
       # Clipboard history
-      "Mod+Shift+C" = {
-        action.spawn-sh = "noctalia-shell ipc call launcher clipboard";
+      "Mod+Super+C" = {
+        action.spawn-sh = "noctalia-shell ipc call plugin:clipper toggle";
         hotkey-overlay.title = "Clipboard History";
       };
 
