@@ -258,7 +258,7 @@ in
       };
 
       # Clipboard history
-      "Super+Shift+V" = {
+      "Mod+Shift+C" = {
         action.spawn-sh = "noctalia-shell ipc call launcher clipboard";
         hotkey-overlay.title = "Clipboard History";
       };
