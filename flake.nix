@@ -67,7 +67,7 @@
       };
     };
 
-    nix-proton-cachyos.url = "github:kimjongbing/nix-proton-cachyos";
+    nix-proton-cachyos.url = "github:Flerpharos/nix-proton-cachyos/update-mirror-location";
 
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";

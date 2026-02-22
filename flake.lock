@@ -430,15 +430,16 @@
         "nixpkgs": "nixpkgs_5"
       },
       "locked": {
-        "lastModified": 1738731353,
-        "narHash": "sha256-opfBquff3X73DhLC4io2FqzhSrlnDOBLWrnBpGqLAHU=",
-        "owner": "kimjongbing",
+        "lastModified": 1769330905,
+        "narHash": "sha256-5zDNUprPTsf3YLOajyWwGag7JVNTIJ2YeLZYY924u/g=",
+        "owner": "Flerpharos",
         "repo": "nix-proton-cachyos",
-        "rev": "bad753f8f8d19aecd753bef3f764562ad15d6a9b",
+        "rev": "8b8f93c800daba6f1bbddd47ee0b13faed6b594f",
         "type": "github"
       },
       "original": {
-        "owner": "kimjongbing",
+        "owner": "Flerpharos",
+        "ref": "update-mirror-location",
         "repo": "nix-proton-cachyos",
         "type": "github"
       }

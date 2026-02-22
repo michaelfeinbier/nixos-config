@@ -12,7 +12,8 @@ in
 
     extraCompatPackages = with pkgs; [
       proton-ge-bin
-      inputs.nix-proton-cachyos.packages.${system}.proton-cachyos
+      # Broken - maybe https://github.com/kimjongbing/nix-proton-cachyos/pull/12 will fix it
+      #inputs.nix-proton-cachyos.packages.${system}.proton-cachyos
     ];
   };
 
