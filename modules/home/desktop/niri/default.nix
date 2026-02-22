@@ -258,8 +258,8 @@ in
       };
 
       # Clipboard history
-      "Super+V" = {
-        action.spawn-sh = "noctalia-shell ipc call plugin:clipper toggle";
+      "Super+Shift+V" = {
+        action.spawn-sh = "noctalia-shell ipc call launcher clipboard";
         hotkey-overlay.title = "Clipboard History";
       };
 
