@@ -2,7 +2,7 @@
 
 {
   services.wlsunset = {
-    enable = true;
+    enable = false;
     gamma = 0.9;
 
     latitude =  51.23;
@@ -10,7 +10,7 @@
 
     temperature = {
       day = 5000;
-      night = 3000;
+      night = 3500;
     };
 
   };
