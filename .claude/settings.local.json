@@ -18,7 +18,9 @@
       "Bash(curl:*)",
       "Bash(niri msg config:*)",
       "Bash(niri msg:*)",
-      "Bash(niri validate:*)"
+      "Bash(niri validate:*)",
+      "Bash(nix eval:*)",
+      "Bash(find:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

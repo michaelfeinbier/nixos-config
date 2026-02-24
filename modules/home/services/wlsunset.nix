@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
+  # WL-Sunset is unused, using the location setting of noctalia shell instead
   services.wlsunset = {
     enable = false;
     gamma = 0.9;
@@ -12,6 +13,5 @@
       day = 5000;
       night = 3500;
     };
-
   };
 }
