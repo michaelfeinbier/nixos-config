@@ -348,14 +348,14 @@ in
         firstDayOfWeek = -1;
         hideWeatherCityName = false;
         hideWeatherTimezone = false;
-        name = "Warsaw";
+        name = "Dusseldorf";
         showCalendarEvents = false;
         showCalendarWeather = false;
         showWeekNumberInCalendar = true;
         use12hourFormat = false;
         useFahrenheit = false;
-        weatherEnabled = false;
-        weatherShowEffects = false;
+        weatherEnabled = true;
+        weatherShowEffects = true;
       };
       network = {
         bluetoothDetailsViewMode = "grid";
