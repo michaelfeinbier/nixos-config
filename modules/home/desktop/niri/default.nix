@@ -196,11 +196,15 @@ in
         open-on-workspace = "main";
       }
 
-      # Alacritty
+      # Alacritty & Ghostty
       {
-        matches = [{ app-id = "^Alacritty$"; }];
-        default-column-width = { proportion = 1.0; };
+        matches = [
+          { app-id = "^Alacritty$"; }
+          { app-id = "^com.mitchellh.ghostty$"; }
+        ];
+        default-column-width = { proportion = 0.5; };
         open-on-workspace = "terminal";
+        #open-maximized = true;
       }
 
       # Steam
@@ -293,7 +297,7 @@ in
 
       # Programs
       "Mod+T" = {
-        action.spawn = "alacritty";
+        action.spawn = "ghostty +new-window";
         hotkey-overlay.title = "Open Terminal";
       };
       "Mod+B" = {

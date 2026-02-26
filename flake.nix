@@ -74,6 +74,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    xremap = {
+      url = "github:xremap/nix-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri = {
+      url = "github:michaelfeinbier/niri-flake/feat/recent-windows";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hardware.url = "github:nixos/nixos-hardware";
     #stylix.url = "github:danth/stylix/release-24.11";
     #stylix.url = "github:danth/stylix";
@@ -88,14 +98,9 @@
     aesthetic-wallpapers.url = "github:D3Ext/aesthetic-wallpapers";
     aesthetic-wallpapers.flake = false;
 
-    xremap = {
-      url = "github:xremap/nix-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    niri = {
-      url = "github:michaelfeinbier/niri-flake/feat/recent-windows";
-      inputs.nixpkgs.follows = "nixpkgs";
+    ghostty-shaders = {
+      url = "github:0xhckr/ghostty-shaders";
+      flake = false;
     };
   };
 

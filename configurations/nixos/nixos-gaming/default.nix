@@ -16,7 +16,6 @@ in
     self.nixosModules.xremap
     self.nixosModules.niri
     self.nixosModules.gaming
-    self.nixosModules.terminal
     self.nixosModules._1password
     inputs.hardware.nixosModules.common-cpu-intel
     #inputs.hardware.nixosModules.common-gpu-nvidia
