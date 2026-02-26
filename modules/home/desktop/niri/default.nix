@@ -93,47 +93,65 @@ in
     # Animations from https://github.com/rickinshah/0xNiri/blob/main/.config/niri/config.kdl#L183
     animations = {
       window-close = {
-        duration-ms = 250;
-        curve = "ease-out-quad";
+        kind.easing = {
+          duration-ms = 250;
+          curve = "ease-out-quad";
+        };
       };
       screenshot-ui-open = {
-        duration-ms = 500;
-        curve = "ease-out-quad";
+        kind.easing = {
+          duration-ms = 500;
+          curve = "ease-out-quad";
+        };
       };
-      workspace-switch.spring = {
-        damping-ratio = 0.7;
-        stiffness = 200;
-        epsilon = 0.0001;
+      workspace-switch = {
+        kind.spring = {
+          damping-ratio = 0.7;
+          stiffness = 200;
+          epsilon = 0.0001;
+        };
       };
-      config-notification-open-close.spring = {
-        damping-ratio = 0.7;
-        stiffness = 200;
-        epsilon = 0.0001;
+      config-notification-open-close = {
+        kind.spring = {
+          damping-ratio = 0.7;
+          stiffness = 200;
+          epsilon = 0.0001;
+        };
       };
-      overview-open-close.spring = {
-        damping-ratio = 0.7;
-        stiffness = 200;
-        epsilon = 0.001;
+      overview-open-close = {
+        kind.spring = {
+          damping-ratio = 0.7;
+          stiffness = 200;
+          epsilon = 0.001;
+        };
       };
-      horizontal-view-movement.spring = {
-        damping-ratio = 0.7;
-        stiffness = 200;
-        epsilon = 0.0001;
+      horizontal-view-movement = {
+        kind.spring = {
+          damping-ratio = 0.7;
+          stiffness = 200;
+          epsilon = 0.0001;
+        };
       };
-      window-resize.spring = {
-        damping-ratio = 0.7;
-        stiffness = 200;
-        epsilon = 0.0001;
+      window-resize = {
+        kind.spring = {
+          damping-ratio = 0.7;
+          stiffness = 200;
+          epsilon = 0.0001;
+        };
       };
-      window-open.spring = {
-        damping-ratio = 0.7;
-        stiffness = 200;
-        epsilon = 0.0001;
+      window-open = {
+        kind.spring = {
+          damping-ratio = 0.7;
+          stiffness = 200;
+          epsilon = 0.0001;
+        };
       };
-      window-movement.spring = {
-        damping-ratio = 0.7;
-        stiffness = 200;
-        epsilon = 0.0001;
+      window-movement = {
+        kind.spring = {
+          damping-ratio = 0.7;
+          stiffness = 200;
+          epsilon = 0.0001;
+        };
       };
     };
 
