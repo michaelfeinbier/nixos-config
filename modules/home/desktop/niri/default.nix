@@ -297,7 +297,7 @@ in
 
       # Programs
       "Mod+T" = {
-        action.spawn = "ghostty +new-window";
+        action.spawn = ["ghostty" "+new-window"];
         hotkey-overlay.title = "Open Terminal";
       };
       "Mod+B" = {
