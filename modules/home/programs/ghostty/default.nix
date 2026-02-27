@@ -5,8 +5,8 @@
   programs.ghostty = {
     enable = true;
     settings = {
-      font-size = 13;
-      theme = "noctalia";
+      # font-size = 13;
+      # theme = "noctalia";
       background-opacity = 0.9;
       custom-shader = [
         # "${flake.inputs.ghostty-shaders}/retro-terminal.glsl"
@@ -17,4 +17,6 @@
       ];
     };
   };
+
+  catppuccin.ghostty.enable = true;
 }
