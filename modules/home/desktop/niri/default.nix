@@ -92,6 +92,9 @@ in
 
     # Animations from https://github.com/rickinshah/0xNiri/blob/main/.config/niri/config.kdl#L183
     animations = {
+      enable = true;
+      slowdown = 0.8;
+
       window-close = {
         kind.easing = {
           duration-ms = 250;
