@@ -11,5 +11,5 @@ lib.mkIf pkgs.stdenv.isLinux {
     };
   };
 
-  catppuccin.mangohud.enable = true;
+  #catppuccin.mangohud.enable = true;
 }

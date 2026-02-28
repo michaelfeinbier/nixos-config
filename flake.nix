@@ -25,12 +25,6 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    # Global catppuccin theme
-    catppuccin = {
-      url = "github:catppuccin/nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Noctalia Shell
     noctalia = {
       url = "github:noctalia-dev/noctalia-shell";
@@ -85,8 +79,11 @@
     };
 
     hardware.url = "github:nixos/nixos-hardware";
-    #stylix.url = "github:danth/stylix/release-24.11";
-    #stylix.url = "github:danth/stylix";
+    
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     #apple-fonts.url = "github:Lyndeno/apple-fonts.nix";

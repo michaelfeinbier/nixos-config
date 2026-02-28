@@ -11,14 +11,14 @@ lib.mkIf pkgs.stdenv.isLinux {
     enable = true;
     colorScheme = "dark";
     gtk4.theme = config.gtk.theme;
-    theme = {
-      name = "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-compact";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ config.catppuccin.accent ];
-        variant = config.catppuccin.flavor;
-        size = "compact";
-      };
-    };
+    # theme = {
+    #   name = "catppuccin-${config.catppuccin.flavor}-${config.catppuccin.accent}-compact";
+    #   package = pkgs.catppuccin-gtk.override {
+    #     accents = [ config.catppuccin.accent ];
+    #     variant = config.catppuccin.flavor;
+    #     size = "compact";
+    #   };
+    # };
     iconTheme = {
       name = "WhiteSur";
       package = pkgs.whitesur-icon-theme;

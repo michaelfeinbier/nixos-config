@@ -8,7 +8,6 @@ in
   imports = [
     self.homeModules.default
     inputs.zen-browser.homeModules.twilight
-    inputs.catppuccin.homeModules.catppuccin
   ];
 
   # Note: nixpkgs.config.allowUnfree should be set at the system level
@@ -19,6 +18,6 @@ in
   home.stateVersion = "24.11";
 
   # Catppuccin theming
-  catppuccin.flavor = lib.mkDefault "frappe";
-  catppuccin.accent = lib.mkDefault "blue";
+  #catppuccin.flavor = lib.mkDefault "frappe";
+  #catppuccin.accent = lib.mkDefault "blue";
 }

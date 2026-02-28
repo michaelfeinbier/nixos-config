@@ -18,5 +18,5 @@
     };
   };
 
-  catppuccin.ghostty.enable = true;
+  #catppuccin.ghostty.enable = true;
 }

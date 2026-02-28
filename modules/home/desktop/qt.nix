@@ -19,5 +19,4 @@
     };
   };
 
-  catppuccin.kvantum.enable = true;
 }

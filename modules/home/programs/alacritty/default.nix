@@ -81,5 +81,5 @@
   };
 
   # Enable catppuccin theming for alacritty.
-  catppuccin.alacritty.enable = true;
+  #catppuccin.alacritty.enable = true;
 }
