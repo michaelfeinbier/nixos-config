@@ -294,6 +294,7 @@ in
         monitorWidgets = [ ];
       };
       dock = {
+        dockType = "floating";
         animationSpeed = 1;
         backgroundOpacity = 1;
         colorizeIcons = false;
@@ -304,10 +305,20 @@ in
         inactiveIndicators = false;
         monitors = [ ];
         onlySameOutput = true;
-        pinnedApps = [ ];
-        pinnedStatic = false;
+        pinnedApps = [
+          "zen-twilight"
+          "discord"
+          "steam"
+        ];
+        pinnedStatic = true;
         position = "bottom";
         size = 1;
+
+        groupApps = true;
+        groupClickAction = "cycle";
+        groupContextMenuMode = "extended";
+        groupIndicatorStyle = "dots";
+        launcherPosition = "start";
       };
       general = {
         allowPanelsOnScreenWithoutBar = true;
