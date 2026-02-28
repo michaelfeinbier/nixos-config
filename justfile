@@ -24,6 +24,11 @@ lint:
 check:
   nix flake check
 
+# compare current noctalia settings with Nix config
+[group('dev')]
+noctalia-config:
+  nix shell nixpkgs#jq nixpkgs#colordiff -c bash -c "colordiff -u --nobanner <(jq -S . ~/.config/noctalia/settings.json) <(noctalia-shell ipc call state all | jq -S .settings)"
+
 # Manually enter dev shell
 [group('dev')]
 dev:
@@ -49,16 +54,6 @@ run:
     git tag "${tag}"
     echo "Tagged as ${tag}"
   fi
-
-# Run astal
-[group('Astal')]
-ags:
-  ags run --gtk4
-
-# Build astal
-[group('Astal')]
-bundle:
-  ags bundle astal/app.ts dnkwt-shell
 
 [group('History')]
 history:

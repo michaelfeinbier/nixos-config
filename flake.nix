@@ -90,8 +90,6 @@
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
 
     #apple-fonts.url = "github:Lyndeno/apple-fonts.nix";
-    astal.url = "github:aylur/astal";
-    ags.url = "github:aylur/ags";
     _1password-shell-plugins.url = "github:1Password/shell-plugins";
 
     # non flakes

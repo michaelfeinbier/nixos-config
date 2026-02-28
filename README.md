@@ -96,7 +96,6 @@ Catppuccin Mocha with a teal accent, applied globally through the [catppuccin/ni
 | [nixvim](https://github.com/nix-community/nixvim) | Declarative Neovim configuration |
 | [catppuccin/nix](https://github.com/catppuccin/nix) | Global Catppuccin theming |
 | [zen-browser](https://github.com/0xc000022070/zen-browser-flake) | Zen Browser |
-| [ags](https://github.com/aylur/ags) / [astal](https://github.com/aylur/astal) | Desktop shell widgets |
 | [plasma-manager](https://github.com/nix-community/plasma-manager) | KDE Plasma declarative config |
 | [noctalia-shell](https://github.com/noctalia-dev/noctalia-shell) | Noctalia shell |
 | [nixos-hardware](https://github.com/NixOS/nixos-hardware) | Hardware-specific optimizations |
