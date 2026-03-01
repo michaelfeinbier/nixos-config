@@ -3,6 +3,8 @@ let
   inherit (flake) inputs;
 in
 {
+  #stylix.targets.niri.enable = true;
+
   programs.niri.settings = {
     # Input
     input = {
@@ -56,28 +58,29 @@ in
 
       default-column-width = { proportion = 0.5; };
 
-      focus-ring = {
-        enable = false;
-        width = 1;
-        active.color = "#b7bdf8";
-        inactive.color = "#494d64";
-      };
+      # Let's not set it here but by stylix
+      # focus-ring = {
+      #   enable = false;
+      #   width = 1;
+      #   active.color = "#b7bdf8";
+      #   inactive.color = "#494d64";
+      # };
 
-      border = {
-        enable = true;
-        width = 2;
-        active.color = "#798ebd";
-        inactive.color = "#665c54";
-        urgent.color = "#9b0000";
-      };
+      # border = {
+      #   enable = true;
+      #   width = 2;
+      #   active.color = "#798ebd";
+      #   inactive.color = "#665c54";
+      #   urgent.color = "#9b0000";
+      # };
 
-      shadow = {
-        enable = true;
-        softness = 30;
-        spread = 5;
-        offset = { x = 0; y = 5; };
-        color = "#181926aa";
-      };
+      # shadow = {
+      #   enable = true;
+      #   softness = 30;
+      #   spread = 5;
+      #   offset = { x = 0; y = 5; };
+      #   color = "#181926aa";
+      # };
     };
 
     # Spawn at startup

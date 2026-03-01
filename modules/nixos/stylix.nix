@@ -17,9 +17,11 @@ in
 
   stylix = {
     enable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
-    #base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
-    #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
+    autoEnable = true;
+
+    # Pick themes from here: https://tinted-theming.github.io/tinted-gallery/
+    # If you do not set this, stylix creates a color scheme from .image
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
 
     # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
     image = "${inputs.aesthetic-wallpapers}/images/acrylic.jpg";
@@ -32,8 +34,8 @@ in
 
     cursor = {
       package = pkgs.bibata-cursors;
-      name = "Bibata-Original-Ice";
-      size = 24;
+      name = "Bibata-Modern-Ice";
+      size = 18;
     };
 
     fonts = {
