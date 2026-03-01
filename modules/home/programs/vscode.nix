@@ -12,14 +12,14 @@ in
 
     profiles.default = {
       userSettings = {
-        "workbench.colorTheme" = "Catppuccin Frappé";
+        "workbench.colorTheme" = lib.mkDefault "Catppuccin Frappé";
 
-        "editor.fontSize" = 13;
-        "editor.fontFamily" = "'JetbrainsMono Nerd Font', 'Droid Sans Mono', monospace";
+        "editor.fontSize" = lib.mkDefault 13;
+        "editor.fontFamily" = lib.mkDefault "'JetbrainsMono Nerd Font', 'Droid Sans Mono', monospace";
         "editor.fontLigatures" = true;
         "editor.acceptSuggestionOnEnter" = "off";
-        "editor.codeLensFontFamily" = "JetbrainsMono Nerd Font";
-        "editor.inlayHints.fontFamily" = "JetbrainsMono Nerd Font";
+        "editor.codeLensFontFamily" = lib.mkDefault "JetbrainsMono Nerd Font";
+        "editor.inlayHints.fontFamily" = lib.mkDefault "JetbrainsMono Nerd Font";
         "editor.semanticHighlighting.enabled" = true;
         "editor.minimap.enabled" = false;
 

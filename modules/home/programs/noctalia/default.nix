@@ -2,6 +2,7 @@
   config,
   flake,
   pkgs,
+  lib,
   ...
 }:
 let
@@ -26,6 +27,8 @@ in
 
   programs.noctalia-shell = {
     enable = true;
+
+    # Now managed by stylix
     # colors = {
     #   mPrimary = accentColor;
     #   mOnPrimary = color "crust";
@@ -96,8 +99,8 @@ in
         volumeStep = 5;
       };
       bar = {
-        backgroundOpacity = 0.93;
-        capsuleOpacity = 1;
+        backgroundOpacity = lib.mkDefault 0.93;
+        capsuleOpacity = lib.mkDefault 1;
         density = "default";
         exclusive = true;
         floating = false;
@@ -296,7 +299,7 @@ in
       dock = {
         dockType = "floating";
         animationSpeed = 1;
-        backgroundOpacity = 1;
+        backgroundOpacity = lib.mkDefault 1;
         colorizeIcons = false;
         deadOpacity = 0.6;
         displayMode = "auto_hide";
@@ -387,7 +390,7 @@ in
         nightTemp = "4000";
       };
       notifications = {
-        backgroundOpacity = 1;
+        backgroundOpacity = lib.mkDefault 1;
         criticalUrgencyDuration = 15;
         enableKeyboardLayoutToast = false;
         enabled = true;
@@ -414,7 +417,7 @@ in
       };
       osd = {
         autoHideMs = 2000;
-        backgroundOpacity = 1;
+        backgroundOpacity = lib.mkDefault 1;
         enabled = true;
         enabledTypes = [
           0
@@ -518,13 +521,13 @@ in
         bluetoothHideUnnamedDevices = false;
         boxBorderEnabled = false;
         # fontDefault = "Clear Sans Medium"; use default from system
-        fontDefault = "";
+        fontDefault = lib.mkDefault "";
         fontDefaultScale = 1;
         # fontFixed = "JetBrainsMono Nerd Font Mono";
-        fontFixed = "";
+        fontFixed = lib.mkDefault "";
         fontFixedScale = 1;
         networkPanelView = "wifi";
-        panelBackgroundOpacity = 0.93;
+        panelBackgroundOpacity = lib.mkDefault 0.93;
         panelsAttachedToBar = true;
         settingsPanelMode = "attached";
         tooltipsEnabled = true;

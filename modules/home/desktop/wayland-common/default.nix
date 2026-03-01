@@ -24,11 +24,12 @@ in
   ];
 
   # Consistent cursor theme across all applications.
+  # When stylix is enabled, cursor is managed by stylix instead.
   home.pointerCursor = {
     gtk.enable = true;
     x11.enable = true;
-    package = config.gtk.cursorTheme.package;
-    name = config.gtk.cursorTheme.name;
-    size = 24;
+    package = lib.mkDefault config.gtk.cursorTheme.package;
+    name = lib.mkDefault config.gtk.cursorTheme.name;
+    size = lib.mkDefault 24;
   };
 }

@@ -14,6 +14,9 @@ let
 in
 {
 
+  # Stylix configuration
+  #stylix.targets.zen-browser.profileNames = [ "default" ];
+
   programs.zen-browser = {
     enable = true;
     suppressXdgMigrationWarning = true; # we migrated already
@@ -38,7 +41,7 @@ in
     };
 
     # Spaces and container definitons
-    profiles."*" = let
+    profiles."default" = let
       # extensions 
       extensions.packages = [
         firefox-addons.ublock-origin

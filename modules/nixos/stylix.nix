@@ -11,6 +11,10 @@ let
 in
 {
 
+  imports = [
+    inputs.stylix.nixosModules.stylix
+  ];
+
   stylix = {
     enable = true;
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
@@ -45,7 +49,7 @@ in
       };
 
       emoji = {
-        package = pkgs.noto-fonts-emoji;
+        package = pkgs.noto-fonts-color-emoji;
         name = "Noto Color Emoji";
       };
     };

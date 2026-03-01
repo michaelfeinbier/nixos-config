@@ -24,13 +24,13 @@ lib.mkIf pkgs.stdenv.isLinux {
       package = pkgs.whitesur-icon-theme;
     };
     cursorTheme = {
-      name = "Yaru";
-      package = pkgs.yaru-theme;
-      size = 24;
+      name = lib.mkDefault "Yaru";
+      package = lib.mkDefault pkgs.yaru-theme;
+      size = lib.mkDefault 24;
     };
     font = {
-      name = "SF Pro Display";
-      size = 11;
+      name = lib.mkDefault "SF Pro Display";
+      size = lib.mkDefault 11;
     };
     # gtk3 = {
     #   bookmarks = [

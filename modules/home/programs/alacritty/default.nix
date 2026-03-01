@@ -53,25 +53,26 @@
         else
           [ ];
 
-      font = {
-        size = if pkgs.stdenv.hostPlatform.isDarwin then 15 else 12;
-        normal = {
-          family = "JetBrainsMono Nerd Font Mono";
-          style = "Regular";
-        };
-        bold = {
-          family = "JetBrainsMono Nerd Font Mono";
-          style = "Bold";
-        };
-        italic = {
-          family = "JetBrainsMono Nerd Font Mono";
-          style = "Italic";
-        };
-        bold_italic = {
-          family = "JetBrainsMono Nerd Font Mono";
-          style = "Bold Italic";
-        };
-      };
+      # font controlled by stylix now
+      # font = {
+      #   size = if pkgs.stdenv.hostPlatform.isDarwin then 15 else 12;
+      #   normal = {
+      #     family = "JetBrainsMono Nerd Font Mono";
+      #     style = "Regular";
+      #   };
+      #   bold = {
+      #     family = "JetBrainsMono Nerd Font Mono";
+      #     style = "Bold";
+      #   };
+      #   italic = {
+      #     family = "JetBrainsMono Nerd Font Mono";
+      #     style = "Italic";
+      #   };
+      #   bold_italic = {
+      #     family = "JetBrainsMono Nerd Font Mono";
+      #     style = "Bold Italic";
+      #   };
+      # };
 
       selection = {
         semantic_escape_chars = '',│`|:"' ()[]{}<>'';

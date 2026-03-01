@@ -20,4 +20,7 @@ in
   # Catppuccin theming
   #catppuccin.flavor = lib.mkDefault "frappe";
   #catppuccin.accent = lib.mkDefault "blue";
+
+  # Disable niri stylix target (niri-flake's stylix.nix is incompatible with current stylix)
+  #stylix.targets.niri.enable = false;
 }
