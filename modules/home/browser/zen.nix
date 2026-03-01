@@ -1,6 +1,6 @@
-{ pkgs, lib, flake, config, ... }:
+{ pkgs, lib, flake, ... }:
 let
-  inherit (flake) inputs;
+  inherit (flake) inputs config;
   inherit (inputs) self;
 
   firefox-addons = inputs.firefox-addons.packages.${pkgs.stdenv.hostPlatform.system};
@@ -15,7 +15,7 @@ in
 {
 
   # Stylix configuration
-  #stylix.targets.zen-browser.profileNames = [ "default" ];
+  stylix.targets.zen-browser.profileNames = [ "${config.me.username}" ];
 
   programs.zen-browser = {
     enable = true;
@@ -41,7 +41,7 @@ in
     };
 
     # Spaces and container definitons
-    profiles."default" = let
+    profiles."${flake.config.me.username}" = let
       # extensions 
       extensions.packages = [
         firefox-addons.ublock-origin

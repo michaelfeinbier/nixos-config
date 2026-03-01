@@ -24,7 +24,8 @@ in
     base16Scheme = "${pkgs.base16-schemes}/share/themes/nord.yaml";
 
     # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
-    image = "${inputs.aesthetic-wallpapers}/images/acrylic.jpg";
+    # previous images: acrylic.jpg lake.jpg
+    image = "${inputs.aesthetic-wallpapers}/images/lake.jpg";
     #image = config.lib.stylix.pixel "base0A";
 
     homeManagerIntegration = {
