@@ -58,7 +58,6 @@ in
 
       default-column-width = { proportion = 0.5; };
 
-      Let's not set it here but by stylix
       focus-ring = {
         enable = false;
         width = 1;
