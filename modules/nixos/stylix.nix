@@ -25,7 +25,7 @@ in
 
     # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
     # previous images: acrylic.jpg lake.jpg
-    image = "${inputs.aesthetic-wallpapers}/images/lake.jpg";
+    image = "${inputs.aesthetic-wallpapers}/images/acrylic.jpg";
     #image = config.lib.stylix.pixel "base0A";
 
     homeManagerIntegration = {

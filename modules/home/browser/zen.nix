@@ -11,11 +11,14 @@ let
       license = lib.licenses.free;
     };
   });
+
+  # profileName = "*";
+  profileName = config.me.username;
 in
 {
 
   # Stylix configuration
-  stylix.targets.zen-browser.profileNames = [ "${config.me.username}" ];
+  stylix.targets.zen-browser.profileNames = [ profileName ];
 
   programs.zen-browser = {
     enable = true;
@@ -41,7 +44,7 @@ in
     };
 
     # Spaces and container definitons
-    profiles."${flake.config.me.username}" = let
+    profiles."${profileName}" = let
       # extensions 
       extensions.packages = [
         firefox-addons.ublock-origin
