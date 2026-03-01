@@ -17,13 +17,13 @@ in
 
   stylix = {
     enable = true;
-    #base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
+    #base16Scheme = "${pkgs.base16-schemes}/share/themes/dracula.yaml";
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
 
     # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
-    #image = "${inputs.aesthetic-wallpapers}/images/lake.jpg";
-    image = config.lib.stylix.pixel "base0A";
+    image = "${inputs.aesthetic-wallpapers}/images/acrylic.jpg";
+    #image = config.lib.stylix.pixel "base0A";
 
     homeManagerIntegration = {
       autoImport = true;

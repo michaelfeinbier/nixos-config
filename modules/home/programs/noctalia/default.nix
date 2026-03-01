@@ -18,13 +18,7 @@ in
   imports = [
     flake.inputs.noctalia.homeModules.default
   ];
-
-  home.file.".cache/noctalia/wallpapers.json" = {
-    text = builtins.toJSON {
-      defaultWallpaper = "${flake.inputs.aesthetic-wallpapers}/images/acrylic.jpg";
-    };
-  };
-
+  
   programs.noctalia-shell = {
     enable = true;
 
