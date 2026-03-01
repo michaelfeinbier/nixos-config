@@ -3,7 +3,7 @@ let
   inherit (flake) inputs;
 in
 {
-  #stylix.targets.niri.enable = true;
+  stylix.targets.niri.enable = true;
 
   programs.niri.settings = {
     # Input
