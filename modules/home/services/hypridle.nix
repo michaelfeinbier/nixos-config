@@ -1,7 +1,7 @@
 { ... }:
 {
   services.hypridle = {
-    enable = true;
+    enable = false; # We manage it now via noctalia
     settings = {
       general = {
         before_sleep_cmd = "noctalia-shell ipc call lockScreen lock";

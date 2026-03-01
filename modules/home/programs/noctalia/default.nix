@@ -351,6 +351,13 @@ in
         screenUnlock = "";
         wallpaperChange = "";
       };
+      idle = {
+        enabled = true;
+        fadeDuration = 5;
+        lockTimeout = 660;
+        screenOffTimeout = 600;
+        suspendTimeout = 1800;
+      };
       location = {
         analogClockInCalendar = false;
         firstDayOfWeek = -1;
