@@ -488,11 +488,11 @@ in
         kcolorscheme = false;
         alacritty = false;
         kitty = false;
-        ghostty = true;
+        ghostty = false;
         foot = false;
         wezterm = false;
         fuzzel = false;
-        discord = true;
+        discord = false;
         pywalfox = false;
         vicinae = false;
         walker = false;
