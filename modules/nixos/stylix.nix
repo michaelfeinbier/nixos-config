@@ -22,7 +22,13 @@ in
     #base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-frappe.yaml";
 
     # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
-    image = "${inputs.aesthetic-wallpapers}/images/lake.jpg";
+    #image = "${inputs.aesthetic-wallpapers}/images/lake.jpg";
+    image = config.lib.stylix.pixel "base0A";
+
+    homeManagerIntegration = {
+      autoImport = true;
+      followSystem = true;
+    };
 
     cursor = {
       package = pkgs.bibata-cursors;
