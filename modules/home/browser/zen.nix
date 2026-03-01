@@ -90,16 +90,32 @@ in
           icon = "chrome://browser/skin/zen-icons/selectable/baseball.svg";
           container = containers."Personal".id;
         };
+        "HomeLab" = {
+          id = "168939b8-ccf2-47ee-a1f4-f87379c5a9f5";
+          position = 3000;
+          icon = "chrome://browser/skin/zen-icons/selectable/layers.svg";
+          container = containers."Personal".id;
+        };
       };
 
       pins = {
         "mail" = {
           id = "9d8a8f91-7e29-4688-ae2e-da4e49d4a179";
-          container = containers.Personal.id;
+          container = containers."Personal".id;
           url = "https://mail.google.com/mail/u/0/#inbox";
           isEssential = true;
           position = 101;
         };
+        "komodo" = {
+          id = "b12e91a7-7260-4e1d-9929-22ad89cf09ac";
+          container = containers."Personal".id;
+          url = "https://komodo.feinbier.systems";
+          isEssential = true;
+          position = 200;
+        };
+
+
+
         "Nix awesome" = {
           id = "d85a9026-1458-4db6-b115-346746bcc692";
           workspace = spaces."NixOS".id;
