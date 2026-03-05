@@ -8,10 +8,20 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
+  boot = {
+    initrd = {
+      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+      kernelModules = [ ];
+    };
+
+    kernelModules = [ "kvm-intel" ];
+    extraModulePackages = [ ];
+
+    plymouth = {
+      enable = true;
+    };
+
+  };
 
   # It's enable by default still explicitly setting it here
   services.fstrim.enable = true;

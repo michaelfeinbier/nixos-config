@@ -14,7 +14,7 @@ in
       userSettings = {
         "workbench.colorTheme" = lib.mkDefault "Catppuccin Frappé";
 
-        "editor.fontSize" = lib.mkDefault 13;
+        "editor.fontSize" = lib.mkForce 13;
         "editor.fontFamily" = lib.mkDefault "'JetbrainsMono Nerd Font', 'Droid Sans Mono', monospace";
         "editor.fontLigatures" = true;
         "editor.acceptSuggestionOnEnter" = true;
