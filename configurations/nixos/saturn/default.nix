@@ -39,9 +39,18 @@ in
     videoDrivers = [ "nvidia" ];
   };
 
+  boot.kernelParams = [
+    "nvidia-drm.fbdev=1"
+    "split_lock_mitigate=0"
+  ];
+
+  boot.kernel.sysctl = {
+    "vm.max_map_count" = 2147483642;
+  };
+
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
+    powerManagement.enable = true;
     powerManagement.finegrained = false;
     open = false;
     nvidiaSettings = true;

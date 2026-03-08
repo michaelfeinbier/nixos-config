@@ -148,6 +148,13 @@ in
           url = "https://home-manager-options.extranix.com";
           position = 203;
         };
+
+        "Paperless" = {
+          id = "885a95dd-d720-4196-aed3-5a7199db1909";
+          workspace = spaces."HomeLab".id;
+          position = 301;
+          url = "https://paperless.titan.fein.beer";
+        };
       };
 
      in {

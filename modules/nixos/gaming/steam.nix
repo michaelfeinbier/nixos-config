@@ -19,11 +19,9 @@ in
 
   programs.gamescope = {
     enable = true;
-    capSysNice = false;
+    capSysNice = true;
   };
-
-  programs.gamemode.enable = true;
-
+  
   # supposed to fix issues with gamescope
   programs.nix-ld = {
     enable = true;

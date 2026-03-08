@@ -23,7 +23,7 @@ in
         "editor.semanticHighlighting.enabled" = true;
         "editor.minimap.enabled" = false;
 
-        # prevent VSCode from modifying the terminal colors
+        # prevent VSCode from modifying the terminal colors 
         "terminal.integrated.minimumContrastRatio" = 1;
         "terminal.integrated.fontLigatures.enabled" = true;
         "git.confirmSync" = false;

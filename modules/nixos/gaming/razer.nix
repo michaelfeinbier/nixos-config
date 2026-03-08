@@ -1,4 +1,4 @@
-{flake, ...}:
+{flake, pkgs, ...}:
 let
   inherit (flake.config) me;
 in
@@ -7,4 +7,6 @@ in
     enable = true;
     users = [me.username];
   };
+
+  environment.systemPackages = [pkgs.razergenie];
 }
