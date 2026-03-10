@@ -21,11 +21,11 @@ in
 
     # Pick themes from here: https://tinted-theming.github.io/tinted-gallery/
     # If you do not set this, stylix creates a color scheme from .image
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-pale.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/${me.color}.yaml";
 
     # select one from https://alexandrosliaskos.github.io/Awesome_Wallpapers/
     # previous images: acrylic.jpg lake.jpg
-    image = "${inputs.aesthetic-wallpapers}/images/acrylic.jpg";
+    image = me.wallpaper;
     #image = config.lib.stylix.pixel "base0A";
 
     homeManagerIntegration = {

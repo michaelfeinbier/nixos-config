@@ -20,7 +20,8 @@
       "Bash(niri msg:*)",
       "Bash(niri validate:*)",
       "Bash(nix eval:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(just check:*)"
     ]
   },
   "enableAllProjectMcpServers": true,

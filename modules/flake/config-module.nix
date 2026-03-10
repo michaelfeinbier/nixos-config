@@ -1,4 +1,4 @@
-{ lib, config, ... }:
+{ lib, config, inputs, ... }:
 {
   options = {
     me = lib.mkOption {
@@ -26,7 +26,12 @@
           wallpaper = lib.mkOption {
             type = lib.types.path;
             description = "Path to your wallpaper";
-            default = /home/michael/.local/share/wallpaper/aesthetic-wallpapers/images/colorful-planets.jpg;
+            default = "${inputs.aesthetic-wallpapers}/images/colorful-planets.jpg";
+          };
+          color = lib.mkOption {
+            type = lib.types.str;
+            description = "The base16 color name scheme from https://tinted-theming.github.io/tinted-gallery/";
+            default = "catppuccin-mocha";
           };
         };
       };
