@@ -22,7 +22,6 @@ in
 
   programs.zen-browser = {
     enable = true;
-    suppressXdgMigrationWarning = true; # we migrated already
 
     policies = {
       AutofillAddressEnabled = true;
