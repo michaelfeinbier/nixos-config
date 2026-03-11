@@ -200,6 +200,26 @@ in
         default-column-width = { proportion = 1.0; };
         open-on-workspace = "main";
       }
+      # Zen picture in picture
+      {
+        matches = [{ app-id = "^zen$"; title="Picture-in-Picture";}]; 
+        focus-ring.enable = false;
+        border.enable = false;
+        shadow.enable = false;
+        open-floating = true;
+        geometry-corner-radius = let r = 0.0; in {
+          top-left = r;
+          top-right = r;
+          bottom-left = r;
+          bottom-right = r;
+        };
+        default-floating-position = {
+          x = 100;
+          y = 200;
+          relative-to = "bottom-right";
+        };
+      }
+
 
       # Alacritty & Ghostty
       {
