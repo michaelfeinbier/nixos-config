@@ -196,13 +196,13 @@ in
 
       # Zen browser
       {
-        matches = [{ app-id = "^zen$"; }];
+        matches = [{ app-id = "^zen.*"; }];
         default-column-width = { proportion = 1.0; };
         open-on-workspace = "main";
       }
       # Zen picture in picture
       {
-        matches = [{ app-id = "^zen$"; title="Picture-in-Picture";}]; 
+        matches = [{ app-id = "^zen.*"; title="Picture-in-Picture";}]; 
         focus-ring.enable = false;
         border.enable = false;
         shadow.enable = false;
