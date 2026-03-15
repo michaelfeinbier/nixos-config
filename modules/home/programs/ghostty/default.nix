@@ -19,5 +19,9 @@
     };
   };
 
+  # needed to suck les in ssh connections
+  programs.ssh.matchBlocks."*".setEnv = {
+    TERM = "xterm-256color";
+  };
   #catppuccin.ghostty.enable = true;
 }
