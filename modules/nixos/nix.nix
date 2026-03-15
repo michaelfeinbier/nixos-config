@@ -1,5 +1,9 @@
 { pkgs, lib, ... }:
 {
+  nixpkgs.config.permittedInsecurePackages = [
+    "beekeeper-studio-5.5.7"
+  ];
+
   nix = {
     settings = {
       # Substitutors (binary caches)
