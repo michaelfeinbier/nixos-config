@@ -34,6 +34,14 @@ in
   virtualisation.docker.enable = true;
   virtualisation.docker.rootless.enable = true;
   virtualisation.docker.rootless.setSocketVariable = true;
+  security.wrappers = {
+    docker-rootlesskit = {
+      owner = "root";
+      group = "root";
+      capabilities = "cap_net_bind_service+ep";
+      source = "${pkgs.rootlesskit}/bin/rootlesskit";
+    };
+  };
 
   # Tailscale
   services.tailscale.enable = true;
