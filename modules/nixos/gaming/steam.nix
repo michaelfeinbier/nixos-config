@@ -8,7 +8,7 @@ in
   programs.steam = {
     enable = true;
     remotePlay.openFirewall = true;
-    gamescopeSession.enable = true;
+    gamescopeSession.enable = false;
 
     extraCompatPackages = with pkgs; [
       proton-ge-bin

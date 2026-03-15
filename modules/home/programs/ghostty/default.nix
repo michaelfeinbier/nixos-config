@@ -8,6 +8,7 @@
       # font-size = 13;
       # theme = "noctalia";
       background-opacity = 0.9;
+      shell-integration-features = "ssh-terminfo";
       custom-shader = [
         # "${flake.inputs.ghostty-shaders}/retro-terminal.glsl"
          "${flake.inputs.ghostty-shaders}/tft.glsl"
