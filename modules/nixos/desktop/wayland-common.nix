@@ -25,6 +25,7 @@
     nautilus # file manager
     seahorse # keyring manager
     totem # Video player
+    geary # E-Mails
 
     # Wayland utilities
     gpu-screen-recorder
