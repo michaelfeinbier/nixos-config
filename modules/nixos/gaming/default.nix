@@ -5,5 +5,6 @@
     ./launcher.nix
     ./vmware.nix
     ./razer.nix
+    ./fanatec.nix
   ];
 }
