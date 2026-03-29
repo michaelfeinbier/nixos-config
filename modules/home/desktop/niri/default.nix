@@ -94,7 +94,7 @@ in
 
     # Animations from https://github.com/rickinshah/0xNiri/blob/main/.config/niri/config.kdl#L183
     animations = {
-      enable = true;
+      enable = false;
       slowdown = 0.55;
 
       window-close = {
