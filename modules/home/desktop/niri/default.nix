@@ -329,10 +329,6 @@ in
         action.spawn = "zen";
         hotkey-overlay.title = "Open Zen Browser";
       };
-      "Mod+F" = {
-        action.spawn = "nautilus";
-        hotkey-overlay.title = "Open Nautilus";
-      };
       "Super+Alt+L" = {
         action.spawn = "swaylock";
         hotkey-overlay.title = "Lock the Screen: swaylock";
@@ -543,7 +539,9 @@ in
       "Mod+Shift+F".action.maximize-column = {};
       "Mod+M".action.maximize-window-to-edges = {};
       "Mod+Ctrl+F".action.expand-column-to-available-width = {};
-      "Mod+C".action.center-column = {};
+      
+
+      "Super+F".action.fullscreen-window = {};
 
       # Resize
       "Mod+Minus".action.set-column-width = "-10%";

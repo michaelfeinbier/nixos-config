@@ -45,8 +45,6 @@
       };
     };
     
-    nixos-cosmic.url = "github:lilyinstarlight/nixos-cosmic";
-    
     nix-vscode-extensions = {
       url = "github:nix-community/nix-vscode-extensions/";
       inputs.nixpkgs.follows = "nixpkgs";
