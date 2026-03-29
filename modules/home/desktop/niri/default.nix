@@ -541,7 +541,7 @@ in
       "Mod+Ctrl+F".action.expand-column-to-available-width = {};
       
 
-      "Super+F".action.fullscreen-window = {};
+      "Super+Shift+F".action.fullscreen-window = {};
 
       # Resize
       "Mod+Minus".action.set-column-width = "-10%";
