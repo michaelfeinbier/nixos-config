@@ -18,7 +18,7 @@ in
 
   nixpkgs.overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
   #boot.kernelPackages = pkgs.linuxPackages_zen;
-  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest;
+  boot.kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
