@@ -246,16 +246,10 @@ in
         open-on-workspace = "steam";
       }
 
-      # Steam games - workspace
-      {
-        matches = [{ app-id = "^steam_app_\\d+$"; }];
-        open-on-workspace = "games";
-      }
-
       # Steam games - fullscreen + VRR
       {
         matches = [{ app-id = "^steam_app_\\d+$"; }];
-        excludes = [{ title = "^$"; }];
+        #excludes = [{ title = "^$"; }];
         open-fullscreen = true;
         variable-refresh-rate = true;
       }
