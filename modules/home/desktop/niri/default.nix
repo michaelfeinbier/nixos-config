@@ -532,10 +532,8 @@ in
       "Mod+Ctrl+R".action.reset-window-height = {};
       "Mod+Shift+F".action.maximize-column = {};
       "Mod+M".action.maximize-window-to-edges = {};
-      "Mod+Ctrl+F".action.expand-column-to-available-width = {};
-      
-
-      "Super+Shift+F".action.fullscreen-window = {};
+      #"Mod+Ctrl+F".action.expand-column-to-available-width = {};
+      "Mod+Ctrl+F".action.fullscreen-window = {};
 
       # Resize
       "Mod+Minus".action.set-column-width = "-10%";
