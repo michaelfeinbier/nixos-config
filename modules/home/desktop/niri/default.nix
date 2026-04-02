@@ -185,7 +185,7 @@ in
     window-rules = [
       # Global: rounded corners
       {
-        geometry-corner-radius = let r = 12.0; in {
+        geometry-corner-radius = let r = 20.0; in {
           top-left = r;
           top-right = r;
           bottom-left = r;
@@ -328,19 +328,15 @@ in
         hotkey-overlay.title = "Lock the Screen: swaylock";
       };
 
-      # Albert
-      "Mod+A" = {
-        action.spawn = [ "albert" "show" "apps " ];
-        hotkey-overlay.title = "Open Albert Apps";
-      };
       "Super+Space" = {
-        action.spawn = [ "albert" "toggle" ];
-        hotkey-overlay.title = "Toggle Albert";
+        action.spawn-sh = "noctalia-shell ipc call launcher toggle";
+        hotkey-overlay.title = "Toggle Launcher";
       };
 
       # Clipboard history
       "Mod+Super+C" = {
-        action.spawn-sh = "noctalia-shell ipc call plugin:clipper toggle";
+        #action.spawn-sh = "noctalia-shell ipc call plugin:clipper toggle";
+        action.spawn-sh = "noctalia-shell ipc call launcher clipboard";
         hotkey-overlay.title = "Clipboard History";
       };
 
