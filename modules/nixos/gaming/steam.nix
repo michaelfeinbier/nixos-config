@@ -37,12 +37,26 @@ in
 
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+    capSysNice = false; 
   };
   
   # supposed to fix issues with gamescope
   programs.nix-ld = {
     enable = false;
     libraries = pkgs.steam-run.args.multiPkgs pkgs;
+  };
+
+  # Try capSysNice with a different approach
+  # https://github.com/NixOS/nixpkgs/issues/351516
+  services.ananicy = {
+    enable = true;
+    package = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-cpp;
+    extraRules = [
+      {
+        "name" = "gamescope";
+        "nice" = -20;
+      }
+    ];
   };
 }
