@@ -8,48 +8,23 @@
     [ (modulesPath + "/installer/scan/not-detected.nix")
     ];
 
-  boot = {
-    initrd = {
-      availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
-      kernelModules = [ ];
-    };
+  boot.initrd.availableKernelModules = [ "xhci_pci" "ahci" "nvme" "usbhid" "usb_storage" "sd_mod" ];
+  boot.initrd.kernelModules = [ ];
+  boot.kernelModules = [ "kvm-intel" ];
+  boot.extraModulePackages = [ ];
 
-    kernelModules = [ "kvm-intel" ];
-    extraModulePackages = [ ];
-
-    plymouth = {
-      enable = true;
-    };
-
-  };
-
-  # It's enable by default still explicitly setting it here
-  services.fstrim.enable = true;
-  
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/c2cbdab7-f309-42dc-9aae-45fccff9594e";
-      fsType = "btrfs";
+    { device = "/dev/disk/by-uuid/d959df8d-dd06-4864-9b7d-456ebe5ed9da";
+      fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/D181-B799";
+    { device = "/dev/disk/by-uuid/6649-AD8D";
       fsType = "vfat";
-      options = [ "fmask=0777" "dmask=0777" ];
+      options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  fileSystems."/games-fast" = 
-   { device = "/dev/disk/by-label/fast";
-     fsType = "btrfs"; 
-  };
-
   swapDevices = [ ];
-
-  # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
-  # (the default) this is the recommended approach. When using systemd-networkd it's
-  # still possible to use this option, but it's recommended to use it in conjunction
-  # with explicit per-interface declarations with `networking.interfaces.<interface>.useDHCP`.
-  networking.useDHCP = lib.mkDefault true;
-  # networking.interfaces.eno1.useDHCP = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

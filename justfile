@@ -3,7 +3,7 @@
 # run `just` from this directory to see available commands
 
 # Tag prefix for NixOS generation tags (e.g. nixos-gen42)
-tag_prefix := "nixos"
+tag_prefix := "saturn-new"
 
 # Default command when 'just' is run without arguments
 default:
