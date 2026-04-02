@@ -42,7 +42,7 @@ in
   
   # supposed to fix issues with gamescope
   programs.nix-ld = {
-    enable = true;
+    enable = false;
     libraries = pkgs.steam-run.args.multiPkgs pkgs;
   };
 }

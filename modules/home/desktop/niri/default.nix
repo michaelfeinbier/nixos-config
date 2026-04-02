@@ -44,6 +44,16 @@ in
       scale = 2.0;
     };
 
+    # Environment
+    environment = {
+      "DISPLAY" = ":1";
+      "ELECTRON_OZONE_PLATFORM_HINT" = "auto";
+      "QT_QPA_PLATFORM" = "wayland";
+      "QT_WAYLAND_DISABLE_WINDOWDECORATION" = "1";
+      "XDG_SESSION_TYPE" = "wayland";
+      "XDG_CURRENT_DESKTOP" = "niri";
+    };
+
     # Layout
     layout = {
       background-color = "transparent";
