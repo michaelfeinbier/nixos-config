@@ -37,7 +37,7 @@ in
 
   programs.gamescope = {
     enable = true;
-    capSysNice = true;
+    capSysNice = false;
   };
   
   # supposed to fix issues with gamescope
