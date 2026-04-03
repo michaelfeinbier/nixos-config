@@ -27,6 +27,23 @@ in
     remotePlay.openFirewall = true;
     gamescopeSession.enable = false;
 
+    # https://wiki.nixos.org/wiki/Steam
+    package = pkgs.steam.override {
+      extraPkgs = pkgs': with pkgs'; [
+        libXcursor
+        libXi
+        libXinerama
+        libXScrnSaver
+        libpng
+        libpulseaudio
+        libvorbis
+        stdenv.cc.cc.lib # Provides libstdc++.so.6
+        libkrb5
+        keyutils
+        # Add other libraries as needed
+      ];
+    };
+
     extraCompatPackages = with pkgs; [
       proton-ge-bin
       # prefixConfig
@@ -37,19 +54,19 @@ in
 
   programs.gamescope = {
     enable = true;
-    capSysNice = false; 
+    capSysNice = true; 
   };
   
   # supposed to fix issues with gamescope
   programs.nix-ld = {
-    enable = false;
+    enable = true;
     libraries = pkgs.steam-run.args.multiPkgs pkgs;
   };
 
   # Try capSysNice with a different approach
   # https://github.com/NixOS/nixpkgs/issues/351516
   services.ananicy = {
-    enable = true;
+    enable = false;
     package = pkgs.ananicy-cpp;
     rulesProvider = pkgs.ananicy-cpp;
     extraRules = [
